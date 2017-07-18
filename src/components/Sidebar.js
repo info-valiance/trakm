@@ -3,32 +3,81 @@ import { Link } from 'react-router-dom';
 import '../css/Sidebar.css'
 
 class Sidebar extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { expandSidebar: true }
+    }
+
+    // toggle sidebar expandSidebar state on hamburger click
+    /*global toggleSidebar:true*/
+    toggleSidebar = () => {
+        this.setState({ expandSidebar: !this.state.expandSidebar })
+    }
+
     render() {
         return (
-            <aside>
+            <aside
+                style={{
+                    width: `${this.state.expandSidebar ? '250px' : '50px'}`
+                }}
+            >
                 <div className="nav-wrapper">
-                    <h1><i className="fa fa-bars" aria-hidden="true"></i> TrakM</h1>
+                    <h1>
+                        <i
+                            className="fa fa-bars"
+                            aria-hidden="true"
+                            onClick={this.toggleSidebar}
+                        ></i>
+                        &nbsp;
+                        <span
+                            className="sidebar-toggle-items"
+                            style={{
+                                display: `${this.state.expandSidebar ? 'inline-block' : 'none'}`
+                            }}
+                        >TrakM</span>
+                    </h1>
 
                     <ul className="nav-ul-top">
                         <li>
                             <Link
                                 to="/overview"
                             >
-                                <i className="fa fa-tachometer" aria-hidden="true"></i> Overview
+                                <i className="fa fa-tachometer" aria-hidden="true"></i>
+                                &nbsp;
+                                <span
+                                    className="sidebar-toggle-items"
+                                    style={{
+                                        display: `${this.state.expandSidebar ? 'inline-block' : 'none'}`
+                                    }}
+                                >Overview</span>
                             </Link>
                         </li>
                         <li>
                             <Link
                                 to="/frontend"
                             >
-                                <i className="fa fa-area-chart" aria-hidden="true"></i> Frontend
+                                <i className="fa fa-area-chart" aria-hidden="true"></i>
+                                &nbsp;
+                                <span
+                                    className="sidebar-toggle-items"
+                                    style={{
+                                        display: `${this.state.expandSidebar ? 'inline-block' : 'none'}`
+                                    }}
+                                >Frontend</span>
                             </Link>
                         </li>
                         <li>
                             <Link
                                 to="/backend"
                             >
-                                <i className="fa fa-pie-chart" aria-hidden="true"></i> Backend
+                                <i className="fa fa-pie-chart" aria-hidden="true"></i>
+                                &nbsp;
+                                <span
+                                    className="sidebar-toggle-items"
+                                    style={{
+                                        display: `${this.state.expandSidebar ? 'inline-block' : 'none'}`
+                                    }}
+                                >Backend</span>
                             </Link>
                         </li>
                     </ul>
@@ -38,21 +87,42 @@ class Sidebar extends Component {
                             <Link
                                 to="/"
                             >
-                                <i className="fa fa-home" aria-hidden="true"></i> Home
+                                <i className="fa fa-home" aria-hidden="true"></i>
+                                &nbsp;
+                                <span
+                                    className="sidebar-toggle-items"
+                                    style={{
+                                        display: `${this.state.expandSidebar ? 'inline-block' : 'none'}`
+                                    }}
+                                >Home</span>
                             </Link>
                         </li>
                         <li>
                             <Link
                                 to="/settings"
                             >
-                                <i className="fa fa-cog" aria-hidden="true"></i> Settings
+                                <i className="fa fa-cog" aria-hidden="true"></i>
+                                &nbsp;
+                                <span
+                                    className="sidebar-toggle-items"
+                                    style={{
+                                        display: `${this.state.expandSidebar ? 'inline-block' : 'none'}`
+                                    }}
+                                >Settings</span>
                             </Link>
                         </li>
                         <li>
                             <Link
                                 to="/logout"
                             >
-                                <i className="fa fa-sign-out" aria-hidden="true"></i> Logout
+                                <i className="fa fa-sign-out" aria-hidden="true"></i>
+                                &nbsp;
+                                <span
+                                    className="sidebar-toggle-items"
+                                    style={{
+                                        display: `${this.state.expandSidebar ? 'inline-block' : 'none'}`
+                                    }}
+                                >Logout</span>
                             </Link>
                         </li>
                     </ul>
