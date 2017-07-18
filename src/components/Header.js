@@ -6,7 +6,7 @@ class Header extends Component {
         return (
             <nav className="header-navbar">
                 <div className="header-wrapper">
-
+                    <h1>TrakM</h1>
                 </div>
             </nav>
         )

@@ -6,3 +6,22 @@
     -webkit-box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
 }
+
+.header-navbar .header-wrapper {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-left: 50px;
+    color: #2e3d49;
+}
+
+.header-wrapper h1 {
+    margin: 0;
+    padding: 7px;
+    height: 56px;
+    font-family: 'Megrim', cursive;
+    font-size: 36px;
+    font-weight: normal;
+}
