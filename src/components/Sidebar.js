@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import '../css/Sidebar.css'
 
 class Sidebar extends Component {
@@ -41,93 +41,32 @@ class Sidebar extends Component {
                     </h1>
 
                     <ul className="nav-ul-top">
-                        <li>
-                            <Link
-                                to="/overview"
-                            >
-                                <i className="fa fa-tachometer" aria-hidden="true"></i>
-                                &nbsp;
-                                <span
-                                    className="sidebar-toggle-items"
-                                    style={{
-                                        display: `${this.state.expandSidebar ? 'inline-block' : 'none'}`
-                                    }}
-                                >Overview</span>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                to="/frontend"
-                            >
-                                <i className="fa fa-area-chart" aria-hidden="true"></i>
-                                &nbsp;
-                                <span
-                                    className="sidebar-toggle-items"
-                                    style={{
-                                        display: `${this.state.expandSidebar ? 'inline-block' : 'none'}`
-                                    }}
-                                >Frontend</span>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                to="/backend"
-                            >
-                                <i className="fa fa-pie-chart" aria-hidden="true"></i>
-                                &nbsp;
-                                <span
-                                    className="sidebar-toggle-items"
-                                    style={{
-                                        display: `${this.state.expandSidebar ? 'inline-block' : 'none'}`
-                                    }}
-                                >Backend</span>
-                            </Link>
-                        </li>
+                        <NavbarLiLink to="/overview" icon="fa fa-tachometer" label="Overview" expandSidebar="this.state.expandSidebar" />
+                        <NavbarLiLink to="/frontend" icon="fa fa-area-chart" label="Frontend" expandSidebar="this.state.expandSidebar" />
+                        <NavbarLiLink to="/backend" icon="fa fa-pie-chart" label="Backend" expandSidebar="this.state.expandSidebar" />
                     </ul>
 
                     <ul className="nav-ul-bottom">
-                        <li>
-                            <Link
-                                to="/"
-                            >
-                                <i className="fa fa-home" aria-hidden="true"></i>
-                                &nbsp;
-                                <span
-                                    className="sidebar-toggle-items"
-                                    style={{
-                                        display: `${this.state.expandSidebar ? 'inline-block' : 'none'}`
-                                    }}
-                                >Home</span>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                to="/settings"
-                            >
-                                <i className="fa fa-cog" aria-hidden="true"></i>
-                                &nbsp;
-                                <span
-                                    className="sidebar-toggle-items"
-                                    style={{
-                                        display: `${this.state.expandSidebar ? 'inline-block' : 'none'}`
-                                    }}
-                                >Settings</span>
-                            </Link>
-                        </li>
-                        <li>
+                        <NavbarLiLink activeOnlyWhenExact={true} to="/" icon="fa fa-home" label="Home" expandSidebar="this.state.expandSidebar" />
+                        <NavbarLiLink to="/settings" icon="fa fa-cog" label="Settings" expandSidebar="this.state.expandSidebar" />
+                        <NavbarLiLink to="/logout" icon="fa fa-sign-out" label="Logout" expandSidebar="this.state.expandSidebar" />
+
+
+                        {/* previous way of rendering li with link */}
+                        {/* <li>
                             <Link
                                 to="/logout"
                             >
                                 <i className="fa fa-sign-out" aria-hidden="true"></i>
                                 &nbsp;
                                 <span
-                                    className="sidebar-toggle-items"
-                                    style={{
-                                        display: `${this.state.expandSidebar ? 'inline-block' : 'none'}`
-                                    }}
+                            className="sidebar-toggle-items"
+                            style={{
+                            display: `${this.state.expandSidebar ? 'inline-block' : 'none'}`
+                            }}
                                 >Logout</span>
                             </Link>
-                        </li>
+                        </li> */}
                     </ul>
 
                 </div>
@@ -135,5 +74,23 @@ class Sidebar extends Component {
         )
     }
 }
+
+// Custom link creating component which will match the path apply active class to matching element wrapper
+const NavbarLiLink = ({ label, icon, to, activeOnlyWhenExact, expandSidebar }) => (
+  <Route path={to} exact={activeOnlyWhenExact} children={({ match }) => (
+    <li className={match ? 'navbar-li-active' : ''}>
+        <Link to={to}>
+            <i className={icon} aria-hidden="true"></i>
+            &nbsp;
+            <span
+                className="sidebar-toggle-items"
+                style={{
+                display: `${expandSidebar ? 'inline-block' : 'none'}`
+            }}
+            >{label}</span>
+        </Link>
+  </li>
+  )}/>
+)
 
 export default Sidebar

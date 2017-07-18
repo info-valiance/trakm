@@ -46,6 +46,11 @@ aside {
     overflow: hidden;
 }
 
+.nav-wrapper ul li:hover {
+    background: -webkit-gradient(linear, left top, right top, from(rgba(219,226,232,0.4)),color-stop(30%, rgba(255,255,255,0)));
+    background: linear-gradient(to right, rgba(219,226,232,0.4) 0%,rgba(255,255,255,0) 30%);
+}
+
 .nav-wrapper ul li .fa {
     width: 35px;
     height: 35px;
@@ -67,4 +72,9 @@ aside {
 }
 
 .nav-ul-bottom {
+}
+
+.navbar-li-active {
+    background: -webkit-gradient(linear, left top, right top, from(rgba(219,226,232,0.4)),color-stop(30%, rgba(255,255,255,0)));
+    background: linear-gradient(to right, rgba(219,226,232,0.4) 0%,rgba(255,255,255,0) 30%);
 }
