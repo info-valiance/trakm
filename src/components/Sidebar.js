@@ -6,7 +6,7 @@ class Sidebar extends Component {
         return (
             <aside>
                 <div className="nav-wrapper">
-                    <h1>TrakM</h1>
+                    <h1><i className="fa fa-bars" aria-hidden="true"></i> TrakM</h1>
 
                     <ul className="nav-ul-top">
                         <li><i className="fa fa-tachometer" aria-hidden="true"></i> Overview</li>
