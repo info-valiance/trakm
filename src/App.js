@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import Sidebar from './components/Sidebar.js'
+import Header from './components/Header.js'
 
 class App extends Component {
   render() {
     return (
-        <Sidebar />
+        <div>
+            <Header />
+            <Sidebar />
+        </div>
     );
   }
 }
