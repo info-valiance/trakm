@@ -27,6 +27,9 @@ class Sidebar extends Component {
                             className="fa fa-bars"
                             aria-hidden="true"
                             onClick={this.toggleSidebar}
+                            style={{
+                                cursor: 'pointer'
+                            }}
                         ></i>
                         &nbsp;
                         <span

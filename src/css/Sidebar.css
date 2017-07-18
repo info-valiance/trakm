@@ -31,21 +31,24 @@ aside {
 .nav-wrapper h1 {
     margin: 0;
     padding: 7px 15px;
-    /*height: 53px;*/
+    height: 56px;
     background: #1c262f;
     font-family: 'Megrim', cursive;
     font-size: 36px;
     font-weight: normal;
+    overflow: hidden;
 }
 
 .nav-wrapper ul li {
     padding: 11px 15px;
     font-size: 15px;
+    height: 45px;
+    overflow: hidden;
 }
 
 .nav-wrapper ul li .fa {
     width: 35px;
-    height: 23px;
+    height: 35px;
     font-size: 20px;
 }
 
