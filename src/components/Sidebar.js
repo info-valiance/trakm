@@ -37,6 +37,9 @@ class Sidebar extends Component {
                             // style={{
                             //     display: `${this.state.expandSidebar ? 'inline-block' : 'none'}`
                             // }}
+                            style={{
+                                paddingLeft: '7px'
+                            }}
                         >TrakM</span>
                     </h1>
 
