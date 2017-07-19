@@ -45,8 +45,8 @@ class Home extends Component {
                                     innerRadius={65}
                                     outerRadius={100}
                                     fill="#82ca9d"
-                                    label="label"
-                                    colors ={['#f9705d', 'gold', '#63f763']}
+                                    labelLine={true}
+                                    colors={['#f9705d', 'gold', '#63f763']}
                                 />
                             </div>
                             <div className="flex-items age-dist-wrapper">
@@ -62,8 +62,8 @@ class Home extends Component {
                                     innerRadius={65}
                                     outerRadius={100}
                                     fill="#82ca9d"
-                                    label="label"
-                                    colors ={['#006699', '#0088cc', '#00aaff', '#33bbff', '#66ccff', '#80d4ff', '#b3e6ff']}
+                                    labelLine={true}
+                                    colors={['#006699', '#0088cc', '#00aaff', '#33bbff', '#66ccff', '#80d4ff', '#b3e6ff']}
                                 />
                             </div>
                         </div>

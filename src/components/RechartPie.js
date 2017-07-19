@@ -2,6 +2,19 @@ import React, { Component } from 'react'
 import { PieChart, Pie, Cell, ResponsiveContainer, Legend } from 'recharts'
 
 class RechartPie extends Component {
+    /*global renderCustomizedLabel:true*/
+    renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, data }) => {
+        const radius = innerRadius + (outerRadius - innerRadius) * 1.6;
+        const x  = cx + radius * Math.cos(-midAngle * (Math.PI/180));
+        const y = cy  + radius * Math.sin(-midAngle * (Math.PI/180));
+
+        return (
+            <text x={x} y={y} fill="#2e3d49" textAnchor={x > cx ? 'start' : 'end'} fontSize={13} dominantBaseline="central">
+                {`${(percent * 100).toFixed(0)}%`}
+            </text>
+        );
+    };
+
     render() {
         let colors = this.props.colors
 
@@ -18,7 +31,7 @@ class RechartPie extends Component {
                         innerRadius={this.props.innerRadius}
                         outerRadius={this.props.outerRadius}
                         fill={this.props.fill}
-                        label={this.props.label}
+                        label={this.renderCustomizedLabel}
                     >
                         {
                             this.props.data.map((entry, index) => <Cell key={index} fill={colors[index % colors.length]}/>)
