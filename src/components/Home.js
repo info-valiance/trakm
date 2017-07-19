@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import VicPieChart from './VicPieChart.js'
+// import VicPieChart from './VicPieChart.js'
+import RechartPie from './RechartPie.js'
 import '../css/Home.css'
 
 class Home extends Component {
@@ -12,11 +13,13 @@ class Home extends Component {
                         <div className="flex-box">
                             <div className="flex-items perf-dist-wrapper">
                                 <h1>Performance Distribution of Models</h1>
-                                <VicPieChart />
+                                {/* <VicPieChart /> */}
+                                <RechartPie />
                             </div>
                             <div className="flex-items age-dist-wrapper">
                                 <h1>Age Distribution of Models</h1>
-                                <VicPieChart />
+                                {/* <VicPieChart /> */}
+                                <RechartPie />
                             </div>
                         </div>
                     </div>
