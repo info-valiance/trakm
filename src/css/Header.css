@@ -4,6 +4,7 @@
     left: 0;
     height: 56px;
     width: 100%;
+    background: #fff;
     z-index: 1000;
     -webkit-box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
