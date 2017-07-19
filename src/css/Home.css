@@ -5,3 +5,47 @@
 .home-add-model {
     width: 25%;
 }
+
+.home-addmodel-graph-wrapper {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.perf-dist-wrapper,
+.age-dist-wrapper {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -moz-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+.home-graphs,
+.home-add-model {
+    position: relative;
+    padding: 12px 15px;
+    background: #fff;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.12);
+}
+
+.card-accent {
+    position: absolute;
+    background: #02b3e4;
+    height: 40px;
+    width: 4px;
+    top: 45px;
+    left: -2px;
+}
+
+.perf-dist-wrapper h1,
+.age-dist-wrapper h1 {
+    margin: 0;
+    font-size: 15px;
+    color: #2e3d49;
+    text-align: center;
+}

@@ -6,13 +6,16 @@ class Home extends Component {
     render() {
         return (
             <div className="home-content-wrapper">
-                <div className="flex-box">
+                <div className="flex-box home-addmodel-graph-wrapper">
                     <div className="flex-items home-graphs">
+                        <div className="card-accent"></div>
                         <div className="flex-box">
-                            <div className="flex-items">
+                            <div className="flex-items perf-dist-wrapper">
+                                <h1>Performance Distribution of Models</h1>
                                 <VicPieChart />
                             </div>
-                            <div className="flex-items">
+                            <div className="flex-items age-dist-wrapper">
+                                <h1>Age Distribution of Models</h1>
                                 <VicPieChart />
                             </div>
                         </div>

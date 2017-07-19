@@ -23,7 +23,7 @@ class VicPieChart extends Component {
         return (
             <VictoryPie
                 data={this.state.data}
-                colorScale={['#f9705d', '#f7f732', '#63f763']}
+                colorScale={['#f9705d', 'gold', '#63f763']}
                 // radius of donut hole
                 innerRadius={100}
                 // space between multiple arcs
