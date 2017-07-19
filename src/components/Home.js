@@ -7,8 +7,17 @@ class Home extends Component {
         return (
             <div className="home-content-wrapper">
                 <div className="flex-box">
-                    <div className="home-graphs">ds</div>
-                    <div className="home-add-model">kd</div>
+                    <div className="flex-items home-graphs">
+                        <div className="flex-box">
+                            <div className="flex-items">
+                                <VicPieChart />
+                            </div>
+                            <div className="flex-items">
+                                <VicPieChart />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="flex-items home-add-model">kd</div>
                 </div>
             </div>
         )

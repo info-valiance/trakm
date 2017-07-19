@@ -23,7 +23,7 @@ class VicPieChart extends Component {
         return (
             <VictoryPie
                 data={this.state.data}
-                colorScale={['#3D2645', '#832161', '#DA4167']}
+                colorScale={['#f9705d', '#f7f732', '#63f763']}
                 // radius of donut hole
                 innerRadius={100}
                 // space between multiple arcs
@@ -32,7 +32,16 @@ class VicPieChart extends Component {
                 // animate={{ duration: 500, onLoad: {duration: 2000} }}
                 // To position the labels from the center
                 labelRadius={112}
-                style={{ labels: { fill: "#fff" } }}
+                // labels text
+                labels={(data) => `${data.y}`}
+                style={{
+                    labels: {
+                        fill: "#fff" ,
+                        fontSize: "18px",
+                        fontFamily: "Open Sans",
+                        fontWeight: "bold"
+                    }
+                }}
             />
         )
     }
