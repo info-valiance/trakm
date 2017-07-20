@@ -7,12 +7,12 @@ class Home extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            data1: [
+            perfDistData: [
                 { name: "Low Performing", value: 40 },
                 { name: "Fairly Performing", value: 60 },
                 { name: "High Performing", value: 100 }
             ],
-            data2: [
+            ageDistData: [
                 { name: "0-3 months", value: 30 },
                 { name: "3-6 months", value: 25 },
                 { name: "6-9 months", value: 15 },
@@ -49,7 +49,7 @@ class Home extends Component {
                                 <h1>Performance Distribution of Models</h1>
                                 {/* <VicPieChart /> */}
                                 <RechartPie
-                                    data={this.state.data1}
+                                    data={this.state.perfDistData}
                                     dataKey="value"
                                     startAngle={90}
                                     endAngle={-270}
@@ -77,7 +77,7 @@ class Home extends Component {
                                 <h1>Age Distribution of Models</h1>
                                 {/* <VicPieChart /> */}
                                 <RechartPie
-                                    data={this.state.data2}
+                                    data={this.state.ageDistData}
                                     dataKey="value"
                                     startAngle={90}
                                     endAngle={-270}
