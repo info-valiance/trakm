@@ -61,6 +61,16 @@ class Home extends Component {
                                     labelLine={true}
                                     label="label"
                                     colors={['#f9705d', 'gold', '#63f763']}
+                                    textCenter={{
+                                        text: "200",
+                                        fill: "#2e3d49",
+                                        x: "50%",
+                                        y: "43%",
+                                        textAnchor: "middle",
+                                        fontSize: 24,
+                                        fontWeight: "bold",
+                                        dominantBaseline: "central"
+                                    }}
                                 />
                             </div>
                             <div className="flex-items age-dist-wrapper">
@@ -79,6 +89,9 @@ class Home extends Component {
                                     labelLine={true}
                                     label={this.renderCustomizedLabel}
                                     colors={['#006699', '#0088cc', '#00aaff', '#33bbff', '#66ccff', '#80d4ff', '#b3e6ff']}
+                                    textCenter={{
+                                        text: ""
+                                    }}
                                 />
                             </div>
                         </div>
