@@ -21,7 +21,15 @@ class RechartPie extends Component {
         return (
             <ResponsiveContainer width="100%" height={300}>
                 <PieChart>
-                    <text fill={this.props.textCenter.fill} textAnchor={this.props.textCenter.textAnchor} x={this.props.textCenter.x} y={this.props.textCenter.y} fontWeight={this.props.textCenter.fontWeight} fontSize={this.props.textCenter.fontSize} dominantBaseline={this.props.textCenter.dominantBaseline}>
+                    <text
+                        fill={this.props.textCenter.fill}
+                        textAnchor={this.props.textCenter.textAnchor}
+                        x={this.props.textCenter.x}
+                        y={this.props.textCenter.y}
+                        fontWeight={this.props.textCenter.fontWeight}
+                        fontSize={this.props.textCenter.fontSize}
+                        dominantBaseline={this.props.textCenter.dominantBaseline}
+                    >
                         {this.props.textCenter.text}
                     </text>
                     <Pie

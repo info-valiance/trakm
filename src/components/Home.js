@@ -65,7 +65,7 @@ class Home extends Component {
                                         text: "200",
                                         fill: "#2e3d49",
                                         x: "50%",
-                                        y: "43%",
+                                        y: "44%",
                                         textAnchor: "middle",
                                         fontSize: 24,
                                         fontWeight: "bold",
