@@ -24,6 +24,19 @@ class Home extends Component {
         }
     }
 
+    /*global renderCustomizedLabel:true*/
+    renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, data }) => {
+        const radius = innerRadius + (outerRadius - innerRadius) * 1.6;
+        const x  = cx + radius * Math.cos(-midAngle * (Math.PI/180));
+        const y = cy  + radius * Math.sin(-midAngle * (Math.PI/180));
+
+        return (
+            <text x={x} y={y} fill="#2e3d49" textAnchor={x > cx ? 'start' : 'end'} fontSize={13} dominantBaseline="central">
+                {`${(percent * 100).toFixed(0)}%`}
+            </text>
+        );
+    };
+
     render() {
         return (
             <div className="home-content-wrapper">
@@ -46,6 +59,7 @@ class Home extends Component {
                                     outerRadius={100}
                                     fill="#82ca9d"
                                     labelLine={true}
+                                    label="label"
                                     colors={['#f9705d', 'gold', '#63f763']}
                                 />
                             </div>
@@ -63,6 +77,7 @@ class Home extends Component {
                                     outerRadius={100}
                                     fill="#82ca9d"
                                     labelLine={true}
+                                    label={this.renderCustomizedLabel}
                                     colors={['#006699', '#0088cc', '#00aaff', '#33bbff', '#66ccff', '#80d4ff', '#b3e6ff']}
                                 />
                             </div>
