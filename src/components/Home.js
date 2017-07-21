@@ -60,7 +60,7 @@ class Home extends Component {
                                     fill="#82ca9d"
                                     labelLine={true}
                                     label="label"
-                                    colors={['#f9705d', 'gold', '#63f763']}
+                                    colors={['#FF8042', '#FFBB28', '#00C49F']}
                                     textCenter={{
                                         text: "200",
                                         fill: "#2e3d49",
