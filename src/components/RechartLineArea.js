@@ -7,19 +7,19 @@ class RechartLineArea extends Component {
             <ResponsiveContainer width="100%" height={300}>
                 <AreaChart
                     data={[
-                        {name: '1st Jan 16', Gains: 2, pv: 2400, amt: 2400},
-                        {name: '1st Feb 16', Gains: 2, pv: 1398, amt: 2210},
-                        {name: '1st Mar 16', Gains: 2.2, pv: 9800, amt: 2290},
-                        {name: '1st Apr 16', Gains: 1.5, pv: 3908, amt: 2000},
-                        {name: '1st May 16', Gains: 3, pv: 4800, amt: 2181},
-                        {name: '1st Jun 16', Gains: 3, pv: 3800, amt: 2500},
-                        {name: '1st Jul 16', Gains: 3.4, pv: 4300, amt: 2100},
-                        {name: '1st Aug 16', Gains: 3.3, pv: 4300, amt: 2100},
-                        {name: '1st Sept 16', Gains: 3.8, pv: 4300, amt: 2100},
+                        {name: 'Jan 16', Gains: 2, pv: 2400, amt: 2400},
+                        {name: 'Feb 16', Gains: 2, pv: 1398, amt: 2210},
+                        {name: 'Mar 16', Gains: 2.2, pv: 9800, amt: 2290},
+                        {name: 'Apr 16', Gains: 1.5, pv: 3908, amt: 2000},
+                        {name: 'May 16', Gains: 3, pv: 4800, amt: 2181},
+                        {name: 'Jun 16', Gains: 3, pv: 3800, amt: 2500},
+                        {name: 'Jul 16', Gains: 3.4, pv: 4300, amt: 2100},
+                        {name: 'Aug 16', Gains: 3.3, pv: 4300, amt: 2100},
+                        {name: 'Sept 16', Gains: 3.8, pv: 4300, amt: 2100}
                     ]}
                     margin={{
                         top: 0,
-                        right: 30,
+                        right: 0,
                         left: 0,
                         bottom: 0
                     }}
@@ -30,7 +30,7 @@ class RechartLineArea extends Component {
                             <stop offset="95%" stopColor="#006699" stopOpacity={0.1}/>
                         </linearGradient>
                     </defs>
-                    <XAxis dataKey="name"/>
+                    <XAxis dataKey="name" interval="preserveStartEnd"/>
                     {/* <YAxis/> */}
                     {/* <CartesianGrid strokeDasharray="3 3"/> */}
                     <Tooltip/>
