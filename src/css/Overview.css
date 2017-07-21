@@ -32,3 +32,8 @@
 .page-current-window {
     font-family: 'Nunito', sans-serif;
 }
+
+.overview-card-head {
+    font-family: 'Nunito', sans-serif;
+    width: 100%;
+}

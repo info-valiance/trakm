@@ -5,7 +5,7 @@ import '../css/Sidebar.css'
 class Sidebar extends Component {
     constructor(props) {
         super(props);
-        this.state = { expandSidebar: true }
+        this.state = { expandSidebar: false }
     }
 
     // toggle sidebar expandSidebar state on hamburger click

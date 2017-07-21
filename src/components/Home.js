@@ -96,7 +96,7 @@ class Home extends Component {
                             </div>
                         </div>
                     </div>
-                    <div className="flex-items home-add-model">kd</div>
+                    <div className="flex-items home-add-model"></div>
                 </div>
             </div>
         )
