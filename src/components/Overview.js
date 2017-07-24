@@ -27,9 +27,41 @@ class Overview extends Component {
                             Model Details
                         </div>
                     </div>
-                    <div className="flex-box">
+                    <div className="flex-box model-detail-content">
                         <div className="flex-items model-detail-img">
-                            <img src={redGraphThumb} alt=""/>
+                            <img className="overview-model-img" src={redGraphThumb} alt=""/>
+                            <div className="model-detail-img-text">Model Name</div>
+                        </div>
+                        <div className="flex-items model-detail-text">
+                            <div className="model-detail-text-row">
+                                <span className="detail-text-row-left">Name</span>
+                                <span className="detail-text-row-right">: Model Name</span>
+                            </div>
+                            <div className="model-detail-text-row">
+                                <span className="detail-text-row-left">Type</span>
+                                <span className="detail-text-row-right">: Classification</span>
+                            </div>
+                            <div className="model-detail-text-row">
+                                <span className="detail-text-row-left">Technique</span>
+                                <span className="detail-text-row-right">: Logistic Regression</span>
+                            </div>
+                            <div className="model-detail-text-row">
+                                <span className="detail-text-row-left">Category</span>
+                                <span className="detail-text-row-right">: Fraud</span>
+                            </div>
+                            <div className="model-detail-text-row">
+                                <span className="detail-text-row-left">Development Window</span>
+                                <span className="detail-text-row-right">: 1 Jan 14 to 31 Dec 14</span>
+                            </div>
+                        </div>
+                        <div className="flex-items model-detail-btn">
+                            <button className="overview-download">
+                                <i className="fa fa-download" aria-hidden="true"></i> Download
+                            </button>
+                            <br />
+                            <button className="overview-share">
+                                <i className="fa fa-share-alt" aria-hidden="true"></i> Share
+                            </button>
                         </div>
                     </div>
                 </div>

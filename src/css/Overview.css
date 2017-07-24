@@ -27,6 +27,7 @@
 
 .page-name {
     font-family: 'Nunito', sans-serif;
+    font-size: 20px;
 }
 
 .page-current-window {
@@ -36,4 +37,76 @@
 .overview-card-head {
     font-family: 'Nunito', sans-serif;
     width: 100%;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.model-detail-content {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.model-detail-img {
+    position: relative;
+}
+
+.model-detail-img-text {
+    position: absolute;
+    top: 3px;
+    left: 5px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.overview-model-img {
+    width: 150px;
+}
+
+.model-detail-text {
+    font-size: 15px;
+}
+
+.model-detail-text-row {
+    padding: 3px 0;
+}
+
+.detail-text-row-left {
+    display: inline-block;
+    width: 160px;
+}
+
+.overview-download,
+.overview-share {
+    border: none;
+    color: #fff;
+    background: #02b3e4;
+    border: 2px solid #02b3e4;
+    border-radius: 2px;
+    padding: 5px 10px;
+    -webkit-box-shadow: 1px 1px 5px #9c9c9c;
+    box-shadow: 1px 1px 5px #9c9c9c;
+    cursor: pointer;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.overview-download {
+    margin-bottom: 7px;
+}
+
+.overview-download:hover,
+.overview-share:hover {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background: #fff;
+    color: #02b3e4;
+}
+
+@media screen and (min-width: 1030px) {
+    .model-detail-content {
+        width: 80%;
+    }
 }
