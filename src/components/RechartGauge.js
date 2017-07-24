@@ -54,8 +54,8 @@ const RechartGauge = () => {
         };
 
         const pieRadius = {
-            innerRadius: (width / 2) * 0.55,
-            outerRadius: (width / 2) * 0.7
+            innerRadius: (width / 2) * 0.85,
+            outerRadius: (width / 2) * 1.0
         };
 
         const Arrow = ({ cx, cy, midAngle, outerRadius }) => { //eslint-disable-line react/no-multi-comp
@@ -89,7 +89,7 @@ const RechartGauge = () => {
         };
 
         return (
-            <ResponsiveContainer width="100%" height={300}>
+            <ResponsiveContainer width="100%" height={250}>
                 <PieChart>
                     <Pie
                         activeIndex={activeSectorIndex}

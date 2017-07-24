@@ -67,11 +67,45 @@ class Overview extends Component {
                     </div>
                 </div>
 
-                <div className="flex-box overview-card">
-                    <RechartGauge />
-                </div>
-                <div className="flex-box overview-card">
-
+                <div className="flex-box overview-gini-psi-wrapper">
+                    <div className="flex-items overview-gini overview-card">
+                    </div>
+                    <div className="flex-items overview-psi overview-card">
+                        <div className="flex-box">
+                            <div className="flex-items overview-card-head">
+                                Stability Index (PSI)
+                            </div>
+                        </div>
+                        <div className="flex-box">
+                            <div className="flex-items psi-gauge-chart">
+                                <RechartGauge />
+                            </div>
+                            <div className="flex-items flex-box psi-gauge-legend">
+                                <table className="flex-items psi-gauge-table">
+                                    <tbody>
+                                        <tr className="psi-gauge-table-head">
+                                            <th>0 - 0.1</th>
+                                        </tr>
+                                        <tr className="psi-gauge-table-cell">
+                                            <td>Little or no change</td>
+                                        </tr>
+                                        <tr className="psi-gauge-table-head">
+                                            <th>0.1 - 0.25</th>
+                                        </tr>
+                                        <tr className="psi-gauge-table-cell">
+                                            <td>Some change, close monitoring required</td>
+                                        </tr>
+                                        <tr className="psi-gauge-table-head">
+                                            <th>0.25 & above</th>
+                                        </tr>
+                                        <tr className="psi-gauge-table-cell">
+                                            <td>Major shift, requires review</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         )

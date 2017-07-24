@@ -110,3 +110,55 @@
         width: 80%;
     }
 }
+
+.overview-gini-psi-wrapper {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.overview-gini {
+    width: 39%;
+}
+
+.overview-psi {
+    width: 60%;
+}
+
+.psi-gauge-legend {
+    width: 25%;
+}
+
+.psi-gauge-chart {
+    width: 75%;
+    -webkit-box-ordinal-group: 3;
+    -webkit-order: 2;
+    -moz-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    order: 2;
+}
+
+.psi-gauge-table {
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+}
+
+.psi-gauge-table-head {
+    text-align: left;
+    background: #e6e6e6;
+}
+
+.psi-gauge-table-head th {
+    /*font-weight: normal;*/
+    color: #656565;
+}
+
+.psi-gauge-table-cell {
+    text-align: left;
+    font-size: 14px;
+    background: #f2f2f2;
+    height: 50px;
+}
