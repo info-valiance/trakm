@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import RechartLineArea from './RechartLineArea.js'
+import RechartGauge from './RechartGauge.js'
 import redGraphThumb from '../img/red.png'
 import '../css/Overview.css'
 
@@ -64,6 +65,13 @@ class Overview extends Component {
                             </button>
                         </div>
                     </div>
+                </div>
+
+                <div className="flex-box overview-card">
+                    <RechartGauge />
+                </div>
+                <div className="flex-box overview-card">
+
                 </div>
             </div>
         )
