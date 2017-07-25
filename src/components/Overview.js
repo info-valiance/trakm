@@ -25,7 +25,7 @@ class Overview extends Component {
         super(props);
         this.state = {
             gini: {
-                value: 0.35, // gini value
+                value: 0.4, // gini value
             },
             gains: {
                 data: [
