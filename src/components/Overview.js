@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import RechartLineArea from './RechartLineArea.js'
 import RechartGauge from './RechartGauge.js'
 import GiniChart from './GiniChart.js'
+import RechartLine from './RechartLine.js'
 import redGraphThumb from '../img/red.png'
 import '../css/Overview.css'
 
@@ -27,11 +28,13 @@ class Overview extends Component {
                         Current Window
                     </div>
                 </div>
+
                 <div className="flex-box overview-card">
                     <div className="flex-items overview-gains-chart">
                         <RechartLineArea />
                     </div>
                 </div>
+
                 <div className="overview-card">
                     <div className="flex-box">
                         <div className="flex-items overview-card-head">
@@ -103,6 +106,7 @@ class Overview extends Component {
                             </div>
                         </div>
                     </div>
+
                     <div className="flex-items overview-psi overview-card">
                         <div className="flex-box">
                             <div className="flex-items overview-card-head">
@@ -140,6 +144,20 @@ class Overview extends Component {
                         </div>
                     </div>
                 </div>
+
+                <div className="overview-card overview-head">
+                    <div className="flex-box">
+                        <div className="flex-items overview-card-head">
+                            Gains Chart
+                        </div>
+                    </div>
+                    <div className="flex-box gains-chart-wrapper">
+                        <div className="flex-items gains-chart">
+                            <RechartLine />
+                        </div>
+                    </div>
+                </div>
+
             </div>
         )
     }
