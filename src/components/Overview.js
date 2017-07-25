@@ -1,10 +1,20 @@
 import React, { Component } from 'react'
 import RechartLineArea from './RechartLineArea.js'
 import RechartGauge from './RechartGauge.js'
+import GiniChart from './GiniChart.js'
 import redGraphThumb from '../img/red.png'
 import '../css/Overview.css'
 
 class Overview extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            gini: {
+                value: 0.35, // gini value
+            }
+        }
+    }
+
     render() {
         return (
             <div className="overview-content-wrapper">
@@ -69,6 +79,16 @@ class Overview extends Component {
 
                 <div className="flex-box overview-gini-psi-wrapper">
                     <div className="flex-items overview-gini overview-card">
+                        <div className="flex-box">
+                            <div className="flex-items overview-card-head">
+                                Model Performance
+                            </div>
+                        </div>
+                        <div className="flex-box">
+                            <div className="flex-items gini-chart">
+                                <GiniChart data={this.state.gini} />
+                            </div>
+                        </div>
                     </div>
                     <div className="flex-items overview-psi overview-card">
                         <div className="flex-box">
