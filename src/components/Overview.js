@@ -84,9 +84,22 @@ class Overview extends Component {
                                 Model Performance
                             </div>
                         </div>
-                        <div className="flex-box">
+                        <div className="flex-box gini-chart-wrapper">
                             <div className="flex-items gini-chart">
                                 <GiniChart data={this.state.gini} />
+                            </div>
+                            <div className="flex-items gini-value">
+                                Gini:
+                                <br/>
+                                {this.state.gini.value}
+                            </div>
+                        </div>
+                        <div className="flex-box">
+                            <div className="flex-items gini-note-head">
+                                Note:
+                            </div>
+                            <div className="flex-items gini-note-text">
+                                Gini coefficient >0.4 means the predictive power of scorecard is good
                             </div>
                         </div>
                     </div>

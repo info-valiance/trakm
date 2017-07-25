@@ -75,7 +75,7 @@
 
 .detail-text-row-left {
     display: inline-block;
-    width: 160px;
+    width: 170px;
 }
 
 .overview-download,
@@ -163,7 +163,18 @@
     height: 50px;
 }
 
-.gini-chart-thumb {
-    font-size: 200px;
-    /*color: #fff;*/
+.gini-chart-wrapper {
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+}
+
+.gini-value {
+    font-size: 24px;
+    color: #4c4c4c;
+}
+
+.gini-note-text {
+    font-size: 15px;
+    padding-left: 10px;
 }
