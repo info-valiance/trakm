@@ -1,3 +1,4 @@
+/* Card design */
 .overview-card {
     position: relative;
     padding: 12px 15px;
@@ -8,6 +9,7 @@
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.12);
 }
 
+/* Overview line area chart */
 .overview-gains-chart {
     -webkit-box-flex: 1;
     -webkit-flex: 1;
@@ -17,6 +19,7 @@
     width: 100%;
 }
 
+/* Overview Header */
 .page-head-filler {
     -webkit-box-flex: 1;
     -webkit-flex-grow: 1;
@@ -34,6 +37,7 @@
     font-family: 'Nunito', sans-serif;
 }
 
+/* Each card head */
 .overview-card-head {
     font-family: 'Nunito', sans-serif;
     width: 100%;
@@ -41,6 +45,7 @@
     margin-bottom: 12px;
 }
 
+/* Model details section */
 .model-detail-content {
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
@@ -111,6 +116,7 @@
     }
 }
 
+/* Gini - PSI Section */
 .overview-gini-psi-wrapper {
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
@@ -127,6 +133,7 @@
     width: 60%;
 }
 
+/* PSI Section */
 .psi-gauge-legend {
     width: 25%;
 }
@@ -163,6 +170,7 @@
     height: 50px;
 }
 
+/* Gini Section */
 .gini-chart-wrapper {
     -webkit-justify-content: space-around;
     -ms-flex-pack: distribute;
@@ -179,6 +187,7 @@
     padding-left: 10px;
 }
 
+/* Gains Section */
 .gains-chart {
     width: 100%;
 }
