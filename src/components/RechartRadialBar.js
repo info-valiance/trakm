@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { ResponsiveContainer, RadialBarChart, RadialBar, Legend, Tooltip } from 'recharts'
 
 class RechartRadialBar extends Component {
+    // Customized label for population radial bar chart
     /*global renderCustomizedLabel:true*/
     renderCustomizedLabel = ({ viewBox }) => {
         return (
@@ -15,28 +16,33 @@ class RechartRadialBar extends Component {
         return (
             <ResponsiveContainer width="100%" height={200}>
                 <RadialBarChart
-                    data={[
-                        {name: 'Current', percent: 10, fill: '#006699'},
-                        {name: 'Development', percent: 8, fill: '#00aaff'},
-                        {name: 'filler', percent: 100, fill: '#fff'}
-                    ]}
-                    // cx={150}
-                    // cy={150}
-                    startAngle={90}
-                    endAngle={-270}
-                    innerRadius={75}
-                    outerRadius={40}
-                    barSize={10}
+                    data={this.props.data}
+                    // startAngle={90}
+                    // endAngle={-270}
+                    // innerRadius={75}
+                    // outerRadius={40}
+                    // barSize={10}
+                    startAngle={this.props.chartStartAngle}
+                    endAngle={this.props.chartEndAngle}
+                    innerRadius={this.props.chartInnerRadius}
+                    outerRadius={this.props.chartOuterRadius}
+                    barSize={this.props.chartBarSize}
                 >
                     <RadialBar
+                        // startAngle={90}
+                        // endAngle={-270}
                         // minAngle={15}
-                        startAngle={90}
-                        endAngle={-270}
-                        minAngle={15}
+                        // label={this.renderCustomizedLabel}
+                        // background
+                        // clockWise={true}
+                        // dataKey='percent'
+                        startAngle={this.props.barStartAngle}
+                        endAngle={this.props.barEndAngle}
+                        minAngle={this.props.barMinAngle}
                         label={this.renderCustomizedLabel}
-                        background
-                        clockWise={true}
-                        dataKey='percent'
+                        background={this.props.barBackground}
+                        clockWise={this.props.barClockWise}
+                        dataKey={this.props.barDataKey}
                     />
                     <Tooltip />
                     {/* <Legend

@@ -4,6 +4,109 @@ import RechartRadialBar from './RechartRadialBar.js'
 import '../css/FrontEnd.css'
 
 class FrontEnd extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            popRadial: {
+                data: [
+                    {
+                        name: "0 - 261",
+                        plotData: [
+                            {name: 'Current', percent: 8, fill: '#006699'},
+                            {name: 'Development', percent: 10, fill: '#00aaff'},
+                            {name: 'filler', percent: 100, fill: '#fff'}
+                        ]
+                    },
+                    {
+                        name: "262 - 273",
+                        plotData: [
+                            {name: 'Current', percent: 10, fill: '#006699'},
+                            {name: 'Development', percent: 10, fill: '#00aaff'},
+                            {name: 'filler', percent: 100, fill: '#fff'}
+                        ]
+                    },
+                    {
+                        name: "274 - 283",
+                        plotData: [
+                            {name: 'Current', percent: 10, fill: '#006699'},
+                            {name: 'Development', percent: 10, fill: '#00aaff'},
+                            {name: 'filler', percent: 100, fill: '#fff'}
+                        ]
+                    },
+                    {
+                        name: "284 - 291",
+                        plotData: [
+                            {name: 'Current', percent: 13, fill: '#006699'},
+                            {name: 'Development', percent: 10, fill: '#00aaff'},
+                            {name: 'filler', percent: 100, fill: '#fff'}
+                        ]
+                    },
+                    {
+                        name: "292 - 298",
+                        plotData: [
+                            {name: 'Current', percent: 9, fill: '#006699'},
+                            {name: 'Development', percent: 8, fill: '#00aaff'},
+                            {name: 'filler', percent: 100, fill: '#fff'}
+                        ]
+                    },
+                    {
+                        name: "299 - 305",
+                        plotData: [
+                            {name: 'Current', percent: 10, fill: '#006699'},
+                            {name: 'Development', percent: 9, fill: '#00aaff'},
+                            {name: 'filler', percent: 100, fill: '#fff'}
+                        ]
+                    },
+                    {
+                        name: "306 - 312",
+                        plotData: [
+                            {name: 'Current', percent: 10, fill: '#006699'},
+                            {name: 'Development', percent: 9, fill: '#00aaff'},
+                            {name: 'filler', percent: 100, fill: '#fff'}
+                        ]
+                    },
+                    {
+                        name: "313 - 330",
+                        plotData: [
+                            {name: 'Current', percent: 17, fill: '#006699'},
+                            {name: 'Development', percent: 17, fill: '#00aaff'},
+                            {name: 'filler', percent: 100, fill: '#fff'}
+                        ]
+                    },
+                    {
+                        name: "331 - 341",
+                        plotData: [
+                            {name: 'Current', percent: 6, fill: '#006699'},
+                            {name: 'Development', percent: 8, fill: '#00aaff'},
+                            {name: 'filler', percent: 100, fill: '#fff'}
+                        ]
+                    },
+                    {
+                        name: "342+",
+                        plotData: [
+                            {name: 'Current', percent: 7, fill: '#006699'},
+                            {name: 'Development', percent: 8, fill: '#00aaff'},
+                            {name: 'filler', percent: 100, fill: '#fff'}
+                        ]
+                    },
+                ]
+            },
+            popRadialOptions: {
+                chartStartAngle: 90,
+                chartEndAngle: -270,
+                chartInnerRadius: 75,
+                chartOuterRadius: 40,
+                chartBarSize: 10,
+                barStartAngle: 90,
+                barEndAngle: -270,
+                barMinAngle: 15,
+                barBackground: true,
+                barClockWise: true,
+                barDataKey: 'percent'
+            }
+        }
+    }
+
     render() {
         return (
             <div className="frontend-content-wrapper">
@@ -58,8 +161,63 @@ class FrontEnd extends Component {
 
                 <div className="flex-box frontend-card">
                     <div className="flex-items frontend-psi-radial">
-                        <RechartRadialBar name="wert" />
-                        {/* <RechartRadialBar /> */}
+                        <div className="flex-box">
+                            <div className="flex-items frontend-card-head">
+                                Population Stability
+                            </div>
+                        </div>
+                        <div className="flex-box frontend-population-stability">
+                            {this.state.popRadial.data.map((data, index) =>
+                                <div key={index} className="flex-items frontend-population-radial">
+                                    <RechartRadialBar
+                                        name={data.name}
+                                        data={data.plotData}
+                                        chartStartAngle={this.state.popRadialOptions.chartStartAngle}
+                                        chartEndAngle={this.state.popRadialOptions.chartEndAngle}
+                                        chartInnerRadius={this.state.popRadialOptions.chartInnerRadius}
+                                        chartOuterRadius={this.state.popRadialOptions.chartOuterRadius}
+                                        chartBarSize={this.state.popRadialOptions.chartBarSize}
+                                        barStartAngle={this.state.popRadialOptions.barStartAngle}
+                                        barEndAngle={this.state.popRadialOptions.barEndAngle}
+                                        barMinAngle={this.state.popRadialOptions.barMinAngle}
+                                        // barLabel={this.renderCustomizedLabel}
+                                        barBackground={this.state.popRadialOptions.barBackground}
+                                        barClockWise={this.state.popRadialOptions.barClockWise}
+                                        barDataKey={this.state.popRadialOptions.barDataKey}
+                                    />
+                                </div>
+                            )}
+                            {/* <div className="flex-items frontend-population-radial">
+                                <RechartRadialBar name="wert" />
+                                </div>
+                                <div className="flex-items frontend-population-radial">
+                                <RechartRadialBar name="wert" />
+                                </div>
+                                <div className="flex-items frontend-population-radial">
+                                <RechartRadialBar name="wert" />
+                                </div>
+                                <div className="flex-items frontend-population-radial">
+                                <RechartRadialBar name="wert" />
+                                </div>
+                                <div className="flex-items frontend-population-radial">
+                                <RechartRadialBar name="wert" />
+                                </div>
+                                <div className="flex-items frontend-population-radial">
+                                <RechartRadialBar name="wert" />
+                                </div>
+                                <div className="flex-items frontend-population-radial">
+                                <RechartRadialBar name="wert" />
+                                </div>
+                                <div className="flex-items frontend-population-radial">
+                                <RechartRadialBar name="wert" />
+                                </div>
+                                <div className="flex-items frontend-population-radial">
+                                <RechartRadialBar name="wert" />
+                                </div>
+                                <div className="flex-items frontend-population-radial">
+                                <RechartRadialBar name="wert" />
+                            </div> */}
+                        </div>
                     </div>
                 </div>
 

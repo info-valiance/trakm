@@ -84,6 +84,18 @@
     height: 50px;
 }
 
+/* Population stability radial section */
 .frontend-psi-radial {
     width: 100%;
+}
+
+.frontend-population-stability {
+    width: 100%;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.frontend-population-radial {
+    width: 20%;
 }
