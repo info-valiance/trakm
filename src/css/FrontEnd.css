@@ -99,3 +99,25 @@
 .frontend-population-radial {
     width: 20%;
 }
+
+.frontend-pop-legend-wrapper {
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    -moz-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+}
+
+.frontend-pop-legend {
+    padding-right: 25px;
+    font-size: 15px;
+    color: #3a3a3a;
+}
+
+.pop-cur-bullet {
+    color: #006699;
+}
+
+.pop-dev-bullet {
+    color: #00aaff;
+}

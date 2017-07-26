@@ -218,6 +218,13 @@ class FrontEnd extends Component {
                                 <RechartRadialBar name="wert" />
                             </div> */}
                         </div>
+                        <div className="flex-box frontend-pop-legend-wrapper">
+                            <div className="flex-items frontend-pop-legend">
+                                <span className="pop-cur-bullet">&#x25fc;</span> Current
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                <span className="pop-dev-bullet">&#x25fc;</span> Development
+                            </div>
+                        </div>
                     </div>
                 </div>
 

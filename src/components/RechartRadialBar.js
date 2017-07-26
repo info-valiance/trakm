@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { ResponsiveContainer, RadialBarChart, RadialBar, Legend, Tooltip } from 'recharts'
+import { ResponsiveContainer, RadialBarChart, RadialBar, Legend } from 'recharts'
 
 class RechartRadialBar extends Component {
     // Customized label for population radial bar chart
@@ -44,7 +44,6 @@ class RechartRadialBar extends Component {
                         clockWise={this.props.barClockWise}
                         dataKey={this.props.barDataKey}
                     />
-                    <Tooltip />
                     {/* <Legend
                         iconSize={10}
                         width={120}
