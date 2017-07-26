@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import RechartGauge from './RechartGauge.js'
+import RechartRadialBar from './RechartRadialBar.js'
 import '../css/FrontEnd.css'
 
 class FrontEnd extends Component {
@@ -52,6 +53,13 @@ class FrontEnd extends Component {
                                 </table>
                             </div>
                         </div>
+                    </div>
+                </div>
+
+                <div className="flex-box frontend-card">
+                    <div className="flex-items frontend-psi-radial">
+                        <RechartRadialBar name="wert" />
+                        {/* <RechartRadialBar /> */}
                     </div>
                 </div>
 
