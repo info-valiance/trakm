@@ -154,3 +154,8 @@
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
 }
+
+/* Frontend final report section */
+.frontend-final-report-wrapper {
+    width: 100%;
+}

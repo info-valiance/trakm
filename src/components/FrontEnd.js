@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import RechartGauge from './RechartGauge.js'
 import RechartRadialBar from './RechartRadialBar.js'
 import CharacterCard from './CharacterCard.js'
+import RechartBar from './RechartBar.js'
 import '../css/FrontEnd.css'
 
 class FrontEnd extends Component {
@@ -282,6 +283,19 @@ class FrontEnd extends Component {
                                     score={data.score}
                                 />
                             )}
+                        </div>
+                    </div>
+                </div>
+
+                <div className="flex-box frontend-card">
+                    <div className="flex-items frontend-final-report-wrapper">
+                        <div className="flex-box">
+                            <div className="flex-items frontend-card-head">
+                                Final Decision Report
+                            </div>
+                        </div>
+                        <div className="flex-box frontend-final-report-graph">
+                            <RechartBar />
                         </div>
                     </div>
                 </div>
