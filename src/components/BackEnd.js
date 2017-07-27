@@ -20,6 +20,8 @@ class BackEnd extends Component {
         super(props)
         this.state = {
             scoreOdds: {
+                devBadRate: "1.8%",
+                curBadRate: "1.7%",
                 data: [
                     {Score: '0 - 261', Development: 11, Current: 13},
                     {Score: '262 - 273', Development: 34, Current: 34},
@@ -73,6 +75,13 @@ class BackEnd extends Component {
                         <div className="flex-box">
                             <div className="flex-items backend-card-head">
                                 Score to Odds Report
+                            </div>
+                        </div>
+                        <div className="flex-box backend-odds-text-wrapper">
+                            <div className="flex-items">
+                                Development Bad Rate - <span className="backend-odds-dev-rate">{this.state.scoreOdds.devBadRate}</span>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                Current Bad Rate - <span className="backend-odds-cur-rate">{this.state.scoreOdds.curBadRate}</span>
                             </div>
                         </div>
                         <div className="flex-box backend-odds-chart-content-wrapper">

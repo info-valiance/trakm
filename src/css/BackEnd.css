@@ -43,3 +43,19 @@
 .backend-odds-chart {
     width: 100%;
 }
+
+.backend-odds-text-wrapper {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.backend-odds-dev-rate {
+    color: #00aaff;
+}
+
+.backend-odds-cur-rate {
+    color: #006699;
+}
