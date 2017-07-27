@@ -143,6 +143,43 @@ class FrontEnd extends Component {
                         score: '5.75'
                     }
                 ]
+            },
+            // data for frontend final report
+            frontendFinal: {
+                data: [
+                    {name: '0 - 261', Current: 89, Development: 66},
+                    {name: '262 - 273', Current: 89, Development: 77},
+                    {name: '274 - 283', Current: 90, Development: 78},
+                    {name: '284 - 291', Current: 91, Development: 82},
+                    {name: '292 - 298', Current: 95, Development: 82},
+                    {name: '299 - 305', Current: 95, Development: 84},
+                    {name: '306 - 312', Current: 94, Development: 87},
+                    {name: '313 - 330', Current: 97, Development: 89},
+                    {name: '331 - 341', Current: 98, Development: 90},
+                    {name: '342+', Current: 99, Development: 92}
+                ],
+                chartMargin: {
+                    top: 5,
+                    right: 30,
+                    left: 20,
+                    bottom: 5
+                },
+                chartBarGap: 4,
+                chartBarSize: 40,
+                xAxisDataKey: "name",
+                // return yAxis ticks with percent symbol
+                yAxisTickFormatter: (data) => `${data}%`,
+                cartesianDasharray: "1 1",
+                barData: [
+                    {
+                        dataKey: "Current",
+                        fill: "#006699"
+                    },
+                    {
+                        dataKey: "Development",
+                        fill: "#00aaff"
+                    }
+                ]
             }
         }
     }
@@ -295,7 +332,16 @@ class FrontEnd extends Component {
                             </div>
                         </div>
                         <div className="flex-box frontend-final-report-graph">
-                            <RechartBar />
+                            <RechartBar
+                                data={this.state.frontendFinal.data}
+                                chartMargin={this.state.frontendFinal.chartMargin}
+                                chartBarGap={this.state.frontendFinal.chartBarGap}
+                                chartBarSize={this.state.frontendFinal.chartBarSize}
+                                xAxisDataKey={this.state.frontendFinal.xAxisDataKey}
+                                yAxisTickFormatter={this.state.frontendFinal.yAxisTickFormatter}
+                                cartesianDasharray={this.state.frontendFinal.cartesianDasharray}
+                                barData={this.state.frontendFinal.barData}
+                            />
                         </div>
                     </div>
                 </div>
