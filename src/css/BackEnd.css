@@ -59,3 +59,12 @@
 .backend-odds-cur-rate {
     color: #006699;
 }
+
+/* Character analysis section */
+.backend-char-analysis-wrapper {
+    width: 100%;
+}
+
+.char-analysis-chart {
+    width: 100%;
+}

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import RechartLine from './RechartLine.js'
+import RechartComposed from './RechartComposed.js'
 import '../css/BackEnd.css'
 
 // X and Y axis label component for score to odds line chart
@@ -99,6 +100,21 @@ class BackEnd extends Component {
                                     linesData={this.state.scoreOdds.linesData}
                                     // yAxisTickFormatter={this.toPercent}
                                 />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="flex-box backend-card">
+                    <div className="flex-items backend-char-analysis-wrapper">
+                        <div className="flex-box">
+                            <div className="flex-items backend-card-head">
+                                Characteristics Analysis
+                            </div>
+                        </div>
+                        <div className="flex-box char-analysis-chart-wrapper">
+                            <div className="flex-items char-analysis-chart">
+                                <RechartComposed />
                             </div>
                         </div>
                     </div>
