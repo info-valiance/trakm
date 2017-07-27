@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts'
 
 class RechartBar extends Component {
-    // return yAxis ticks with percent symbol
-    /*global toPercent:true*/
-    toPercent = (data) => {
-        return `${data}%`
-    }
+    // // return yAxis ticks with percent symbol
+    // /*global toPercent:true*/
+    // toPercent = (data) => {
+    //     return `${data}%`
+    // }
 
     render() {
         return (

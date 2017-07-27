@@ -1,0 +1,36 @@
+/* Card design */
+.backend-card {
+    position: relative;
+    padding: 12px 15px;
+    background: #fff;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.12);
+}
+
+/* Backend Header */
+.page-head-filler {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -moz-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+
+.page-name {
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+}
+
+.page-current-window {
+    font-family: 'Nunito', sans-serif;
+}
+
+/* Each card head */
+.backend-card-head {
+    font-family: 'Nunito', sans-serif;
+    width: 100%;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
