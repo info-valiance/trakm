@@ -34,3 +34,12 @@
     font-size: 18px;
     margin-bottom: 12px;
 }
+
+/* Score to Odds Section */
+.backend-odds {
+    width: 100%;
+}
+
+.backend-odds-chart {
+    width: 100%;
+}
