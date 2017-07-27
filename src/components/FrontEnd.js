@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import RechartGauge from './RechartGauge.js'
 import RechartRadialBar from './RechartRadialBar.js'
+import CharacterCard from './CharacterCard.js'
 import '../css/FrontEnd.css'
 
 class FrontEnd extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            // data for population index radial graphs
             popRadial: {
                 data: [
                     {
@@ -103,6 +105,43 @@ class FrontEnd extends Component {
                 barBackground: true,
                 barClockWise: true,
                 barDataKey: 'percent'
+            },
+            // data for character analysis character card
+            characterData: {
+                nationality: [
+                    {
+                        name: 'NK - Illegal',
+                        score: '-0.17'
+                    },
+                    {
+                        name: 'Saudi',
+                        score: '-0.11'
+                    },
+                    {
+                        name: 'Bangladesh',
+                        score: '-0.14'
+                    },
+                    {
+                        name: 'Egypt & Syria',
+                        score: '-0.11'
+                    },
+                    {
+                        name: 'Rest',
+                        score: '-0.43'
+                    },
+                    {
+                        name: 'Kuwait',
+                        score: '-2.59'
+                    },
+                    {
+                        name: 'PH & Jordan',
+                        score: '-0.31'
+                    },
+                    {
+                        name: 'India, Pakistan & Lebanon',
+                        score: '5.75'
+                    }
+                ]
             }
         }
     }
@@ -224,6 +263,25 @@ class FrontEnd extends Component {
                                 &nbsp;&nbsp;&nbsp;&nbsp;
                                 <span className="pop-dev-bullet">&#x25fc;</span> Development
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="flex-box frontend-card">
+                    <div className="flex-items frontend-char-analysis-wrapper">
+                        <div className="flex-box">
+                            <div className="flex-items frontend-card-head">
+                                Characteristics Analysis
+                            </div>
+                        </div>
+                        <div className="flex-box char-analysis-scorecards-wrapper">
+                            {this.state.characterData.nationality.map((data, index) =>
+                                <CharacterCard
+                                    key={index}
+                                    name={data.name}
+                                    score={data.score}
+                                />
+                            )}
                         </div>
                     </div>
                 </div>

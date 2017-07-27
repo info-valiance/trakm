@@ -121,3 +121,36 @@
 .pop-dev-bullet {
     color: #00aaff;
 }
+
+/* Character Analysis section */
+.frontend-char-analysis-wrapper {
+    width: 100%;
+}
+
+.char-analysis-scorecard {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    height: 130px;
+    width: 110px;
+    text-align: center;
+    padding: 5px;
+    margin: 0 25px 20px 0;
+    -webkit-box-shadow: 1px 1px 3px #a7a7a7;
+    box-shadow: 1px 1px 3px #a7a7a7;
+}
+
+.char-analysis-scorecards-wrapper {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
