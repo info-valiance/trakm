@@ -145,6 +145,7 @@
     text-align: center;
     padding: 5px;
     margin: 0 25px 20px 0;
+    border-radius: 0 5px;
     -webkit-box-shadow: 1px 1px 3px #a7a7a7;
     box-shadow: 1px 1px 3px #a7a7a7;
 }
