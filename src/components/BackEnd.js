@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import RechartLine from './RechartLine.js'
 import RechartComposed from './RechartComposed.js'
+import ThumbsChart from './ThumbsChart.js'
 import '../css/BackEnd.css'
 
 // X and Y axis label component for score to odds line chart
@@ -53,6 +54,26 @@ class BackEnd extends Component {
                         stroke: "#006699"
                     }
                 ]
+            },
+            gini: {
+                dev: {
+                    value: 0.35,
+                    cutoff: 0.40 // value beyond which thumb direction changes
+                },
+                cur: {
+                    value: 0.35,
+                    cutoff: 0.4 // value beyond which thumb direction changes
+                }
+            },
+            ks: {
+                dev: {
+                    value: 0.4,
+                    cutoff: 0.5 // value beyond which thumb direction changes
+                },
+                cur: {
+                    value: 0.4,
+                    cutoff: 0.5 // value beyond which thumb direction changes
+                }
             }
         }
     }
@@ -115,6 +136,44 @@ class BackEnd extends Component {
                         <div className="flex-box char-analysis-chart-wrapper">
                             <div className="flex-items char-analysis-chart">
                                 <RechartComposed />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="flex-box backend-card">
+                    <div className="flex-items backend-perf">
+                        <div className="flex-box">
+                            <div className="flex-items backend-card-head">
+                                Scorecard Performance
+                            </div>
+                        </div>
+                        <div className="flex-box backend-perf-thumbs">
+                            <div className="flex-items backend-perf-gini-wrapper">
+                                <div className="flex-box backend-perf-gini">
+                                    <div className="flex-items backend-perf-gini-head">
+                                        Gini:
+                                    </div>
+                                    <div className="flex-items backend-perf-gini-graph">
+                                        <ThumbsChart data={this.state.gini.dev} />
+                                    </div>
+                                    <div className="flex-items backend-perf-gini-graph">
+                                        <ThumbsChart data={this.state.gini.cur} />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="flex-items backend-perf-ks-wrapper">
+                                <div className="flex-box backend-perf-ks">
+                                    <div className="flex-items backend-perf-ks-head">
+                                        KS:
+                                    </div>
+                                    <div className="flex-items backend-perf-ks-graph">
+                                        <ThumbsChart data={this.state.ks.dev} />
+                                    </div>
+                                    <div className="flex-items backend-perf-ks-graph">
+                                        <ThumbsChart data={this.state.ks.cur} />
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

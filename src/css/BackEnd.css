@@ -68,3 +68,38 @@
 .char-analysis-chart {
     width: 100%;
 }
+
+/* Scorecard performance */
+.backend-perf {
+    width: 100%;
+}
+
+.backend-perf-gini-wrapper,
+.backend-perf-ks-wrapper {
+    width: 50%;
+}
+
+.backend-perf-gini {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.backend-perf-ks {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.backend-perf-gini-head,
+.backend-perf-ks-head {
+    font-size: 18px;
+}

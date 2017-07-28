@@ -26,6 +26,7 @@ class Overview extends Component {
         this.state = {
             gini: {
                 value: 0.4, // gini value
+                cutoff: 0.4 // value beyond which thumb direction changes
             },
             gains: {
                 data: [
