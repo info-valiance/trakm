@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import RechartLineArea from './RechartLineArea.js'
 import RechartGauge from './RechartGauge.js'
-import GiniChart from './GiniChart.js'
+import ThumbsChart from './ThumbsChart.js'
 import RechartLine from './RechartLine.js'
 import redGraphThumb from '../img/red.png'
 import '../css/Overview.css'
@@ -152,7 +152,7 @@ class Overview extends Component {
                         </div>
                         <div className="flex-box gini-chart-wrapper">
                             <div className="flex-items gini-chart">
-                                <GiniChart data={this.state.gini} />
+                                <ThumbsChart data={this.state.gini} />
                             </div>
                             <div className="flex-items gini-value">
                                 Gini:
