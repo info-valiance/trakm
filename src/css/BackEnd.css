@@ -129,3 +129,18 @@
 .vintage-analysis-chart {
     width: 100%;
 }
+
+.vintage-analysis-chart-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.backend-vintage-30-head,
+.backend-vintage-60-head {
+    font-size: 16px;
+}

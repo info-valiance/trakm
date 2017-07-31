@@ -104,7 +104,7 @@ class BackEnd extends Component {
                     {Model: 'M25', 'Q2-2014': 12.9, 'Q3-2014': 12.5},
                     {Model: 'M26', 'Q2-2014': 13.2},
                 ],
-                xAxisDataKey: "Score",
+                xAxisDataKey: "Model",
                 xAxisText: "",
                 yAxisText: "",
                 legendLayout: "horizontal",
@@ -303,6 +303,9 @@ class BackEnd extends Component {
                             </div>
                         </div>
                         <div className="flex-box vintage-analysis-chart-wrapper">
+                            <div className="flex-items backend-vintage-30-head">
+                                30 DPD Vintage:
+                            </div>
                             <div className="flex-items vintage-analysis-chart">
                                 <RechartLine
                                     data={this.state.vintage30dpd.data}
