@@ -74,7 +74,79 @@ class BackEnd extends Component {
                     value: 0.4,
                     cutoff: 0.5 // value beyond which thumb direction changes
                 }
-            }
+            },
+            vintage30dpd: {
+                data: [
+                    {Model: 'M1', 'Q2-2014': 0.1, 'Q3-2014': 0.0, 'Q4-2014': 0.0, 'Q1-2015': 0.1, 'Q2-2015': 0.0, 'Q3-2015': 0.0, 'Q5-2015': 0.0, 'Q1-2016': 0.0},
+                    {Model: 'M2', 'Q2-2014': 1.1, 'Q3-2014': 1.1, 'Q4-2014': 0.8, 'Q1-2015': 0.7, 'Q2-2015': 0.4, 'Q3-2015': 0.2, 'Q5-2015': 0.1, 'Q1-2016': 0.1},
+                    {Model: 'M3', 'Q2-2014': 1.9, 'Q3-2014': 1.9, 'Q4-2014': 1.5, 'Q1-2015': 1.1, 'Q2-2015': 0.9, 'Q3-2015': 0.6, 'Q5-2015': 0.3, 'Q1-2016': 0.4},
+                    {Model: 'M4', 'Q2-2014': 3.0, 'Q3-2014': 2.6, 'Q4-2014': 2.2, 'Q1-2015': 1.7, 'Q2-2015': 1.5, 'Q3-2015': 0.8, 'Q5-2015': 0.5, 'Q1-2016': 0.5},
+                    {Model: 'M5', 'Q2-2014': 3.9, 'Q3-2014': 3.5, 'Q4-2014': 2.7, 'Q1-2015': 2.3, 'Q2-2015': 2.0, 'Q3-2015': 1.0, 'Q5-2015': 0.8, 'Q1-2016': 0.6},
+                    {Model: 'M6', 'Q2-2014': 4.4, 'Q3-2014': 4.2, 'Q4-2014': 3.3, 'Q1-2015': 3.1, 'Q2-2015': 2.4, 'Q3-2015': 1.3, 'Q5-2015': 1.0, 'Q1-2016': 0.8},
+                    {Model: 'M7', 'Q2-2014': 5.1, 'Q3-2014': 4.9, 'Q4-2014': 4.0, 'Q1-2015': 3.7, 'Q2-2015': 2.7, 'Q3-2015': 1.6, 'Q5-2015': 1.2, 'Q1-2016': 0.8},
+                    {Model: 'M8', 'Q2-2014': 5.7, 'Q3-2014': 5.5, 'Q4-2014': 4.8, 'Q1-2015': 4.3, 'Q2-2015': 3.2, 'Q3-2015': 1.9, 'Q5-2015': 1.3},
+                    {Model: 'M9', 'Q2-2014': 6.3, 'Q3-2014': 6.1, 'Q4-2014': 5.6, 'Q1-2015': 4.6, 'Q2-2015': 3.6, 'Q3-2015': 2.2, 'Q5-2015': 1.5},
+                    {Model: 'M10', 'Q2-2014': 6.9, 'Q3-2014': 6.7, 'Q4-2014': 6.5, 'Q1-2015': 5.1, 'Q2-2015': 4.0, 'Q3-2015': 2.5, 'Q5-2015': 1.5},
+                    {Model: 'M11', 'Q2-2014': 7.3, 'Q3-2014': 7.5, 'Q4-2014': 7.2, 'Q1-2015': 5.6, 'Q2-2015': 4.4, 'Q3-2015': 2.9},
+                    {Model: 'M12', 'Q2-2014': 7.8, 'Q3-2014': 8.3, 'Q4-2014': 7.7, 'Q1-2015': 6.1, 'Q2-2015': 4.7, 'Q3-2015': 3.1},
+                    {Model: 'M13', 'Q2-2014': 8.3, 'Q3-2014': 8.9, 'Q4-2014': 8.2, 'Q1-2015': 6.5, 'Q2-2015': 5.1, 'Q3-2015': 3.1},
+                    {Model: 'M14', 'Q2-2014': 9.0, 'Q3-2014': 9.2, 'Q4-2014': 8.7, 'Q1-2015': 6.8, 'Q2-2015': 5.4},
+                    {Model: 'M15', 'Q2-2014': 9.4, 'Q3-2014': 9.8, 'Q4-2014': 9.1, 'Q1-2015': 7.2, 'Q2-2015': 5.5},
+                    {Model: 'M16', 'Q2-2014': 9.9, 'Q3-2014': 10.2, 'Q4-2014': 9.5, 'Q1-2015': 7.5, 'Q2-2015': 5.5},
+                    {Model: 'M17', 'Q2-2014': 10.2, 'Q3-2014': 10.5, 'Q4-2014': 9.9, 'Q1-2015': 7.8},
+                    {Model: 'M18', 'Q2-2014': 10.5, 'Q3-2014': 10.9, 'Q4-2014': 10.3, 'Q1-2015': 7.9},
+                    {Model: 'M19', 'Q2-2014': 11.0, 'Q3-2014': 11.3, 'Q4-2014': 10.7, 'Q1-2015': 7.9},
+                    {Model: 'M20', 'Q2-2014': 11.3, 'Q3-2014': 11.6, 'Q4-2014': 11.0},
+                    {Model: 'M21', 'Q2-2014': 11.7, 'Q3-2014': 11.9, 'Q4-2014': 11.1},
+                    {Model: 'M22', 'Q2-2014': 12.1, 'Q3-2014': 12.2, 'Q4-2014': 11.1},
+                    {Model: 'M23', 'Q2-2014': 12.2, 'Q3-2014': 12.4},
+                    {Model: 'M24', 'Q2-2014': 12.6, 'Q3-2014': 12.5},
+                    {Model: 'M25', 'Q2-2014': 12.9, 'Q3-2014': 12.5},
+                    {Model: 'M26', 'Q2-2014': 13.2},
+                ],
+                xAxisDataKey: "Score",
+                xAxisText: "",
+                yAxisText: "",
+                legendLayout: "horizontal",
+                // legendHeight: 50,
+                // legendWrapperStyle: {
+                //     bottom: -15
+                // },
+                linesData: [
+                    {
+                        dataKey: "Q2-2014",
+                        stroke: "#3F51B5"
+                    },
+                    {
+                        dataKey: "Q3-2014",
+                        stroke: "#2196F3"
+                    },
+                    {
+                        dataKey: "Q4-2014",
+                        stroke: "#03A9F4"
+                    },
+                    {
+                        dataKey: "Q1-2015",
+                        stroke: "#00BCD4"
+                    },
+                    {
+                        dataKey: "Q2-2015",
+                        stroke: "#009688"
+                    },
+                    {
+                        dataKey: "Q3-2015",
+                        stroke: "#4CAF50"
+                    },
+                    {
+                        dataKey: "Q5-2015",
+                        stroke: "#8BC34A"
+                    },
+                    {
+                        dataKey: "Q1-2016",
+                        stroke: "#CDDC39"
+                    }
+                ]
+            },
         }
     }
 
@@ -218,6 +290,33 @@ class BackEnd extends Component {
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="flex-box backend-card">
+                    <div className="flex-items backend-vintage-analysis-wrapper">
+                        <div className="flex-box">
+                            <div className="flex-items backend-card-head">
+                                Vintage Analysis
+                            </div>
+                        </div>
+                        <div className="flex-box vintage-analysis-chart-wrapper">
+                            <div className="flex-items vintage-analysis-chart">
+                                <RechartLine
+                                    data={this.state.vintage30dpd.data}
+                                    xAxisDataKey={this.state.vintage30dpd.xAxisDataKey}
+                                    // xAxisText={this.state.vintage30dpd.xAxisText}
+                                    // yAxisText={this.state.vintage30dpd.yAxisText}
+                                    xAxisLabel={<AxisLabel axisType='xAxis' text={this.state.vintage30dpd.xAxisText} />}
+                                    yAxisLabel={<AxisLabel axisType='yAxis' text={this.state.vintage30dpd.yAxisText} />}
+                                    legendLayout={this.state.vintage30dpd.legendLayout}
+                                    legendHeight={this.state.vintage30dpd.legendHeight}
+                                    legendWrapperStyle={this.state.vintage30dpd.legendWrapperStyle}
+                                    linesData={this.state.vintage30dpd.linesData}
+                                    yAxisTickFormatter={(data) => `${data}%`}
+                                />
                             </div>
                         </div>
                     </div>

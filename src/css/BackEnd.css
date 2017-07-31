@@ -120,3 +120,12 @@
     font-size: 15px;
     padding-left: 10px;
 }
+
+/* Vintage analysis section */
+.backend-vintage-analysis-wrapper {
+    width: 100%;
+}
+
+.vintage-analysis-chart {
+    width: 100%;
+}
