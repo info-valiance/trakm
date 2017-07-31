@@ -103,3 +103,20 @@
 .backend-perf-ks-head {
     font-size: 18px;
 }
+
+.backend-perf-gini-ks-thumb-wrapper {
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+}
+
+.gini-ks-value {
+    font-size: 22px;
+    color: #4c4c4c;
+    width: 30%;
+}
+
+.gini-ks-note-text {
+    font-size: 15px;
+    padding-left: 10px;
+}

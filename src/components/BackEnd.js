@@ -154,11 +154,33 @@ class BackEnd extends Component {
                                     <div className="flex-items backend-perf-gini-head">
                                         Gini:
                                     </div>
-                                    <div className="flex-items backend-perf-gini-graph">
-                                        <ThumbsChart data={this.state.gini.dev} />
+                                    <div className="flex-box backend-perf-gini-ks-thumb-wrapper">
+                                        <div className="flex-items backend-perf-gini-graph">
+                                            <ThumbsChart data={this.state.gini.dev} />
+                                        </div>
+                                        <div className="flex-items gini-ks-value">
+                                            Development:
+                                            <br/>
+                                            {this.state.gini.dev.value}
+                                        </div>
                                     </div>
-                                    <div className="flex-items backend-perf-gini-graph">
-                                        <ThumbsChart data={this.state.gini.cur} />
+                                    <div className="flex-box backend-perf-gini-ks-thumb-wrapper">
+                                        <div className="flex-items backend-perf-gini-graph">
+                                            <ThumbsChart data={this.state.gini.cur} />
+                                        </div>
+                                        <div className="flex-items gini-ks-value">
+                                            Current:
+                                            <br/>
+                                            {this.state.gini.cur.value}
+                                        </div>
+                                    </div>
+                                    <div className="flex-box">
+                                        <div className="flex-items gini-ks-note-head">
+                                            Note:
+                                        </div>
+                                        <div className="flex-items gini-ks-note-text">
+                                            Gini coefficient >0.4 means the predictive power of scorecard is good
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -167,11 +189,33 @@ class BackEnd extends Component {
                                     <div className="flex-items backend-perf-ks-head">
                                         KS:
                                     </div>
-                                    <div className="flex-items backend-perf-ks-graph">
-                                        <ThumbsChart data={this.state.ks.dev} />
+                                    <div className="flex-box backend-perf-gini-ks-thumb-wrapper">
+                                        <div className="flex-items backend-perf-ks-graph">
+                                            <ThumbsChart data={this.state.ks.dev} />
+                                        </div>
+                                        <div className="flex-items gini-ks-value">
+                                            Development:
+                                            <br/>
+                                            {this.state.ks.dev.value}
+                                        </div>
                                     </div>
-                                    <div className="flex-items backend-perf-ks-graph">
-                                        <ThumbsChart data={this.state.ks.cur} />
+                                    <div className="flex-box backend-perf-gini-ks-thumb-wrapper">
+                                        <div className="flex-items backend-perf-ks-graph">
+                                            <ThumbsChart data={this.state.ks.cur} />
+                                        </div>
+                                        <div className="flex-items gini-ks-value">
+                                            Current:
+                                            <br/>
+                                            {this.state.ks.cur.value}
+                                        </div>
+                                    </div>
+                                    <div className="flex-box">
+                                        <div className="flex-items gini-ks-note-head">
+                                            Note:
+                                        </div>
+                                        <div className="flex-items gini-ks-note-text">
+                                            Gini coefficient >0.4 means the predictive power of scorecard is good
+                                        </div>
                                     </div>
                                 </div>
                             </div>
