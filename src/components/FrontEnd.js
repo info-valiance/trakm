@@ -112,7 +112,9 @@ class FrontEnd extends Component {
                 barDataKey: 'percent'
             },
             // data for character analysis character card
+            charSelectValue: "nationality",
             characterData: {
+                // Nationality
                 nationality: [
                     {
                         name: 'NK - Illegal',
@@ -146,8 +148,32 @@ class FrontEnd extends Component {
                         name: 'India, Pakistan & Lebanon',
                         score: '5.75'
                     }
+                ],
+                // Total Salary
+                totSal: [
+                    {
+                        name: '<900',
+                        score: '-0.47'
+                    },
+                    {
+                        name: '>=900 - <1200',
+                        score: '-0.39'
+                    },
+                    {
+                        name: '>=1200 - <1500',
+                        score: '-0.33'
+                    },
+                    {
+                        name: '>=1500',
+                        score: '0.61'
+                    },
+                    {
+                        name: 'Non-Kuwait',
+                        score: '1.11'
+                    }
                 ]
             },
+            currentCharacterData: "",
             // data for frontend final report
             frontendFinal: {
                 data: [
@@ -186,6 +212,21 @@ class FrontEnd extends Component {
                 ]
             }
         }
+
+        this.handleCharChange = this.handleCharChange.bind(this);
+    }
+
+    componentWillMount() {
+        this.setState({
+            currentCharacterData: this.state.characterData.nationality
+        })
+    }
+
+    handleCharChange(event) {
+        this.setState({
+                charSelectValue: event.target.value,
+                currentCharacterData: this.state.characterData[event.target.value]
+        })
     }
 
     render() {
@@ -316,8 +357,23 @@ class FrontEnd extends Component {
                                 Characteristics Analysis
                             </div>
                         </div>
+                        <div className="flex-box">
+                            <div className="flex-items char-analysis-select-wrapper">
+                                <select className="char-analysis-select" value={this.state.charSelectValue} onChange={this.handleCharChange}>
+                                    <option value="nationality">Nationality</option>
+                                    <option value="totSal">Total Salary</option>
+                                    <option disabled value="salAcc">Salaried Account</option>
+                                    <option disabled value="worstDelinquency">Worst Delinquency Currently at Ci-Net</option>
+                                    <option disabled value="loanPeriod">Loan Period</option>
+                                    <option disabled value="gender">Gender</option>
+                                    <option disabled value="bankMonths">Months at Bank</option>
+                                    <option disabled value="empYears">Years at Current Employment</option>
+                                    <option disabled value="loanAmt">Loan Amount</option>
+                                </select>
+                            </div>
+                        </div>
                         <div className="flex-box char-analysis-scorecards-wrapper">
-                            {this.state.characterData.nationality.map((data, index) =>
+                            {this.state.currentCharacterData.map((data, index) =>
                                 <CharacterCard
                                     key={index}
                                     name={data.name}
