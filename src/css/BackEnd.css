@@ -65,6 +65,16 @@
     width: 100%;
 }
 
+.char-analysis-select-wrapper {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.char-analysis-select {
+    border: 0;
+    border-bottom: 2px solid #2e3d49;
+}
+
 .char-analysis-chart {
     width: 100%;
 }

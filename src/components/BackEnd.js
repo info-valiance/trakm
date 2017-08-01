@@ -21,6 +21,7 @@ class BackEnd extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            // data for Score to Odds
             scoreOdds: {
                 devBadRate: "1.8%",
                 curBadRate: "1.7%",
@@ -55,6 +56,96 @@ class BackEnd extends Component {
                     }
                 ]
             },
+            // data for Character Analysis
+            charSelectValue: "nationality",
+            characterData: {
+                // Nationality
+                nationality: [
+                    {
+                        name: 'NK - Illegal',
+                        Development: 11,
+                        Current: 27,
+                        Score: 17
+                    },
+                    {
+                        name: 'Saudi',
+                        Development: 16,
+                        Current: 17,
+                        Score: 26
+                    },
+                    {
+                        name: 'Bangladesh',
+                        Development: 27,
+                        Current: 160,
+                        Score: 37
+                    },
+                    {
+                        name: 'Egypt & Syria',
+                        Development: 40,
+                        Current: 44,
+                        Score: 47
+                    },
+                    {
+                        name: 'Rest',
+                        Development: 52,
+                        Current: 43,
+                        Score: 53
+                    },
+                    {
+                        name: 'Kuwait',
+                        Development: 58,
+                        Current: 47,
+                        Score: 56
+                    },
+                    {
+                        name: 'PH & Jordan',
+                        Development: 75,
+                        Current: 67,
+                        Score: 62
+                    },
+                    {
+                        name: 'India, Pakistan and Lebanon',
+                        Development: 116,
+                        Current: 117,
+                        Score: 72
+                    }
+                ],
+                // Total Salary
+                totSal: [
+                    {
+                        name: '<900',
+                        Development: 38,
+                        Current: 33,
+                        Score: 17
+                    },
+                    {
+                        name: '>=900 - <1200',
+                        Development: 42,
+                        Current: 35,
+                        Score: 19
+                    },
+                    {
+                        name: '>=1200 - <1500',
+                        Development: 98,
+                        Current: 73,
+                        Score: 38
+                    },
+                    {
+                        name: '>=1500',
+                        Development: 257,
+                        Current: 134,
+                        Score: 59
+                    },
+                    {
+                        name: 'Non-Kuwait',
+                        Development: 53,
+                        Current: 68,
+                        Score: 24
+                    }
+                ]
+            },
+            currentCharacterData: "",
+            // data for Gini
             gini: {
                 dev: {
                     value: 0.35,
@@ -65,6 +156,7 @@ class BackEnd extends Component {
                     cutoff: 0.4 // value beyond which thumb direction changes
                 }
             },
+            // data for KS
             ks: {
                 dev: {
                     value: 0.4,
@@ -75,6 +167,7 @@ class BackEnd extends Component {
                     cutoff: 0.5 // value beyond which thumb direction changes
                 }
             },
+            // Vintage Analysis
             vintage30dpd: {
                 data: [
                     {Model: 'M1', 'Q2-2014': 0.1, 'Q3-2014': 0.0, 'Q4-2014': 0.0, 'Q1-2015': 0.1, 'Q2-2015': 0.0, 'Q3-2015': 0.0, 'Q5-2015': 0.0, 'Q1-2016': 0.0},
@@ -220,6 +313,21 @@ class BackEnd extends Component {
                 ]
             },
         }
+
+        this.handleCharChange = this.handleCharChange.bind(this);
+    }
+
+    componentWillMount() {
+        this.setState({
+            currentCharacterData: this.state.characterData.nationality
+        })
+    }
+
+    handleCharChange(event) {
+        this.setState({
+                charSelectValue: event.target.value,
+                currentCharacterData: this.state.characterData[event.target.value]
+        })
     }
 
     render() {
@@ -277,9 +385,24 @@ class BackEnd extends Component {
                                 Characteristics Analysis
                             </div>
                         </div>
+                        <div className="flex-box">
+                            <div className="flex-items char-analysis-select-wrapper">
+                                <select className="char-analysis-select" value={this.state.charSelectValue} onChange={this.handleCharChange}>
+                                    <option value="nationality">Nationality</option>
+                                    <option value="totSal">Total Salary</option>
+                                    <option disabled value="salAcc">Salaried Account</option>
+                                    <option disabled value="worstDelinquency">Worst Delinquency Currently at Ci-Net</option>
+                                    <option disabled value="loanPeriod">Loan Period</option>
+                                    <option disabled value="gender">Gender</option>
+                                    <option disabled value="bankMonths">Months at Bank</option>
+                                    <option disabled value="empYears">Years at Current Employment</option>
+                                    <option disabled value="loanAmt">Loan Amount</option>
+                                </select>
+                            </div>
+                        </div>
                         <div className="flex-box char-analysis-chart-wrapper">
                             <div className="flex-items char-analysis-chart">
-                                <RechartComposed />
+                                <RechartComposed data={this.state.currentCharacterData} />
                             </div>
                         </div>
                     </div>
