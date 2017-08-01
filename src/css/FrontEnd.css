@@ -35,12 +35,11 @@
     margin-bottom: 12px;
 }
 
-/* Gini - PSI Section */
+/* PSI Section */
 .frontend-psi {
     width: 100%;
 }
 
-/* PSI Section */
 .frontend-psi-gauge-chart-table-wrapper {
     -webkit-justify-content: space-around;
     -ms-flex-pack: distribute;
@@ -75,6 +74,7 @@
 .frontend-psi-gauge-table-head th {
     /*font-weight: normal;*/
     color: #656565;
+    padding-left: 10px;
 }
 
 .frontend-psi-gauge-table-cell {
@@ -82,6 +82,10 @@
     font-size: 14px;
     background: #f2f2f2;
     height: 50px;
+}
+
+.frontend-psi-gauge-table-cell td {
+    padding-left: 10px;
 }
 
 /* Population stability radial section */
