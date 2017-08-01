@@ -1,9 +1,9 @@
 import React from 'react';
 import { Sector, Cell, PieChart, Pie, ResponsiveContainer } from 'recharts';
 
-const RechartGauge = () => {
+const RechartGauge = (props) => {
         const width = 300;
-        const chartValue = 0.30;  // the value that will be shown on chart
+        const chartValue = props.psi.value;  // the value that will be shown on chart
         const colorData = [{
                 name: "0 - 0.1",
                 value: 0.1, // span is 0 to 0.1

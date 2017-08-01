@@ -9,6 +9,10 @@ class FrontEnd extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            // data for psi gauge
+            psi: {
+                value: 0.30 // psi value
+            },
             // data for population index radial graphs
             popRadial: {
                 data: [
@@ -206,7 +210,7 @@ class FrontEnd extends Component {
                         </div>
                         <div className="flex-box psi-gauge-chart-table-wrapper">
                             <div className="flex-items psi-gauge-chart">
-                                <RechartGauge />
+                                <RechartGauge psi={this.state.psi} />
                             </div>
                             <div className="flex-items flex-box psi-gauge-legend">
                                 <table className="flex-items psi-gauge-table">

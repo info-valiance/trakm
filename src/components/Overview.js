@@ -28,6 +28,9 @@ class Overview extends Component {
                 value: 0.4, // gini value
                 cutoff: 0.4 // value beyond which thumb direction changes
             },
+            psi: {
+                value: 0.30 // psi value
+            },
             gains: {
                 data: [
                     {'Cumulative Good': '0%', Development: 0, Current: 0, 'Cumulative Bad': '0%'},
@@ -179,7 +182,7 @@ class Overview extends Component {
                         </div>
                         <div className="flex-box">
                             <div className="flex-items psi-gauge-chart">
-                                <RechartGauge />
+                                <RechartGauge psi={this.state.psi} />
                             </div>
                             <div className="flex-items flex-box psi-gauge-legend">
                                 <table className="flex-items psi-gauge-table">
