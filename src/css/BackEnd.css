@@ -144,3 +144,7 @@
 .backend-vintage-60-head {
     font-size: 16px;
 }
+
+.vintage-analysis-chart-wrapper:last-of-type {
+    margin-top: 25px;
+}
