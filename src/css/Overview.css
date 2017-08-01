@@ -134,11 +134,11 @@
 }
 
 /* PSI Section */
-.psi-gauge-legend {
+.overview-psi-gauge-legend {
     width: 25%;
 }
 
-.psi-gauge-chart {
+.overview-psi-gauge-chart {
     width: 75%;
     -webkit-box-ordinal-group: 3;
     -webkit-order: 2;
@@ -147,23 +147,23 @@
     order: 2;
 }
 
-.psi-gauge-table {
+.overview-psi-gauge-table {
     -webkit-align-self: center;
     -ms-flex-item-align: center;
     align-self: center;
 }
 
-.psi-gauge-table-head {
+.overview-psi-gauge-table-head {
     text-align: left;
     background: #e6e6e6;
 }
 
-.psi-gauge-table-head th {
+.overview-psi-gauge-table-head th {
     /*font-weight: normal;*/
     color: #656565;
 }
 
-.psi-gauge-table-cell {
+.overview-psi-gauge-table-cell {
     text-align: left;
     font-size: 14px;
     background: #f2f2f2;
