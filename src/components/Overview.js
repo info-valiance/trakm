@@ -4,6 +4,8 @@ import RechartGauge from './RechartGauge.js'
 import ThumbsChart from './ThumbsChart.js'
 import RechartLine from './RechartLine.js'
 import redGraphThumb from '../img/red.png'
+import yellowGraphThumb from '../img/yellow.png'
+import greenGraphThumb from '../img/green.png'
 import '../css/Overview.css'
 
 // X and Y axis label component for gains line chart
@@ -110,7 +112,7 @@ class Overview extends Component {
                     </div>
                     <div className="flex-box model-detail-content">
                         <div className="flex-items model-detail-img">
-                            <img className="overview-model-img" src={redGraphThumb} alt=""/>
+                            <img className="overview-model-img" src={this.state.psi.value >= 0.25 ? redGraphThumb : this.state.psi.value >= 0.10 ? yellowGraphThumb : greenGraphThumb} alt=""/>
                             <div className="model-detail-img-text">Model Name</div>
                         </div>
                         <div className="flex-items model-detail-text">
