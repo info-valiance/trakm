@@ -33,7 +33,7 @@ class Overview extends Component {
             psi: {
                 value: 0.30 // psi value
             },
-            gains: {
+            tradeoff: {
                 data: [
                     {'Cumulative Good': '0%', Development: 0, Current: 0, 'Cumulative Bad': '0%'},
                     {'Cumulative Good': '5%', Development: 30, Current: 25, 'Cumulative Bad': '5%'},
@@ -220,19 +220,19 @@ class Overview extends Component {
                             Gains Chart
                         </div>
                     </div>
-                    <div className="flex-box gains-chart-wrapper">
-                        <div className="flex-items gains-chart">
+                    <div className="flex-box tradeoff-chart-wrapper">
+                        <div className="flex-items tradeoff-chart">
                             <RechartLine
-                                data={this.state.gains.data}
-                                xAxisDataKey={this.state.gains.xAxisDataKey}
-                                // xAxisText={this.state.gains.xAxisText}
-                                // yAxisText={this.state.gains.yAxisText}
-                                xAxisLabel={<AxisLabel axisType='xAxis' text={this.state.gains.xAxisText} />}
-                                yAxisLabel={<AxisLabel axisType='yAxis' text={this.state.gains.yAxisText} />}
-                                legendLayout={this.state.gains.legendLayout}
-                                legendHeight={this.state.gains.legendHeight}
-                                legendWrapperStyle={this.state.gains.legendWrapperStyle}
-                                linesData={this.state.gains.linesData}
+                                data={this.state.tradeoff.data}
+                                xAxisDataKey={this.state.tradeoff.xAxisDataKey}
+                                // xAxisText={this.state.tradeoff.xAxisText}
+                                // yAxisText={this.state.tradeoff.yAxisText}
+                                xAxisLabel={<AxisLabel axisType='xAxis' text={this.state.tradeoff.xAxisText} />}
+                                yAxisLabel={<AxisLabel axisType='yAxis' text={this.state.tradeoff.yAxisText} />}
+                                legendLayout={this.state.tradeoff.legendLayout}
+                                legendHeight={this.state.tradeoff.legendHeight}
+                                legendWrapperStyle={this.state.tradeoff.legendWrapperStyle}
+                                linesData={this.state.tradeoff.linesData}
                                 yAxisTickFormatter={this.toPercent}
                             />
                         </div>
