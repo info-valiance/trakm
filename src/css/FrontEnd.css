@@ -104,6 +104,13 @@
     width: 20%;
 }
 
+.population-radial-legend {
+    position: relative;
+    top: -10px;
+    text-align: center;
+    font-size: 14px;
+}
+
 .frontend-pop-legend-wrapper {
     -webkit-box-pack: end;
     -webkit-justify-content: flex-end;

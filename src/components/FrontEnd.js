@@ -307,6 +307,11 @@ class FrontEnd extends Component {
                                         barClockWise={this.state.popRadialOptions.barClockWise}
                                         barDataKey={this.state.popRadialOptions.barDataKey}
                                     />
+                                    <div className="population-radial-legend">
+                                        <span className="pop-cur-bullet">&#x25fc;</span> {data.plotData[0].percent}%
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                        <span className="pop-dev-bullet">&#x25fc;</span> {data.plotData[1].percent}%
+                                    </div>
                                 </div>
                             )}
                             {/* <div className="flex-items frontend-population-radial">
