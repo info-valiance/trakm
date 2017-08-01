@@ -158,3 +158,8 @@
 .vintage-analysis-chart-wrapper:last-of-type {
     margin-top: 25px;
 }
+
+.vintage-analysis-table {
+    width: 100%;
+    font-size: 14px;
+}
