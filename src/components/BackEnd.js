@@ -26,16 +26,96 @@ class BackEnd extends Component {
                 devBadRate: "1.8%",
                 curBadRate: "1.7%",
                 data: [
-                    {Score: '0 - 261', Development: 11, Current: 13},
-                    {Score: '262 - 273', Development: 34, Current: 34},
-                    {Score: '274 - 283', Development: 44, Current: 49},
-                    {Score: '284 - 291', Development: 67, Current: 88},
-                    {Score: '292 - 298', Development: 75, Current: 111},
-                    {Score: '299 - 305', Development: 111, Current: 100},
-                    {Score: '306 - 312', Development: 142, Current: 111},
-                    {Score: '313 - 330', Development: 182, Current: 181},
-                    {Score: '331 - 341', Development: 247, Current: 206},
-                    {Score: '342+', Development: 917, Current: 517}
+                    {
+                        Score: '0 - 261',
+                        Development: 11,
+                        Current: 13,
+                        devBad: 230,
+                        devGood: 2530,
+                        curBad: 260,
+                        curGood: 3403,
+                    },
+                    {
+                        Score: '262 - 273',
+                        Development: 34,
+                        Current: 34,
+                        devBad: 75,
+                        devGood: 2532,
+                        curBad: 99,
+                        curGood: 3354,
+                    },
+                    {
+                        Score: '274 - 283',
+                        Development: 44,
+                        Current: 49,
+                        devBad: 64,
+                        devGood: 2810,
+                        curBad: 65,
+                        curGood: 3215,
+                    },
+                    {
+                        Score: '284 - 291',
+                        Development: 67,
+                        Current: 88,
+                        devBad: 39,
+                        devGood: 2603,
+                        curBad: 41,
+                        curGood: 3623,
+                    },
+                    {
+                        Score: '292 - 298',
+                        Development: 75,
+                        Current: 111,
+                        devBad: 33,
+                        devGood: 2468,
+                        curBad: 29,
+                        curGood: 3207,
+                    },
+                    {
+                        Score: '299 - 305',
+                        Development: 111,
+                        Current: 100,
+                        devBad: 25,
+                        devGood: 2766,
+                        curBad: 33,
+                        curGood: 3300,
+                    },
+                    {
+                        Score: '306 - 312',
+                        Development: 142,
+                        Current: 111,
+                        devBad: 19,
+                        devGood: 2703,
+                        curBad: 30,
+                        curGood: 3323,
+                    },
+                    {
+                        Score: '313 - 330',
+                        Development: 182,
+                        Current: 181,
+                        devBad: 30,
+                        devGood: 5446,
+                        curBad: 31,
+                        curGood: 5622,
+                    },
+                    {
+                        Score: '331 - 341',
+                        Development: 247,
+                        Current: 206,
+                        devBad: 11,
+                        devGood: 2722,
+                        curBad: 12,
+                        curGood: 2470,
+                    },
+                    {
+                        Score: '342+',
+                        Development: 917,
+                        Current: 517,
+                        devBad: 3,
+                        devGood: 2751,
+                        curBad: 5,
+                        curGood: 2587,
+                    }
                 ],
                 xAxisDataKey: "Score",
                 xAxisText: "Score",
@@ -426,6 +506,74 @@ class BackEnd extends Component {
                                     linesData={this.state.scoreOdds.linesData}
                                     // yAxisTickFormatter={this.toPercent}
                                 />
+                            </div>
+                        </div>
+                        <div className="flex-box">
+                            <div className="flex-items odds-table-wrapper">
+                                <table className="odds-table">
+                                    <tbody>
+                                        <tr>
+                                            <td></td>
+                                            <td colSpan="2">
+                                                Development
+                                            </td>
+                                            <td colSpan="2">
+                                                Current
+                                            </td>
+                                            <td colSpan="2">
+                                                Odds
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Score
+                                            </td>
+                                            <td>
+                                                Bad
+                                            </td>
+                                            <td>
+                                                Good
+                                            </td>
+                                            <td>
+                                                Bad
+                                            </td>
+                                            <td>
+                                                Good
+                                            </td>
+                                            <td>
+                                                Development
+                                            </td>
+                                            <td>
+                                                Current
+                                            </td>
+                                        </tr>
+                                        {this.state.scoreOdds.data.map((data, index) =>
+                                            <tr key={index}>
+                                                <td>
+                                                    {data.Score}
+                                                </td>
+                                                <td>
+                                                    {data.devBad}
+                                                </td>
+                                                <td>
+                                                    {data.devGood}
+                                                </td>
+                                                <td>
+                                                    {data.curBad}
+                                                </td>
+                                                <td>
+                                                    {data.curGood}
+                                                </td>
+                                                <td>
+                                                    {data.Development}
+                                                </td>
+                                                <td>
+                                                    {data.Current}
+                                                </td>
+                                            </tr>
+                                        )}
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
