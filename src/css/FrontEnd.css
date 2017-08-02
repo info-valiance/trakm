@@ -197,3 +197,28 @@
     -webkit-transition: 0.4s;
     transition: 0.4s;
 }
+
+/* Tables */
+.char-analysis-table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.char-analysis-table td,
+.char-analysis-table th {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.char-analysis-table tr:nth-child(odd) {
+    background-color: #ececec;
+}
+
+.char-analysis-table tr.char-analysis-table-head {
+    font-size: 14px;
+    font-weight: bold;
+    color: #464646;
+    background: #fff;
+}

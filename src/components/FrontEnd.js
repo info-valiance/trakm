@@ -118,58 +118,175 @@ class FrontEnd extends Component {
                 nationality: [
                     {
                         name: 'NK - Illegal',
-                        score: '-0.17'
+                        score: '-0.17',
+                        devApps: '1179',
+                        curApps: '857',
+                        devPer: '3%',
+                        curPer: '2%',
+                        change: '-1%',
+                        ratio: '0.68',
+                        woe: '-0.38',
+                        contribution: '0.00',
+                        scoreAttri: '17',
                     },
                     {
                         name: 'Saudi',
-                        score: '-0.11'
+                        score: '-0.11',
+                        devApps: '545',
+                        curApps: '414',
+                        devPer: '1%',
+                        curPer: '1%',
+                        change: '0%',
+                        ratio: '0.71',
+                        woe: '-0.34',
+                        contribution: '0.00',
+                        scoreAttri: '26',
                     },
                     {
                         name: 'Bangladesh',
-                        score: '-0.14'
+                        score: '-0.14',
+                        devApps: '247',
+                        curApps: '120',
+                        devPer: '1%',
+                        curPer: '0%',
+                        change: '0%',
+                        ratio: '0.46',
+                        woe: '-0.78',
+                        contribution: '0.00',
+                        scoreAttri: '37',
                     },
                     {
                         name: 'Egypt & Syria',
-                        score: '-0.11'
+                        score: '-0.11',
+                        devApps: '4118',
+                        curApps: '4285',
+                        devPer: '11%',
+                        curPer: '11%',
+                        change: '0%',
+                        ratio: '0.98',
+                        woe: '-0.02',
+                        contribution: '0.00',
+                        scoreAttri: '47',
                     },
                     {
                         name: 'Rest',
-                        score: '-0.43'
+                        score: '-0.43',
+                        devApps: '1301',
+                        curApps: '1071',
+                        devPer: '4%',
+                        curPer: '3%',
+                        change: '-1%',
+                        ratio: '0.77',
+                        woe: '-0.26',
+                        contribution: '0.00',
+                        scoreAttri: '53',
                     },
                     {
                         name: 'Kuwait',
-                        score: '-2.59'
+                        score: '-2.59',
+                        devApps: '17681',
+                        curApps: '17002',
+                        devPer: '49%',
+                        curPer: '44%',
+                        change: '-5%',
+                        ratio: '0.90',
+                        woe: '-0.10',
+                        contribution: '0.00',
+                        scoreAttri: '56',
                     },
                     {
                         name: 'PH & Jordan',
-                        score: '-0.31'
+                        score: '-0.31',
+                        devApps: '1555',
+                        curApps: '1459',
+                        devPer: '4%',
+                        curPer: '4%',
+                        change: '-1%',
+                        ratio: '0.88',
+                        woe: '-0.12',
+                        contribution: '0.00',
+                        scoreAttri: '62',
                     },
                     {
                         name: 'India, Pakistan & Lebanon',
-                        score: '5.75'
+                        score: '5.75',
+                        devApps: '9811',
+                        curApps: '13520',
+                        devPer: '27%',
+                        curPer: '35%',
+                        change: '8%',
+                        ratio: '1.30',
+                        woe: '0.26',
+                        contribution: '0.02',
+                        scoreAttri: '72',
                     }
                 ],
                 // Total Salary
                 totSal: [
                     {
                         name: '<900',
-                        score: '-0.47'
+                        score: '-0.47',
+                        devApps: '5298',
+                        curApps: '4564',
+                        devPer: '15%',
+                        curPer: '12%',
+                        change: '-3%',
+                        ratio: '0.81',
+                        woe: '-0.21',
+                        contribution: '0.01',
+                        scoreAttri: '17',
                     },
                     {
                         name: '>=900 - <1200',
-                        score: '-0.39'
+                        score: '-0.39',
+                        devApps: '5308',
+                        curApps: '4853',
+                        devPer: '15%',
+                        curPer: '13%',
+                        change: '-2%',
+                        ratio: '86',
+                        woe: '-0.15',
+                        contribution: '0.00',
+                        scoreAttri: '19',
                     },
                     {
                         name: '>=1200 - <1500',
-                        score: '-0.33'
+                        score: '-0.33',
+                        devApps: '3410',
+                        curApps: '3287',
+                        devPer: '9%',
+                        curPer: '8%',
+                        change: '-1%',
+                        ratio: '0.91',
+                        woe: '-0.10',
+                        contribution: '0.00',
+                        scoreAttri: '38',
                     },
                     {
                         name: '>=1500',
-                        score: '0.61'
+                        score: '0.61',
+                        devApps: '3665',
+                        curApps: '4298',
+                        devPer: '10%',
+                        curPer: '11%',
+                        change: '1%',
+                        ratio: '1.10',
+                        woe: '0.10',
+                        contribution: '0.00',
+                        scoreAttri: '59',
                     },
                     {
                         name: 'Non-Kuwait',
-                        score: '1.11'
+                        score: '1.11',
+                        devApps: '18756',
+                        curApps: '21726',
+                        devPer: '51%',
+                        curPer: '56%',
+                        change: '5%',
+                        ratio: '1.09',
+                        woe: '0.09',
+                        contribution: '0.00',
+                        scoreAttri: '24',
                     }
                 ]
             },
@@ -388,6 +505,99 @@ class FrontEnd extends Component {
                                 />
                             )}
                         </div>
+
+                        <div className="flex-box">
+                            <div className="flex-items char-analysis-table-wrapper">
+                                <table className="char-analysis-table">
+                                    <tbody>
+                                        <tr className="char-analysis-table-head">
+                                            <td>
+                                                {
+                                                    this.state.charSelectValue === "nationality" ?
+                                                    "Nationality" : this.state.charSelectValue === "totSal" ?
+                                                    "Total Salary" : this.state.charSelectValue === "salAcc" ?
+                                                    "Salaried Account" : this.state.charSelectValue === "worstDelinquency" ?
+                                                    "Worst Delinquency" : this.state.charSelectValue === "loanPeriod" ?
+                                                    "Loan Period" : this.state.charSelectValue === "gender" ?
+                                                    "Gender" : this.state.charSelectValue === "bankMonths" ?
+                                                    "Months at Bank" : this.state.charSelectValue === "empYears" ?
+                                                    "Years at Current Employment" : this.state.charSelectValue === "loanAmt" ?
+                                                    "Loan Amount" : ""
+                                                }
+                                            </td>
+                                            <td>
+                                                Dev Apps
+                                            </td>
+                                            <td>
+                                                Current Apps
+                                            </td>
+                                            <td>
+                                                Dev %
+                                            </td>
+                                            <td>
+                                                Current %
+                                            </td>
+                                            <td>
+                                                Change
+                                            </td>
+                                            <td>
+                                                Ratio
+                                            </td>
+                                            <td>
+                                                WoE
+                                            </td>
+                                            <td>
+                                                Contribution to Index
+                                            </td>
+                                            <td>
+                                                Score for Attribute
+                                            </td>
+                                            <td>
+                                                Score for Difference
+                                            </td>
+                                        </tr>
+                                        {this.state.currentCharacterData.map((data, index) =>
+                                            <tr key={index}>
+                                                <td>
+                                                    {data.name}
+                                                </td>
+                                                <td>
+                                                    {data.devApps}
+                                                </td>
+                                                <td>
+                                                    {data.curApps}
+                                                </td>
+                                                <td>
+                                                    {data.devPer}
+                                                </td>
+                                                <td>
+                                                    {data.curPer}
+                                                </td>
+                                                <td>
+                                                    {data.change}
+                                                </td>
+                                                <td>
+                                                    {data.ratio}
+                                                </td>
+                                                <td>
+                                                    {data.woe}
+                                                </td>
+                                                <td>
+                                                    {data.contribution}
+                                                </td>
+                                                <td>
+                                                    {data.scoreAttri}
+                                                </td>
+                                                <td>
+                                                    {data.score}
+                                                </td>
+                                            </tr>
+                                        )}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
