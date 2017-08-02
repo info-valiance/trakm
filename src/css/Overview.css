@@ -35,6 +35,9 @@
 
 .page-current-window {
     font-family: 'Nunito', sans-serif;
+    -webkit-align-self: flex-end;
+    -ms-flex-item-align: end;
+    align-self: flex-end;
 }
 
 /* Each card head */

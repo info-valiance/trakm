@@ -94,7 +94,11 @@ class Overview extends Component {
                     </div>
                     <div className="flex-items page-head-filler"></div>
                     <div className="flex-items page-current-window">
-                        Current Window
+                        Current Window:
+                        &nbsp;
+                        <select className="char-analysis-select" value="1">
+                            <option value="1">1st Jan 2014 - 31st Dec 2014</option>
+                        </select>
                     </div>
                 </div>
 
