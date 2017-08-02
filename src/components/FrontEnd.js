@@ -286,6 +286,7 @@ class FrontEnd extends Component {
                         <div className="flex-box">
                             <div className="flex-items frontend-card-head">
                                 Population Stability
+                                <button className="show-table-graph-btn">Show Table</button>
                             </div>
                         </div>
                         <div className="flex-box frontend-population-stability">
@@ -360,6 +361,7 @@ class FrontEnd extends Component {
                         <div className="flex-box">
                             <div className="flex-items frontend-card-head">
                                 Characteristics Analysis
+                                <button className="show-table-graph-btn">Show Table</button>
                             </div>
                         </div>
                         <div className="flex-box">

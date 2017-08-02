@@ -181,3 +181,19 @@
 .frontend-final-report-wrapper {
     width: 100%;
 }
+
+
+.show-table-graph-btn {
+    float: right;
+    border: none;
+    color: #fff;
+    background: #02b3e4;
+    border: 2px solid #02b3e4;
+    border-radius: 2px;
+    padding: 5px 10px;
+    -webkit-box-shadow: 1px 1px 5px #9c9c9c;
+    box-shadow: 1px 1px 5px #9c9c9c;
+    cursor: pointer;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
