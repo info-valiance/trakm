@@ -199,24 +199,29 @@
 }
 
 /* Tables */
-.char-analysis-table {
+.char-analysis-table,
+.population-radial-table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
 }
 
 .char-analysis-table td,
-.char-analysis-table th {
+.char-analysis-table th,
+.population-radial-table td,
+.population-radial-table th {
     border: 1px solid #ddd;
     text-align: left;
     padding: 8px;
 }
 
-.char-analysis-table tr:nth-child(odd) {
+.char-analysis-table tr:nth-child(odd),
+.population-radial-table tr:nth-child(odd) {
     background-color: #ececec;
 }
 
-.char-analysis-table tr.char-analysis-table-head {
+.char-analysis-table tr.char-analysis-table-head,
+.population-radial-table tr.population-radial-table-head {
     font-size: 14px;
     font-weight: bold;
     color: #464646;

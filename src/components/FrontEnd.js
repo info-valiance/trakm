@@ -96,6 +96,118 @@ class FrontEnd extends Component {
                             {name: 'filler', percent: 100, fill: '#fff'}
                         ]
                     },
+                ],
+                tableData: [
+                    {
+                        score: '0-261',
+                        devApps: '3738',
+                        curApps: '3023',
+                        devPer: '10%',
+                        curPer: '8%',
+                        change: '-2%',
+                        ratio: '0.76',
+                        woe: '-0.27',
+                        contribution: '0.01'
+                    },
+                    {
+                        score: '262-273',
+                        devApps: '3491',
+                        curApps: '3761',
+                        devPer: '10%',
+                        curPer: '10%',
+                        change: '0%',
+                        ratio: '1.01',
+                        woe: '0.01',
+                        contribution: '0.00'
+                    },
+                    {
+                        score: '274-283',
+                        devApps: '3787',
+                        curApps: '4001',
+                        devPer: '10%',
+                        curPer: '10%',
+                        change: '0%',
+                        ratio: '0.99',
+                        woe: '-0.01',
+                        contribution: '0.00'
+                    },
+                    {
+                        score: '284-291',
+                        devApps: '3493',
+                        curApps: '4907',
+                        devPer: '10%',
+                        curPer: '13%',
+                        change: '3%',
+                        ratio: '1.32',
+                        woe: '0.28',
+                        contribution: '0.01'
+                    },
+                    {
+                        score: '292-298',
+                        devApps: '3004',
+                        curApps: '3438',
+                        devPer: '8%',
+                        curPer: '9%',
+                        change: '1%',
+                        ratio: '1.08',
+                        woe: '0.07',
+                        contribution: '0.00'
+                    },
+                    {
+                        score: '299-305',
+                        devApps: '3378',
+                        curApps: '4006',
+                        devPer: '9%',
+                        curPer: '10%',
+                        change: '1%',
+                        ratio: '1.12',
+                        woe: '0.11',
+                        contribution: '0.00'
+                    },
+                    {
+                        score: '306-312',
+                        devApps: '3329',
+                        curApps: '3868',
+                        devPer: '9%',
+                        curPer: '10%',
+                        change: '1%',
+                        ratio: '1.09',
+                        woe: '0.09',
+                        contribution: '0.00'
+                    },
+                    {
+                        score: '313-330',
+                        devApps: '6345',
+                        curApps: '6505',
+                        devPer: '17%',
+                        curPer: '17%',
+                        change: '1%',
+                        ratio: '0.96',
+                        woe: '-0.04',
+                        contribution: '0.00'
+                    },
+                    {
+                        score: '331-341',
+                        devApps: '3005',
+                        curApps: '2496',
+                        devPer: '8%',
+                        curPer: '6%',
+                        change: '2%',
+                        ratio: '0.78',
+                        woe: '-0.25',
+                        contribution: '0.00'
+                    },
+                    {
+                        score: '342+',
+                        devApps: '2867',
+                        curApps: '2723',
+                        devPer: '8%',
+                        curPer: '7%',
+                        change: '-1%',
+                        ratio: '0.89',
+                        woe: '-0.11',
+                        contribution: '0.00'
+                    },
                 ]
             },
             popRadialOptions: {
@@ -463,6 +575,76 @@ class FrontEnd extends Component {
                                 <RechartRadialBar name="wert" />
                             </div> */}
                         </div>
+
+                        <div className="flex-box">
+                            <div className="flex-items char-analysis-table-wrapper">
+                                <table className="population-radial-table">
+                                    <tbody>
+                                        <tr className="population-radial-table-head">
+                                            <td>
+                                                Score
+                                            </td>
+                                            <td>
+                                                Dev Apps
+                                            </td>
+                                            <td>
+                                                Current Apps
+                                            </td>
+                                            <td>
+                                                Dev %
+                                            </td>
+                                            <td>
+                                                Current %
+                                            </td>
+                                            <td>
+                                                Change
+                                            </td>
+                                            <td>
+                                                Ratio
+                                            </td>
+                                            <td>
+                                                WoE
+                                            </td>
+                                            <td>
+                                                Contribution to Index
+                                            </td>
+                                        </tr>
+                                        {this.state.popRadial.tableData.map((data, index) =>
+                                            <tr key={index}>
+                                                <td>
+                                                    {data.score}
+                                                </td>
+                                                <td>
+                                                    {data.devApps}
+                                                </td>
+                                                <td>
+                                                    {data.curApps}
+                                                </td>
+                                                <td>
+                                                    {data.devPer}
+                                                </td>
+                                                <td>
+                                                    {data.curPer}
+                                                </td>
+                                                <td>
+                                                    {data.change}
+                                                </td>
+                                                <td>
+                                                    {data.ratio}
+                                                </td>
+                                                <td>
+                                                    {data.woe}
+                                                </td>
+                                                <td>
+                                                    {data.contribution}
+                                                </td>
+                                            </tr>
+                                        )}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
                         <div className="flex-box frontend-pop-legend-wrapper">
                             <div className="flex-items frontend-pop-legend">
                                 <span className="pop-cur-bullet">&#x25fc;</span> Current
