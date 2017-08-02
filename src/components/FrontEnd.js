@@ -210,6 +210,7 @@ class FrontEnd extends Component {
                     },
                 ]
             },
+            popRadialTable: false,
             popRadialOptions: {
                 chartStartAngle: 90,
                 chartEndAngle: -270,
@@ -402,6 +403,7 @@ class FrontEnd extends Component {
                     }
                 ]
             },
+            characterTable: false,
             currentCharacterData: "",
             // data for frontend final report
             frontendFinal: {
@@ -443,6 +445,7 @@ class FrontEnd extends Component {
         }
 
         this.handleCharChange = this.handleCharChange.bind(this);
+        this.handleTableShow = this.handleTableShow.bind(this);
     }
 
     componentWillMount() {
@@ -456,6 +459,20 @@ class FrontEnd extends Component {
                 charSelectValue: event.target.value,
                 currentCharacterData: this.state.characterData[event.target.value]
         })
+    }
+
+    handleTableShow(event) {
+        event.target.innerText = event.target.innerText === 'Show Table' ? 'Show Graph' : 'Show Table';
+        if(event.target.classList.contains('popRadialTableBtn')) {
+            this.setState({
+                    popRadialTable: !this.state.popRadialTable
+            })
+        }
+        if(event.target.classList.contains('characterTableBtn')) {
+            this.setState({
+                    characterTable: !this.state.characterTable
+            })
+        }
     }
 
     render() {
@@ -515,135 +532,140 @@ class FrontEnd extends Component {
                         <div className="flex-box">
                             <div className="flex-items frontend-card-head">
                                 Population Stability
-                                <button className="show-table-graph-btn">Show Table</button>
+                                <button className="show-table-graph-btn popRadialTableBtn" onClick={this.handleTableShow}>Show Table</button>
                             </div>
-                        </div>
-                        <div className="flex-box frontend-population-stability">
-                            {this.state.popRadial.data.map((data, index) =>
-                                <div key={index} className="flex-items frontend-population-radial">
-                                    <RechartRadialBar
-                                        name={data.name}
-                                        data={data.plotData}
-                                        chartStartAngle={this.state.popRadialOptions.chartStartAngle}
-                                        chartEndAngle={this.state.popRadialOptions.chartEndAngle}
-                                        chartInnerRadius={this.state.popRadialOptions.chartInnerRadius}
-                                        chartOuterRadius={this.state.popRadialOptions.chartOuterRadius}
-                                        chartBarSize={this.state.popRadialOptions.chartBarSize}
-                                        barStartAngle={this.state.popRadialOptions.barStartAngle}
-                                        barEndAngle={this.state.popRadialOptions.barEndAngle}
-                                        barMinAngle={this.state.popRadialOptions.barMinAngle}
-                                        // barLabel={this.renderCustomizedLabel}
-                                        barBackground={this.state.popRadialOptions.barBackground}
-                                        barClockWise={this.state.popRadialOptions.barClockWise}
-                                        barDataKey={this.state.popRadialOptions.barDataKey}
-                                    />
-                                    <div className="population-radial-legend">
-                                        <span className="pop-cur-bullet">&#x25fc;</span> {data.plotData[0].percent}%
-                                        &nbsp;&nbsp;&nbsp;&nbsp;
-                                        <span className="pop-dev-bullet">&#x25fc;</span> {data.plotData[1].percent}%
-                                    </div>
-                                </div>
-                            )}
-                            {/* <div className="flex-items frontend-population-radial">
-                                <RechartRadialBar name="wert" />
-                                </div>
-                                <div className="flex-items frontend-population-radial">
-                                <RechartRadialBar name="wert" />
-                                </div>
-                                <div className="flex-items frontend-population-radial">
-                                <RechartRadialBar name="wert" />
-                                </div>
-                                <div className="flex-items frontend-population-radial">
-                                <RechartRadialBar name="wert" />
-                                </div>
-                                <div className="flex-items frontend-population-radial">
-                                <RechartRadialBar name="wert" />
-                                </div>
-                                <div className="flex-items frontend-population-radial">
-                                <RechartRadialBar name="wert" />
-                                </div>
-                                <div className="flex-items frontend-population-radial">
-                                <RechartRadialBar name="wert" />
-                                </div>
-                                <div className="flex-items frontend-population-radial">
-                                <RechartRadialBar name="wert" />
-                                </div>
-                                <div className="flex-items frontend-population-radial">
-                                <RechartRadialBar name="wert" />
-                                </div>
-                                <div className="flex-items frontend-population-radial">
-                                <RechartRadialBar name="wert" />
-                            </div> */}
                         </div>
 
-                        <div className="flex-box">
-                            <div className="flex-items char-analysis-table-wrapper">
-                                <table className="population-radial-table">
-                                    <tbody>
-                                        <tr className="population-radial-table-head">
-                                            <td>
-                                                Score
-                                            </td>
-                                            <td>
-                                                Dev Apps
-                                            </td>
-                                            <td>
-                                                Current Apps
-                                            </td>
-                                            <td>
-                                                Dev %
-                                            </td>
-                                            <td>
-                                                Current %
-                                            </td>
-                                            <td>
-                                                Change
-                                            </td>
-                                            <td>
-                                                Ratio
-                                            </td>
-                                            <td>
-                                                WoE
-                                            </td>
-                                            <td>
-                                                Contribution to Index
-                                            </td>
-                                        </tr>
-                                        {this.state.popRadial.tableData.map((data, index) =>
-                                            <tr key={index}>
+                        {!this.state.popRadialTable && (
+                            <div className="flex-box frontend-population-stability">
+                                {this.state.popRadial.data.map((data, index) =>
+                                    <div key={index} className="flex-items frontend-population-radial">
+                                        <RechartRadialBar
+                                            name={data.name}
+                                            data={data.plotData}
+                                            chartStartAngle={this.state.popRadialOptions.chartStartAngle}
+                                            chartEndAngle={this.state.popRadialOptions.chartEndAngle}
+                                            chartInnerRadius={this.state.popRadialOptions.chartInnerRadius}
+                                            chartOuterRadius={this.state.popRadialOptions.chartOuterRadius}
+                                            chartBarSize={this.state.popRadialOptions.chartBarSize}
+                                            barStartAngle={this.state.popRadialOptions.barStartAngle}
+                                            barEndAngle={this.state.popRadialOptions.barEndAngle}
+                                            barMinAngle={this.state.popRadialOptions.barMinAngle}
+                                            // barLabel={this.renderCustomizedLabel}
+                                            barBackground={this.state.popRadialOptions.barBackground}
+                                            barClockWise={this.state.popRadialOptions.barClockWise}
+                                            barDataKey={this.state.popRadialOptions.barDataKey}
+                                        />
+                                        <div className="population-radial-legend">
+                                            <span className="pop-cur-bullet">&#x25fc;</span> {data.plotData[0].percent}%
+                                            &nbsp;&nbsp;&nbsp;&nbsp;
+                                            <span className="pop-dev-bullet">&#x25fc;</span> {data.plotData[1].percent}%
+                                        </div>
+                                    </div>
+                                )}
+                                {/* <div className="flex-items frontend-population-radial">
+                                    <RechartRadialBar name="wert" />
+                                    </div>
+                                    <div className="flex-items frontend-population-radial">
+                                    <RechartRadialBar name="wert" />
+                                    </div>
+                                    <div className="flex-items frontend-population-radial">
+                                    <RechartRadialBar name="wert" />
+                                    </div>
+                                    <div className="flex-items frontend-population-radial">
+                                    <RechartRadialBar name="wert" />
+                                    </div>
+                                    <div className="flex-items frontend-population-radial">
+                                    <RechartRadialBar name="wert" />
+                                    </div>
+                                    <div className="flex-items frontend-population-radial">
+                                    <RechartRadialBar name="wert" />
+                                    </div>
+                                    <div className="flex-items frontend-population-radial">
+                                    <RechartRadialBar name="wert" />
+                                    </div>
+                                    <div className="flex-items frontend-population-radial">
+                                    <RechartRadialBar name="wert" />
+                                    </div>
+                                    <div className="flex-items frontend-population-radial">
+                                    <RechartRadialBar name="wert" />
+                                    </div>
+                                    <div className="flex-items frontend-population-radial">
+                                    <RechartRadialBar name="wert" />
+                                </div> */}
+                            </div>
+                        )}
+
+                        {this.state.popRadialTable && (
+                            <div className="flex-box">
+                                <div className="flex-items char-analysis-table-wrapper">
+                                    <table className="population-radial-table">
+                                        <tbody>
+                                            <tr className="population-radial-table-head">
                                                 <td>
-                                                    {data.score}
+                                                    Score
                                                 </td>
                                                 <td>
-                                                    {data.devApps}
+                                                    Dev Apps
                                                 </td>
                                                 <td>
-                                                    {data.curApps}
+                                                    Current Apps
                                                 </td>
                                                 <td>
-                                                    {data.devPer}
+                                                    Dev %
                                                 </td>
                                                 <td>
-                                                    {data.curPer}
+                                                    Current %
                                                 </td>
                                                 <td>
-                                                    {data.change}
+                                                    Change
                                                 </td>
                                                 <td>
-                                                    {data.ratio}
+                                                    Ratio
                                                 </td>
                                                 <td>
-                                                    {data.woe}
+                                                    WoE
                                                 </td>
                                                 <td>
-                                                    {data.contribution}
+                                                    Contribution to Index
                                                 </td>
                                             </tr>
-                                        )}
-                                    </tbody>
-                                </table>
+                                            {this.state.popRadial.tableData.map((data, index) =>
+                                                <tr key={index}>
+                                                    <td>
+                                                        {data.score}
+                                                    </td>
+                                                    <td>
+                                                        {data.devApps}
+                                                    </td>
+                                                    <td>
+                                                        {data.curApps}
+                                                    </td>
+                                                    <td>
+                                                        {data.devPer}
+                                                    </td>
+                                                    <td>
+                                                        {data.curPer}
+                                                    </td>
+                                                    <td>
+                                                        {data.change}
+                                                    </td>
+                                                    <td>
+                                                        {data.ratio}
+                                                    </td>
+                                                    <td>
+                                                        {data.woe}
+                                                    </td>
+                                                    <td>
+                                                        {data.contribution}
+                                                    </td>
+                                                </tr>
+                                            )}
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
-                        </div>
+                        )}
 
                         <div className="flex-box frontend-pop-legend-wrapper">
                             <div className="flex-items frontend-pop-legend">
@@ -660,7 +682,7 @@ class FrontEnd extends Component {
                         <div className="flex-box">
                             <div className="flex-items frontend-card-head">
                                 Characteristics Analysis
-                                <button className="show-table-graph-btn">Show Table</button>
+                                <button className="show-table-graph-btn characterTableBtn" onClick={this.handleTableShow}>Show Table</button>
                             </div>
                         </div>
                         <div className="flex-box">
@@ -678,107 +700,112 @@ class FrontEnd extends Component {
                                 </select>
                             </div>
                         </div>
-                        <div className="flex-box char-analysis-scorecards-wrapper">
-                            {this.state.currentCharacterData.map((data, index) =>
-                                <CharacterCard
-                                    key={index}
-                                    name={data.name}
-                                    score={data.score}
-                                />
-                            )}
-                        </div>
 
-                        <div className="flex-box">
-                            <div className="flex-items char-analysis-table-wrapper">
-                                <table className="char-analysis-table">
-                                    <tbody>
-                                        <tr className="char-analysis-table-head">
-                                            <td>
-                                                {
-                                                    this.state.charSelectValue === "nationality" ?
-                                                    "Nationality" : this.state.charSelectValue === "totSal" ?
-                                                    "Total Salary" : this.state.charSelectValue === "salAcc" ?
-                                                    "Salaried Account" : this.state.charSelectValue === "worstDelinquency" ?
-                                                    "Worst Delinquency" : this.state.charSelectValue === "loanPeriod" ?
-                                                    "Loan Period" : this.state.charSelectValue === "gender" ?
-                                                    "Gender" : this.state.charSelectValue === "bankMonths" ?
-                                                    "Months at Bank" : this.state.charSelectValue === "empYears" ?
-                                                    "Years at Current Employment" : this.state.charSelectValue === "loanAmt" ?
-                                                    "Loan Amount" : ""
-                                                }
-                                            </td>
-                                            <td>
-                                                Dev Apps
-                                            </td>
-                                            <td>
-                                                Current Apps
-                                            </td>
-                                            <td>
-                                                Dev %
-                                            </td>
-                                            <td>
-                                                Current %
-                                            </td>
-                                            <td>
-                                                Change
-                                            </td>
-                                            <td>
-                                                Ratio
-                                            </td>
-                                            <td>
-                                                WoE
-                                            </td>
-                                            <td>
-                                                Contribution to Index
-                                            </td>
-                                            <td>
-                                                Score for Attribute
-                                            </td>
-                                            <td>
-                                                Score for Difference
-                                            </td>
-                                        </tr>
-                                        {this.state.currentCharacterData.map((data, index) =>
-                                            <tr key={index}>
+                        {!this.state.characterTable && (
+                            <div className="flex-box char-analysis-scorecards-wrapper">
+                                {this.state.currentCharacterData.map((data, index) =>
+                                    <CharacterCard
+                                        key={index}
+                                        name={data.name}
+                                        score={data.score}
+                                    />
+                                )}
+                            </div>
+                        )}
+
+                        {this.state.characterTable && (
+                            <div className="flex-box">
+                                <div className="flex-items char-analysis-table-wrapper">
+                                    <table className="char-analysis-table">
+                                        <tbody>
+                                            <tr className="char-analysis-table-head">
                                                 <td>
-                                                    {data.name}
+                                                    {
+                                                        this.state.charSelectValue === "nationality" ?
+                                                        "Nationality" : this.state.charSelectValue === "totSal" ?
+                                                        "Total Salary" : this.state.charSelectValue === "salAcc" ?
+                                                        "Salaried Account" : this.state.charSelectValue === "worstDelinquency" ?
+                                                        "Worst Delinquency" : this.state.charSelectValue === "loanPeriod" ?
+                                                        "Loan Period" : this.state.charSelectValue === "gender" ?
+                                                        "Gender" : this.state.charSelectValue === "bankMonths" ?
+                                                        "Months at Bank" : this.state.charSelectValue === "empYears" ?
+                                                        "Years at Current Employment" : this.state.charSelectValue === "loanAmt" ?
+                                                        "Loan Amount" : ""
+                                                    }
                                                 </td>
                                                 <td>
-                                                    {data.devApps}
+                                                    Dev Apps
                                                 </td>
                                                 <td>
-                                                    {data.curApps}
+                                                    Current Apps
                                                 </td>
                                                 <td>
-                                                    {data.devPer}
+                                                    Dev %
                                                 </td>
                                                 <td>
-                                                    {data.curPer}
+                                                    Current %
                                                 </td>
                                                 <td>
-                                                    {data.change}
+                                                    Change
                                                 </td>
                                                 <td>
-                                                    {data.ratio}
+                                                    Ratio
                                                 </td>
                                                 <td>
-                                                    {data.woe}
+                                                    WoE
                                                 </td>
                                                 <td>
-                                                    {data.contribution}
+                                                    Contribution to Index
                                                 </td>
                                                 <td>
-                                                    {data.scoreAttri}
+                                                    Score for Attribute
                                                 </td>
                                                 <td>
-                                                    {data.score}
+                                                    Score for Difference
                                                 </td>
                                             </tr>
-                                        )}
-                                    </tbody>
-                                </table>
+                                            {this.state.currentCharacterData.map((data, index) =>
+                                                <tr key={index}>
+                                                    <td>
+                                                        {data.name}
+                                                    </td>
+                                                    <td>
+                                                        {data.devApps}
+                                                    </td>
+                                                    <td>
+                                                        {data.curApps}
+                                                    </td>
+                                                    <td>
+                                                        {data.devPer}
+                                                    </td>
+                                                    <td>
+                                                        {data.curPer}
+                                                    </td>
+                                                    <td>
+                                                        {data.change}
+                                                    </td>
+                                                    <td>
+                                                        {data.ratio}
+                                                    </td>
+                                                    <td>
+                                                        {data.woe}
+                                                    </td>
+                                                    <td>
+                                                        {data.contribution}
+                                                    </td>
+                                                    <td>
+                                                        {data.scoreAttri}
+                                                    </td>
+                                                    <td>
+                                                        {data.score}
+                                                    </td>
+                                                </tr>
+                                            )}
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
-                        </div>
+                        )}
 
                     </div>
                 </div>
