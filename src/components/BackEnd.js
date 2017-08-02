@@ -512,7 +512,7 @@ class BackEnd extends Component {
                             <div className="flex-items odds-table-wrapper">
                                 <table className="odds-table">
                                     <tbody>
-                                        <tr>
+                                        <tr className="odds-table-head">
                                             <td></td>
                                             <td colSpan="2">
                                                 Development
@@ -524,7 +524,7 @@ class BackEnd extends Component {
                                                 Odds
                                             </td>
                                         </tr>
-                                        <tr>
+                                        <tr className="odds-table-head">
                                             <td>
                                                 Score
                                             </td>
@@ -611,7 +611,7 @@ class BackEnd extends Component {
                             <div className="flex-items char-analysis-table-wrapper">
                                 <table className="char-analysis-table">
                                     <tbody>
-                                        <tr>
+                                        <tr className="char-analysis-table-head">
                                             <td rowSpan="2">
                                                 {
                                                     this.state.charSelectValue === "nationality" ?
@@ -639,7 +639,7 @@ class BackEnd extends Component {
                                                 Score
                                             </td>
                                         </tr>
-                                        <tr>
+                                        <tr className="char-analysis-table-head">
                                             <td>
                                                 Bad
                                             </td>
@@ -803,98 +803,98 @@ class BackEnd extends Component {
                                     yAxisTickFormatter={(data) => `${data}%`}
                                 />
                             </div>
-                            {/* <div className="flex-items vintage-analysis-table-wrapper">
+                            <div className="flex-items vintage-analysis-table-wrapper">
                                 <table className="vintage-analysis-table">
                                     <tbody>
-                                <tr>
-                                <td></td>
-                                {this.state.vintage30dpd.data.map((data, index) =>
-                                <td key={index}>
-                                {data.Model}
-                                </td>
-                                )}
-                                </tr>
-                                <tr>
-                                <td>Q2-2014</td>
-                                {this.state.vintage30dpd.data.map((data, index) =>
-                                <td key={index}>
-                                {data['Q2-2014'].toFixed(1)}
-                                </td>
-                                )}
-                                </tr>
-                                <tr>
-                                <td>Q3-2014</td>
-                                {this.state.vintage30dpd.data.map((data, index) =>
-                                <td key={index}>
-                                {data['Q3-2014'] != null && (
-                                data['Q3-2014'].toFixed(1)
-                                )}
-                                </td>
-                                )}
-                                </tr>
-                                <tr>
-                                <td>Q4-2014</td>
-                                {this.state.vintage30dpd.data.map((data, index) =>
-                                <td key={index}>
-                                {data['Q4-2014'] != null && (
-                                data['Q4-2014'].toFixed(1)
-                                )}
-                                </td>
-                                )}
-                                </tr>
-                                <tr>
-                                <td>Q1-2015</td>
-                                {this.state.vintage30dpd.data.map((data, index) =>
-                                <td key={index}>
-                                {data['Q1-2015'] != null && (
-                                data['Q1-2015'].toFixed(1)
-                                )}
-                                </td>
-                                )}
-                                </tr>
-                                <tr>
-                                <td>Q2-2015</td>
-                                {this.state.vintage30dpd.data.map((data, index) =>
-                                <td key={index}>
-                                {data['Q2-2015'] != null && (
-                                data['Q2-2015'].toFixed(1)
-                                )}
-                                </td>
-                                )}
-                                </tr>
-                                <tr>
-                                <td>Q3-2015</td>
-                                {this.state.vintage30dpd.data.map((data, index) =>
-                                <td key={index}>
-                                {data['Q3-2015'] != null && (
-                                data['Q3-2015'].toFixed(1)
-                                )}
-                                </td>
-                                )}
-                                </tr>
-                                <tr>
-                                <td>Q4-2015</td>
-                                {this.state.vintage30dpd.data.map((data, index) =>
-                                <td key={index}>
-                                {data['Q4-2015'] != null && (
-                                data['Q4-2015'].toFixed(1)
-                                )}
-                                </td>
-                                )}
-                                </tr>
-                                <tr>
-                                <td>Q1-2016</td>
-                                {this.state.vintage30dpd.data.map((data, index) =>
-                                <td key={index}>
-                                {data['Q1-2016'] != null && (
-                                data['Q1-2016'].toFixed(1)
-                                )}
-                                </td>
-                                )}
-                                </tr>
+                                        <tr className="vintage-analysis-table-head">
+                                            <td></td>
+                                            {this.state.vintage30dpd.data.map((data, index) =>
+                                                <td key={index}>
+                                                    {data.Model}
+                                                </td>
+                                            )}
+                                        </tr>
+                                        <tr>
+                                            <td className="vintage-cell-head">Q2-2014</td>
+                                            {this.state.vintage30dpd.data.map((data, index) =>
+                                                <td key={index}>
+                                                    {data['Q2-2014'].toFixed(1)}
+                                                </td>
+                                            )}
+                                        </tr>
+                                        <tr>
+                                            <td className="vintage-cell-head">Q3-2014</td>
+                                            {this.state.vintage30dpd.data.map((data, index) =>
+                                                <td key={index}>
+                                                    {data['Q3-2014'] != null && (
+                                                        data['Q3-2014'].toFixed(1)
+                                                    )}
+                                                </td>
+                                            )}
+                                        </tr>
+                                        <tr>
+                                            <td className="vintage-cell-head">Q4-2014</td>
+                                            {this.state.vintage30dpd.data.map((data, index) =>
+                                                <td key={index}>
+                                                    {data['Q4-2014'] != null && (
+                                                        data['Q4-2014'].toFixed(1)
+                                                    )}
+                                                </td>
+                                            )}
+                                        </tr>
+                                        <tr>
+                                            <td className="vintage-cell-head">Q1-2015</td>
+                                            {this.state.vintage30dpd.data.map((data, index) =>
+                                                <td key={index}>
+                                                    {data['Q1-2015'] != null && (
+                                                        data['Q1-2015'].toFixed(1)
+                                                    )}
+                                                </td>
+                                            )}
+                                        </tr>
+                                        <tr>
+                                            <td className="vintage-cell-head">Q2-2015</td>
+                                            {this.state.vintage30dpd.data.map((data, index) =>
+                                                <td key={index}>
+                                                    {data['Q2-2015'] != null && (
+                                                        data['Q2-2015'].toFixed(1)
+                                                    )}
+                                                </td>
+                                            )}
+                                        </tr>
+                                        <tr>
+                                            <td className="vintage-cell-head">Q3-2015</td>
+                                            {this.state.vintage30dpd.data.map((data, index) =>
+                                                <td key={index}>
+                                                    {data['Q3-2015'] != null && (
+                                                        data['Q3-2015'].toFixed(1)
+                                                    )}
+                                                </td>
+                                            )}
+                                        </tr>
+                                        <tr>
+                                            <td className="vintage-cell-head">Q4-2015</td>
+                                            {this.state.vintage30dpd.data.map((data, index) =>
+                                                <td key={index}>
+                                                    {data['Q4-2015'] != null && (
+                                                        data['Q4-2015'].toFixed(1)
+                                                    )}
+                                                </td>
+                                            )}
+                                        </tr>
+                                        <tr>
+                                            <td className="vintage-cell-head">Q1-2016</td>
+                                            {this.state.vintage30dpd.data.map((data, index) =>
+                                                <td key={index}>
+                                                    {data['Q1-2016'] != null && (
+                                                        data['Q1-2016'].toFixed(1)
+                                                    )}
+                                                </td>
+                                            )}
+                                        </tr>
                                     </tbody>
                                 </table>
-                            </div> */}
+                            </div>
                         </div>
                         <div className="flex-box vintage-analysis-chart-wrapper">
                             <div className="flex-items backend-vintage-60-head">
@@ -916,98 +916,98 @@ class BackEnd extends Component {
                                     yAxisTickFormatter={(data) => `${data}%`}
                                 />
                             </div>
-                            {/* <div className="flex-items vintage-analysis-table-wrapper">
+                            <div className="flex-items vintage-analysis-table-wrapper">
                                 <table className="vintage-analysis-table">
                                     <tbody>
-                                <tr>
-                                <td></td>
-                                {this.state.vintage60dpd.data.map((data, index) =>
-                                <td key={index}>
-                                {data.Model}
-                                </td>
-                                )}
-                                </tr>
-                                <tr>
-                                <td>Q2-2014</td>
-                                {this.state.vintage60dpd.data.map((data, index) =>
-                                <td key={index}>
-                                {data['Q2-2014'].toFixed(1)}
-                                </td>
-                                )}
-                                </tr>
-                                <tr>
-                                <td>Q3-2014</td>
-                                {this.state.vintage60dpd.data.map((data, index) =>
-                                <td key={index}>
-                                {data['Q3-2014'] != null && (
-                                data['Q3-2014'].toFixed(1)
-                                )}
-                                </td>
-                                )}
-                                </tr>
-                                <tr>
-                                <td>Q4-2014</td>
-                                {this.state.vintage60dpd.data.map((data, index) =>
-                                <td key={index}>
-                                {data['Q4-2014'] != null && (
-                                data['Q4-2014'].toFixed(1)
-                                )}
-                                </td>
-                                )}
-                                </tr>
-                                <tr>
-                                <td>Q1-2015</td>
-                                {this.state.vintage60dpd.data.map((data, index) =>
-                                <td key={index}>
-                                {data['Q1-2015'] != null && (
-                                data['Q1-2015'].toFixed(1)
-                                )}
-                                </td>
-                                )}
-                                </tr>
-                                <tr>
-                                <td>Q2-2015</td>
-                                {this.state.vintage60dpd.data.map((data, index) =>
-                                <td key={index}>
-                                {data['Q2-2015'] != null && (
-                                data['Q2-2015'].toFixed(1)
-                                )}
-                                </td>
-                                )}
-                                </tr>
-                                <tr>
-                                <td>Q3-2015</td>
-                                {this.state.vintage60dpd.data.map((data, index) =>
-                                <td key={index}>
-                                {data['Q3-2015'] != null && (
-                                data['Q3-2015'].toFixed(1)
-                                )}
-                                </td>
-                                )}
-                                </tr>
-                                <tr>
-                                <td>Q4-2015</td>
-                                {this.state.vintage60dpd.data.map((data, index) =>
-                                <td key={index}>
-                                {data['Q4-2015'] != null && (
-                                data['Q4-2015'].toFixed(1)
-                                )}
-                                </td>
-                                )}
-                                </tr>
-                                <tr>
-                                <td>Q1-2016</td>
-                                {this.state.vintage60dpd.data.map((data, index) =>
-                                <td key={index}>
-                                {data['Q1-2016'] != null && (
-                                data['Q1-2016'].toFixed(1)
-                                )}
-                                </td>
-                                )}
-                                </tr>
+                                        <tr className="vintage-analysis-table-head">
+                                            <td></td>
+                                            {this.state.vintage60dpd.data.map((data, index) =>
+                                                <td key={index}>
+                                                    {data.Model}
+                                                </td>
+                                            )}
+                                        </tr>
+                                        <tr>
+                                            <td className="vintage-cell-head">Q2-2014</td>
+                                            {this.state.vintage60dpd.data.map((data, index) =>
+                                                <td key={index}>
+                                                    {data['Q2-2014'].toFixed(1)}
+                                                </td>
+                                            )}
+                                        </tr>
+                                        <tr>
+                                            <td className="vintage-cell-head">Q3-2014</td>
+                                            {this.state.vintage60dpd.data.map((data, index) =>
+                                                <td key={index}>
+                                                    {data['Q3-2014'] != null && (
+                                                        data['Q3-2014'].toFixed(1)
+                                                    )}
+                                                </td>
+                                            )}
+                                        </tr>
+                                        <tr>
+                                            <td className="vintage-cell-head">Q4-2014</td>
+                                            {this.state.vintage60dpd.data.map((data, index) =>
+                                                <td key={index}>
+                                                    {data['Q4-2014'] != null && (
+                                                        data['Q4-2014'].toFixed(1)
+                                                    )}
+                                                </td>
+                                            )}
+                                        </tr>
+                                        <tr>
+                                            <td className="vintage-cell-head">Q1-2015</td>
+                                            {this.state.vintage60dpd.data.map((data, index) =>
+                                                <td key={index}>
+                                                    {data['Q1-2015'] != null && (
+                                                        data['Q1-2015'].toFixed(1)
+                                                    )}
+                                                </td>
+                                            )}
+                                        </tr>
+                                        <tr>
+                                            <td className="vintage-cell-head">Q2-2015</td>
+                                            {this.state.vintage60dpd.data.map((data, index) =>
+                                                <td key={index}>
+                                                    {data['Q2-2015'] != null && (
+                                                        data['Q2-2015'].toFixed(1)
+                                                    )}
+                                                </td>
+                                            )}
+                                        </tr>
+                                        <tr>
+                                            <td className="vintage-cell-head">Q3-2015</td>
+                                            {this.state.vintage60dpd.data.map((data, index) =>
+                                                <td key={index}>
+                                                    {data['Q3-2015'] != null && (
+                                                        data['Q3-2015'].toFixed(1)
+                                                    )}
+                                                </td>
+                                            )}
+                                        </tr>
+                                        <tr>
+                                            <td className="vintage-cell-head">Q4-2015</td>
+                                            {this.state.vintage60dpd.data.map((data, index) =>
+                                                <td key={index}>
+                                                    {data['Q4-2015'] != null && (
+                                                        data['Q4-2015'].toFixed(1)
+                                                    )}
+                                                </td>
+                                            )}
+                                        </tr>
+                                        <tr>
+                                            <td className="vintage-cell-head">Q1-2016</td>
+                                            {this.state.vintage60dpd.data.map((data, index) =>
+                                                <td key={index}>
+                                                    {data['Q1-2016'] != null && (
+                                                        data['Q1-2016'].toFixed(1)
+                                                    )}
+                                                </td>
+                                            )}
+                                        </tr>
                                     </tbody>
                                 </table>
-                            </div> */}
+                            </div>
                         </div>
                     </div>
                 </div>

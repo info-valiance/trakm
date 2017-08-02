@@ -159,6 +159,7 @@
     margin-top: 25px;
 }
 
+/* Tables */
 .vintage-analysis-table {
     width: 100%;
     font-size: 14px;
@@ -193,4 +194,49 @@
 
 .odds-table {
     width: 100%;
+}
+
+.vintage-analysis-table,
+.char-analysis-table,
+.odds-table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.vintage-analysis-table td,
+.vintage-analysis-table th,
+.char-analysis-table td,
+.char-analysis-table th,
+.odds-table td,
+.odds-table th {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.vintage-analysis-table tr:nth-child(odd),
+.char-analysis-table tr:nth-child(odd),
+.odds-table tr:nth-child(odd) {
+    background-color: #ececec;
+}
+
+.vintage-analysis-table-head {
+    font-size: 13px;
+    font-weight: bold;
+    color: #464646;
+}
+
+.vintage-cell-head {
+    font-size: 13px;
+    font-weight: bold;
+    color: #464646;
+}
+
+.char-analysis-table tr.char-analysis-table-head,
+.odds-table tr.odds-table-head {
+    font-size: 14px;
+    font-weight: bold;
+    color: #464646;
+    background: #fff;
 }
