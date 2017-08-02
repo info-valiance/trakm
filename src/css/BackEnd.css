@@ -178,3 +178,11 @@
     -webkit-transition: 0.4s;
     transition: 0.4s;
 }
+
+.char-analysis-table-wrapper {
+    width: 100%;
+}
+
+.char-analysis-table {
+    width: 100%;
+}

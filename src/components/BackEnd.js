@@ -65,49 +65,81 @@ class BackEnd extends Component {
                         name: 'NK - Illegal',
                         Development: 11,
                         Current: 27,
-                        Score: 17
+                        Score: 17,
+                        devBad: 68,
+                        devGood: 750,
+                        curBad: 24,
+                        curGood: 641,
                     },
                     {
                         name: 'Saudi',
                         Development: 16,
                         Current: 17,
-                        Score: 26
+                        Score: 26,
+                        devBad: 24,
+                        devGood: 384,
+                        curBad: 23,
+                        curGood: 387,
                     },
                     {
                         name: 'Bangladesh',
                         Development: 27,
                         Current: 160,
-                        Score: 37
+                        Score: 37,
+                        devBad: 8,
+                        devGood: 214,
+                        curBad: 1,
+                        curGood: 160,
                     },
                     {
                         name: 'Egypt & Syria',
                         Development: 40,
                         Current: 44,
-                        Score: 47
+                        Score: 47,
+                        devBad: 80,
+                        devGood: 3161,
+                        curBad: 84,
+                        curGood: 3678,
                     },
                     {
                         name: 'Rest',
                         Development: 52,
                         Current: 43,
-                        Score: 53
+                        Score: 53,
+                        devBad: 19,
+                        devGood: 979,
+                        curBad: 21,
+                        curGood: 897,
                     },
                     {
                         name: 'Kuwait',
                         Development: 58,
                         Current: 47,
-                        Score: 56
+                        Score: 56,
+                        devBad: 237,
+                        devGood: 13779,
+                        curBad: 341,
+                        curGood: 16170,
                     },
                     {
                         name: 'PH & Jordan',
                         Development: 75,
                         Current: 67,
-                        Score: 62
+                        Score: 62,
+                        devBad: 17,
+                        devGood: 1275,
+                        curBad: 16,
+                        curGood: 1072,
                     },
                     {
                         name: 'India, Pakistan and Lebanon',
                         Development: 116,
                         Current: 117,
-                        Score: 72
+                        Score: 72,
+                        devBad: 76,
+                        devGood: 8789,
+                        curBad: 95,
+                        curGood: 11099,
                     }
                 ],
                 // Total Salary
@@ -116,31 +148,51 @@ class BackEnd extends Component {
                         name: '<900',
                         Development: 38,
                         Current: 33,
-                        Score: 17
+                        Score: 17,
+                        devBad: 100,
+                        devGood: 3848,
+                        curBad: 126,
+                        curGood: 4174,
                     },
                     {
                         name: '>=900 - <1200',
                         Development: 42,
                         Current: 35,
-                        Score: 19
+                        Score: 19,
+                        devBad: 97,
+                        devGood: 4115,
+                        curBad: 141,
+                        curGood: 4904,
                     },
                     {
                         name: '>=1200 - <1500',
                         Development: 98,
                         Current: 73,
-                        Score: 38
+                        Score: 38,
+                        devBad: 28,
+                        devGood: 2737,
+                        curBad: 46,
+                        curGood: 3335,
                     },
                     {
                         name: '>=1500',
                         Development: 257,
                         Current: 134,
-                        Score: 59
+                        Score: 59,
+                        devBad: 12,
+                        devGood: 3079,
+                        curBad: 28,
+                        curGood: 3757,
                     },
                     {
                         name: 'Non-Kuwait',
                         Development: 53,
                         Current: 68,
-                        Score: 24
+                        Score: 24,
+                        devBad: 292,
+                        devGood: 1552,
+                        curBad: 264,
+                        curGood: 17934,
                     }
                 ]
             },
@@ -405,6 +457,90 @@ class BackEnd extends Component {
                         <div className="flex-box char-analysis-chart-wrapper">
                             <div className="flex-items char-analysis-chart">
                                 <RechartComposed data={this.state.currentCharacterData} />
+                            </div>
+                        </div>
+                        <div className="flex-box">
+                            <div className="flex-items char-analysis-table-wrapper">
+                                <table className="char-analysis-table">
+                                    <tbody>
+                                        <tr>
+                                            <td rowSpan="2">
+                                                {
+                                                    this.state.charSelectValue === "nationality" ?
+                                                    "Nationality" : this.state.charSelectValue === "totSal" ?
+                                                    "Total Salary" : this.state.charSelectValue === "salAcc" ?
+                                                    "Salaried Account" : this.state.charSelectValue === "worstDelinquency" ?
+                                                    "Worst Delinquency" : this.state.charSelectValue === "loanPeriod" ?
+                                                    "Loan Period" : this.state.charSelectValue === "gender" ?
+                                                    "Gender" : this.state.charSelectValue === "bankMonths" ?
+                                                    "Months at Bank" : this.state.charSelectValue === "empYears" ?
+                                                    "Years at Current Employment" : this.state.charSelectValue === "loanAmt" ?
+                                                    "Loan Amount" : ""
+                                                }
+                                            </td>
+                                            <td colSpan="2">
+                                                Development
+                                            </td>
+                                            <td colSpan="2">
+                                                Current
+                                            </td>
+                                            <td colSpan="2">
+                                                Odds
+                                            </td>
+                                            <td rowSpan="2">
+                                                Score
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Bad
+                                            </td>
+                                            <td>
+                                                Good
+                                            </td>
+                                            <td>
+                                                Bad
+                                            </td>
+                                            <td>
+                                                Good
+                                            </td>
+                                            <td>
+                                                Development
+                                            </td>
+                                            <td>
+                                                Current
+                                            </td>
+                                        </tr>
+                                        {this.state.currentCharacterData.map((data, index) =>
+                                            <tr key={index}>
+                                                <td>
+                                                    {data.name}
+                                                </td>
+                                                <td>
+                                                    {data.devBad}
+                                                </td>
+                                                <td>
+                                                    {data.devGood}
+                                                </td>
+                                                <td>
+                                                    {data.curBad}
+                                                </td>
+                                                <td>
+                                                    {data.curGood}
+                                                </td>
+                                                <td>
+                                                    {data.Development}
+                                                </td>
+                                                <td>
+                                                    {data.Current}
+                                                </td>
+                                                <td>
+                                                    {data.Score}
+                                                </td>
+                                            </tr>
+                                        )}
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
