@@ -136,6 +136,7 @@ class BackEnd extends Component {
                     }
                 ]
             },
+            scoreOddsTable: false,
             // data for Character Analysis
             charSelectValue: "nationality",
             characterData: {
@@ -277,6 +278,7 @@ class BackEnd extends Component {
                 ]
             },
             currentCharacterData: "",
+            characterTable: false,
             // data for Gini
             gini: {
                 dev: {
@@ -444,9 +446,12 @@ class BackEnd extends Component {
                     }
                 ]
             },
+            vintage30Table: false,
+            vintage60Table: false,
         }
 
         this.handleCharChange = this.handleCharChange.bind(this);
+        this.handleTableShow = this.handleTableShow.bind(this);
     }
 
     componentWillMount() {
@@ -460,6 +465,30 @@ class BackEnd extends Component {
                 charSelectValue: event.target.value,
                 currentCharacterData: this.state.characterData[event.target.value]
         })
+    }
+
+    handleTableShow(event) {
+        event.target.innerText = event.target.innerText === 'Show Table' ? 'Show Graph' : 'Show Table';
+        if(event.target.classList.contains('scoreOddsTableBtn')) {
+            this.setState({
+                    scoreOddsTable: !this.state.scoreOddsTable
+            })
+        }
+        if(event.target.classList.contains('characterTableBtn')) {
+            this.setState({
+                    characterTable: !this.state.characterTable
+            })
+        }
+        if(event.target.classList.contains('vintage30TableBtn')) {
+            this.setState({
+                    vintage30Table: !this.state.vintage30Table
+            })
+        }
+        if(event.target.classList.contains('vintage60TableBtn')) {
+            this.setState({
+                    vintage60Table: !this.state.vintage60Table
+            })
+        }
     }
 
     render() {
@@ -481,7 +510,7 @@ class BackEnd extends Component {
                         <div className="flex-box">
                             <div className="flex-items backend-card-head">
                                 Score to Odds Report
-                                <button className="show-table-graph-btn">Show Table</button>
+                                <button className="show-table-graph-btn scoreOddsTableBtn" onClick={this.handleTableShow}>Show Table</button>
                             </div>
                         </div>
                         <div className="flex-box backend-odds-text-wrapper">
@@ -491,91 +520,98 @@ class BackEnd extends Component {
                                 Current Bad Rate - <span className="backend-odds-cur-rate">{this.state.scoreOdds.curBadRate}</span>
                             </div>
                         </div>
-                        <div className="flex-box backend-odds-chart-content-wrapper">
-                            <div className="flex-items backend-odds-chart">
-                                <RechartLine
-                                    data={this.state.scoreOdds.data}
-                                    xAxisDataKey={this.state.scoreOdds.xAxisDataKey}
-                                    // xAxisText={this.state.scoreOdds.xAxisText}
-                                    // yAxisText={this.state.scoreOdds.yAxisText}
-                                    xAxisLabel={<AxisLabel axisType='xAxis' text={this.state.scoreOdds.xAxisText} />}
-                                    yAxisLabel={<AxisLabel axisType='yAxis' text={this.state.scoreOdds.yAxisText} />}
-                                    legendLayout={this.state.scoreOdds.legendLayout}
-                                    legendHeight={this.state.scoreOdds.legendHeight}
-                                    legendWrapperStyle={this.state.scoreOdds.legendWrapperStyle}
-                                    linesData={this.state.scoreOdds.linesData}
-                                    // yAxisTickFormatter={this.toPercent}
-                                />
+
+                        {!this.state.scoreOddsTable && (
+                            <div className="flex-box backend-odds-chart-content-wrapper">
+                                <div className="flex-items backend-odds-chart">
+                                    <RechartLine
+                                        data={this.state.scoreOdds.data}
+                                        xAxisDataKey={this.state.scoreOdds.xAxisDataKey}
+                                        // xAxisText={this.state.scoreOdds.xAxisText}
+                                        // yAxisText={this.state.scoreOdds.yAxisText}
+                                        xAxisLabel={<AxisLabel axisType='xAxis' text={this.state.scoreOdds.xAxisText} />}
+                                        yAxisLabel={<AxisLabel axisType='yAxis' text={this.state.scoreOdds.yAxisText} />}
+                                        legendLayout={this.state.scoreOdds.legendLayout}
+                                        legendHeight={this.state.scoreOdds.legendHeight}
+                                        legendWrapperStyle={this.state.scoreOdds.legendWrapperStyle}
+                                        linesData={this.state.scoreOdds.linesData}
+                                        // yAxisTickFormatter={this.toPercent}
+                                    />
+                                </div>
                             </div>
-                        </div>
-                        <div className="flex-box">
-                            <div className="flex-items odds-table-wrapper">
-                                <table className="odds-table">
-                                    <tbody>
-                                        <tr className="odds-table-head">
-                                            <td></td>
-                                            <td colSpan="2">
-                                                Development
-                                            </td>
-                                            <td colSpan="2">
-                                                Current
-                                            </td>
-                                            <td colSpan="2">
-                                                Odds
-                                            </td>
-                                        </tr>
-                                        <tr className="odds-table-head">
-                                            <td>
-                                                Score
-                                            </td>
-                                            <td>
-                                                Bad
-                                            </td>
-                                            <td>
-                                                Good
-                                            </td>
-                                            <td>
-                                                Bad
-                                            </td>
-                                            <td>
-                                                Good
-                                            </td>
-                                            <td>
-                                                Development
-                                            </td>
-                                            <td>
-                                                Current
-                                            </td>
-                                        </tr>
-                                        {this.state.scoreOdds.data.map((data, index) =>
-                                            <tr key={index}>
-                                                <td>
-                                                    {data.Score}
+                        )}
+
+                        {this.state.scoreOddsTable && (
+                            <div className="flex-box">
+                                <div className="flex-items odds-table-wrapper">
+                                    <table className="odds-table">
+                                        <tbody>
+                                            <tr className="odds-table-head">
+                                                <td></td>
+                                                <td colSpan="2">
+                                                    Development
                                                 </td>
-                                                <td>
-                                                    {data.devBad}
+                                                <td colSpan="2">
+                                                    Current
                                                 </td>
-                                                <td>
-                                                    {data.devGood}
-                                                </td>
-                                                <td>
-                                                    {data.curBad}
-                                                </td>
-                                                <td>
-                                                    {data.curGood}
-                                                </td>
-                                                <td>
-                                                    {data.Development}
-                                                </td>
-                                                <td>
-                                                    {data.Current}
+                                                <td colSpan="2">
+                                                    Odds
                                                 </td>
                                             </tr>
-                                        )}
-                                    </tbody>
-                                </table>
+                                            <tr className="odds-table-head">
+                                                <td>
+                                                    Score
+                                                </td>
+                                                <td>
+                                                    Bad
+                                                </td>
+                                                <td>
+                                                    Good
+                                                </td>
+                                                <td>
+                                                    Bad
+                                                </td>
+                                                <td>
+                                                    Good
+                                                </td>
+                                                <td>
+                                                    Development
+                                                </td>
+                                                <td>
+                                                    Current
+                                                </td>
+                                            </tr>
+                                            {this.state.scoreOdds.data.map((data, index) =>
+                                                <tr key={index}>
+                                                    <td>
+                                                        {data.Score}
+                                                    </td>
+                                                    <td>
+                                                        {data.devBad}
+                                                    </td>
+                                                    <td>
+                                                        {data.devGood}
+                                                    </td>
+                                                    <td>
+                                                        {data.curBad}
+                                                    </td>
+                                                    <td>
+                                                        {data.curGood}
+                                                    </td>
+                                                    <td>
+                                                        {data.Development}
+                                                    </td>
+                                                    <td>
+                                                        {data.Current}
+                                                    </td>
+                                                </tr>
+                                            )}
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
-                        </div>
+                        )}
+
                     </div>
                 </div>
 
@@ -584,7 +620,7 @@ class BackEnd extends Component {
                         <div className="flex-box">
                             <div className="flex-items backend-card-head">
                                 Characteristics Analysis
-                                <button className="show-table-graph-btn">Show Table</button>
+                                <button className="show-table-graph-btn characterTableBtn" onClick={this.handleTableShow}>Show Table</button>
                             </div>
                         </div>
                         <div className="flex-box">
@@ -602,95 +638,102 @@ class BackEnd extends Component {
                                 </select>
                             </div>
                         </div>
-                        <div className="flex-box char-analysis-chart-wrapper">
-                            <div className="flex-items char-analysis-chart">
-                                <RechartComposed data={this.state.currentCharacterData} />
+
+                        {!this.state.characterTable && (
+                            <div className="flex-box char-analysis-chart-wrapper">
+                                <div className="flex-items char-analysis-chart">
+                                    <RechartComposed data={this.state.currentCharacterData} />
+                                </div>
                             </div>
-                        </div>
-                        <div className="flex-box">
-                            <div className="flex-items char-analysis-table-wrapper">
-                                <table className="char-analysis-table">
-                                    <tbody>
-                                        <tr className="char-analysis-table-head">
-                                            <td rowSpan="2">
-                                                {
-                                                    this.state.charSelectValue === "nationality" ?
-                                                    "Nationality" : this.state.charSelectValue === "totSal" ?
-                                                    "Total Salary" : this.state.charSelectValue === "salAcc" ?
-                                                    "Salaried Account" : this.state.charSelectValue === "worstDelinquency" ?
-                                                    "Worst Delinquency" : this.state.charSelectValue === "loanPeriod" ?
-                                                    "Loan Period" : this.state.charSelectValue === "gender" ?
-                                                    "Gender" : this.state.charSelectValue === "bankMonths" ?
-                                                    "Months at Bank" : this.state.charSelectValue === "empYears" ?
-                                                    "Years at Current Employment" : this.state.charSelectValue === "loanAmt" ?
-                                                    "Loan Amount" : ""
-                                                }
-                                            </td>
-                                            <td colSpan="2">
-                                                Development
-                                            </td>
-                                            <td colSpan="2">
-                                                Current
-                                            </td>
-                                            <td colSpan="2">
-                                                Odds
-                                            </td>
-                                            <td rowSpan="2">
-                                                Score
-                                            </td>
-                                        </tr>
-                                        <tr className="char-analysis-table-head">
-                                            <td>
-                                                Bad
-                                            </td>
-                                            <td>
-                                                Good
-                                            </td>
-                                            <td>
-                                                Bad
-                                            </td>
-                                            <td>
-                                                Good
-                                            </td>
-                                            <td>
-                                                Development
-                                            </td>
-                                            <td>
-                                                Current
-                                            </td>
-                                        </tr>
-                                        {this.state.currentCharacterData.map((data, index) =>
-                                            <tr key={index}>
-                                                <td>
-                                                    {data.name}
+                        )}
+
+                        {this.state.characterTable && (
+                            <div className="flex-box">
+                                <div className="flex-items char-analysis-table-wrapper">
+                                    <table className="char-analysis-table">
+                                        <tbody>
+                                            <tr className="char-analysis-table-head">
+                                                <td rowSpan="2">
+                                                    {
+                                                        this.state.charSelectValue === "nationality" ?
+                                                        "Nationality" : this.state.charSelectValue === "totSal" ?
+                                                        "Total Salary" : this.state.charSelectValue === "salAcc" ?
+                                                        "Salaried Account" : this.state.charSelectValue === "worstDelinquency" ?
+                                                        "Worst Delinquency" : this.state.charSelectValue === "loanPeriod" ?
+                                                        "Loan Period" : this.state.charSelectValue === "gender" ?
+                                                        "Gender" : this.state.charSelectValue === "bankMonths" ?
+                                                        "Months at Bank" : this.state.charSelectValue === "empYears" ?
+                                                        "Years at Current Employment" : this.state.charSelectValue === "loanAmt" ?
+                                                        "Loan Amount" : ""
+                                                    }
                                                 </td>
-                                                <td>
-                                                    {data.devBad}
+                                                <td colSpan="2">
+                                                    Development
                                                 </td>
-                                                <td>
-                                                    {data.devGood}
+                                                <td colSpan="2">
+                                                    Current
                                                 </td>
-                                                <td>
-                                                    {data.curBad}
+                                                <td colSpan="2">
+                                                    Odds
                                                 </td>
-                                                <td>
-                                                    {data.curGood}
-                                                </td>
-                                                <td>
-                                                    {data.Development}
-                                                </td>
-                                                <td>
-                                                    {data.Current}
-                                                </td>
-                                                <td>
-                                                    {data.Score}
+                                                <td rowSpan="2">
+                                                    Score
                                                 </td>
                                             </tr>
-                                        )}
-                                    </tbody>
-                                </table>
+                                            <tr className="char-analysis-table-head">
+                                                <td>
+                                                    Bad
+                                                </td>
+                                                <td>
+                                                    Good
+                                                </td>
+                                                <td>
+                                                    Bad
+                                                </td>
+                                                <td>
+                                                    Good
+                                                </td>
+                                                <td>
+                                                    Development
+                                                </td>
+                                                <td>
+                                                    Current
+                                                </td>
+                                            </tr>
+                                            {this.state.currentCharacterData.map((data, index) =>
+                                                <tr key={index}>
+                                                    <td>
+                                                        {data.name}
+                                                    </td>
+                                                    <td>
+                                                        {data.devBad}
+                                                    </td>
+                                                    <td>
+                                                        {data.devGood}
+                                                    </td>
+                                                    <td>
+                                                        {data.curBad}
+                                                    </td>
+                                                    <td>
+                                                        {data.curGood}
+                                                    </td>
+                                                    <td>
+                                                        {data.Development}
+                                                    </td>
+                                                    <td>
+                                                        {data.Current}
+                                                    </td>
+                                                    <td>
+                                                        {data.Score}
+                                                    </td>
+                                                </tr>
+                                            )}
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
-                        </div>
+                        )}
+
                     </div>
                 </div>
 
@@ -786,228 +829,242 @@ class BackEnd extends Component {
                         <div className="flex-box vintage-analysis-chart-wrapper">
                             <div className="flex-items backend-vintage-30-head">
                                 30 DPD Vintage:
-                                <button className="show-table-graph-btn">Show Table</button>
+                                <button className="show-table-graph-btn vintage30TableBtn" onClick={this.handleTableShow}>Show Table</button>
                             </div>
-                            <div className="flex-items vintage-analysis-chart">
-                                <RechartLine
-                                    data={this.state.vintage30dpd.data}
-                                    xAxisDataKey={this.state.vintage30dpd.xAxisDataKey}
-                                    // xAxisText={this.state.vintage30dpd.xAxisText}
-                                    // yAxisText={this.state.vintage30dpd.yAxisText}
-                                    xAxisLabel={<AxisLabel axisType='xAxis' text={this.state.vintage30dpd.xAxisText} />}
-                                    yAxisLabel={<AxisLabel axisType='yAxis' text={this.state.vintage30dpd.yAxisText} />}
-                                    legendLayout={this.state.vintage30dpd.legendLayout}
-                                    legendHeight={this.state.vintage30dpd.legendHeight}
-                                    legendWrapperStyle={this.state.vintage30dpd.legendWrapperStyle}
-                                    linesData={this.state.vintage30dpd.linesData}
-                                    yAxisTickFormatter={(data) => `${data}%`}
-                                />
-                            </div>
-                            <div className="flex-items vintage-analysis-table-wrapper">
-                                <table className="vintage-analysis-table">
-                                    <tbody>
-                                        <tr className="vintage-analysis-table-head">
-                                            <td></td>
-                                            {this.state.vintage30dpd.data.map((data, index) =>
-                                                <td key={index}>
-                                                    {data.Model}
-                                                </td>
-                                            )}
-                                        </tr>
-                                        <tr>
-                                            <td className="vintage-cell-head">Q2-2014</td>
-                                            {this.state.vintage30dpd.data.map((data, index) =>
-                                                <td key={index}>
-                                                    {data['Q2-2014'].toFixed(1)}
-                                                </td>
-                                            )}
-                                        </tr>
-                                        <tr>
-                                            <td className="vintage-cell-head">Q3-2014</td>
-                                            {this.state.vintage30dpd.data.map((data, index) =>
-                                                <td key={index}>
-                                                    {data['Q3-2014'] != null && (
-                                                        data['Q3-2014'].toFixed(1)
-                                                    )}
-                                                </td>
-                                            )}
-                                        </tr>
-                                        <tr>
-                                            <td className="vintage-cell-head">Q4-2014</td>
-                                            {this.state.vintage30dpd.data.map((data, index) =>
-                                                <td key={index}>
-                                                    {data['Q4-2014'] != null && (
-                                                        data['Q4-2014'].toFixed(1)
-                                                    )}
-                                                </td>
-                                            )}
-                                        </tr>
-                                        <tr>
-                                            <td className="vintage-cell-head">Q1-2015</td>
-                                            {this.state.vintage30dpd.data.map((data, index) =>
-                                                <td key={index}>
-                                                    {data['Q1-2015'] != null && (
-                                                        data['Q1-2015'].toFixed(1)
-                                                    )}
-                                                </td>
-                                            )}
-                                        </tr>
-                                        <tr>
-                                            <td className="vintage-cell-head">Q2-2015</td>
-                                            {this.state.vintage30dpd.data.map((data, index) =>
-                                                <td key={index}>
-                                                    {data['Q2-2015'] != null && (
-                                                        data['Q2-2015'].toFixed(1)
-                                                    )}
-                                                </td>
-                                            )}
-                                        </tr>
-                                        <tr>
-                                            <td className="vintage-cell-head">Q3-2015</td>
-                                            {this.state.vintage30dpd.data.map((data, index) =>
-                                                <td key={index}>
-                                                    {data['Q3-2015'] != null && (
-                                                        data['Q3-2015'].toFixed(1)
-                                                    )}
-                                                </td>
-                                            )}
-                                        </tr>
-                                        <tr>
-                                            <td className="vintage-cell-head">Q4-2015</td>
-                                            {this.state.vintage30dpd.data.map((data, index) =>
-                                                <td key={index}>
-                                                    {data['Q4-2015'] != null && (
-                                                        data['Q4-2015'].toFixed(1)
-                                                    )}
-                                                </td>
-                                            )}
-                                        </tr>
-                                        <tr>
-                                            <td className="vintage-cell-head">Q1-2016</td>
-                                            {this.state.vintage30dpd.data.map((data, index) =>
-                                                <td key={index}>
-                                                    {data['Q1-2016'] != null && (
-                                                        data['Q1-2016'].toFixed(1)
-                                                    )}
-                                                </td>
-                                            )}
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+
+                            {!this.state.vintage30Table && (
+                                <div className="flex-items vintage-analysis-chart">
+                                    <RechartLine
+                                        data={this.state.vintage30dpd.data}
+                                        xAxisDataKey={this.state.vintage30dpd.xAxisDataKey}
+                                        // xAxisText={this.state.vintage30dpd.xAxisText}
+                                        // yAxisText={this.state.vintage30dpd.yAxisText}
+                                        xAxisLabel={<AxisLabel axisType='xAxis' text={this.state.vintage30dpd.xAxisText} />}
+                                        yAxisLabel={<AxisLabel axisType='yAxis' text={this.state.vintage30dpd.yAxisText} />}
+                                        legendLayout={this.state.vintage30dpd.legendLayout}
+                                        legendHeight={this.state.vintage30dpd.legendHeight}
+                                        legendWrapperStyle={this.state.vintage30dpd.legendWrapperStyle}
+                                        linesData={this.state.vintage30dpd.linesData}
+                                        yAxisTickFormatter={(data) => `${data}%`}
+                                    />
+                                </div>
+                            )}
+
+                            {this.state.vintage30Table && (
+                                <div className="flex-items vintage-analysis-table-wrapper">
+                                    <table className="vintage-analysis-table">
+                                        <tbody>
+                                            <tr className="vintage-analysis-table-head">
+                                                <td></td>
+                                                {this.state.vintage30dpd.data.map((data, index) =>
+                                                    <td key={index}>
+                                                        {data.Model}
+                                                    </td>
+                                                )}
+                                            </tr>
+                                            <tr>
+                                                <td className="vintage-cell-head">Q2-2014</td>
+                                                {this.state.vintage30dpd.data.map((data, index) =>
+                                                    <td key={index}>
+                                                        {data['Q2-2014'].toFixed(1)}
+                                                    </td>
+                                                )}
+                                            </tr>
+                                            <tr>
+                                                <td className="vintage-cell-head">Q3-2014</td>
+                                                {this.state.vintage30dpd.data.map((data, index) =>
+                                                    <td key={index}>
+                                                        {data['Q3-2014'] != null && (
+                                                            data['Q3-2014'].toFixed(1)
+                                                        )}
+                                                    </td>
+                                                )}
+                                            </tr>
+                                            <tr>
+                                                <td className="vintage-cell-head">Q4-2014</td>
+                                                {this.state.vintage30dpd.data.map((data, index) =>
+                                                    <td key={index}>
+                                                        {data['Q4-2014'] != null && (
+                                                            data['Q4-2014'].toFixed(1)
+                                                        )}
+                                                    </td>
+                                                )}
+                                            </tr>
+                                            <tr>
+                                                <td className="vintage-cell-head">Q1-2015</td>
+                                                {this.state.vintage30dpd.data.map((data, index) =>
+                                                    <td key={index}>
+                                                        {data['Q1-2015'] != null && (
+                                                            data['Q1-2015'].toFixed(1)
+                                                        )}
+                                                    </td>
+                                                )}
+                                            </tr>
+                                            <tr>
+                                                <td className="vintage-cell-head">Q2-2015</td>
+                                                {this.state.vintage30dpd.data.map((data, index) =>
+                                                    <td key={index}>
+                                                        {data['Q2-2015'] != null && (
+                                                            data['Q2-2015'].toFixed(1)
+                                                        )}
+                                                    </td>
+                                                )}
+                                            </tr>
+                                            <tr>
+                                                <td className="vintage-cell-head">Q3-2015</td>
+                                                {this.state.vintage30dpd.data.map((data, index) =>
+                                                    <td key={index}>
+                                                        {data['Q3-2015'] != null && (
+                                                            data['Q3-2015'].toFixed(1)
+                                                        )}
+                                                    </td>
+                                                )}
+                                            </tr>
+                                            <tr>
+                                                <td className="vintage-cell-head">Q4-2015</td>
+                                                {this.state.vintage30dpd.data.map((data, index) =>
+                                                    <td key={index}>
+                                                        {data['Q4-2015'] != null && (
+                                                            data['Q4-2015'].toFixed(1)
+                                                        )}
+                                                    </td>
+                                                )}
+                                            </tr>
+                                            <tr>
+                                                <td className="vintage-cell-head">Q1-2016</td>
+                                                {this.state.vintage30dpd.data.map((data, index) =>
+                                                    <td key={index}>
+                                                        {data['Q1-2016'] != null && (
+                                                            data['Q1-2016'].toFixed(1)
+                                                        )}
+                                                    </td>
+                                                )}
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            )}
+
                         </div>
                         <div className="flex-box vintage-analysis-chart-wrapper">
                             <div className="flex-items backend-vintage-60-head">
                                 60 DPD Vintage:
-                                <button className="show-table-graph-btn">Show Table</button>
+                                <button className="show-table-graph-btn vintage60TableBtn" onClick={this.handleTableShow}>Show Table</button>
                             </div>
-                            <div className="flex-items vintage-analysis-chart">
-                                <RechartLine
-                                    data={this.state.vintage60dpd.data}
-                                    xAxisDataKey={this.state.vintage60dpd.xAxisDataKey}
-                                    // xAxisText={this.state.vintage60dpd.xAxisText}
-                                    // yAxisText={this.state.vintage60dpd.yAxisText}
-                                    xAxisLabel={<AxisLabel axisType='xAxis' text={this.state.vintage60dpd.xAxisText} />}
-                                    yAxisLabel={<AxisLabel axisType='yAxis' text={this.state.vintage60dpd.yAxisText} />}
-                                    legendLayout={this.state.vintage60dpd.legendLayout}
-                                    legendHeight={this.state.vintage60dpd.legendHeight}
-                                    legendWrapperStyle={this.state.vintage60dpd.legendWrapperStyle}
-                                    linesData={this.state.vintage60dpd.linesData}
-                                    yAxisTickFormatter={(data) => `${data}%`}
-                                />
-                            </div>
-                            <div className="flex-items vintage-analysis-table-wrapper">
-                                <table className="vintage-analysis-table">
-                                    <tbody>
-                                        <tr className="vintage-analysis-table-head">
-                                            <td></td>
-                                            {this.state.vintage60dpd.data.map((data, index) =>
-                                                <td key={index}>
-                                                    {data.Model}
-                                                </td>
-                                            )}
-                                        </tr>
-                                        <tr>
-                                            <td className="vintage-cell-head">Q2-2014</td>
-                                            {this.state.vintage60dpd.data.map((data, index) =>
-                                                <td key={index}>
-                                                    {data['Q2-2014'].toFixed(1)}
-                                                </td>
-                                            )}
-                                        </tr>
-                                        <tr>
-                                            <td className="vintage-cell-head">Q3-2014</td>
-                                            {this.state.vintage60dpd.data.map((data, index) =>
-                                                <td key={index}>
-                                                    {data['Q3-2014'] != null && (
-                                                        data['Q3-2014'].toFixed(1)
-                                                    )}
-                                                </td>
-                                            )}
-                                        </tr>
-                                        <tr>
-                                            <td className="vintage-cell-head">Q4-2014</td>
-                                            {this.state.vintage60dpd.data.map((data, index) =>
-                                                <td key={index}>
-                                                    {data['Q4-2014'] != null && (
-                                                        data['Q4-2014'].toFixed(1)
-                                                    )}
-                                                </td>
-                                            )}
-                                        </tr>
-                                        <tr>
-                                            <td className="vintage-cell-head">Q1-2015</td>
-                                            {this.state.vintage60dpd.data.map((data, index) =>
-                                                <td key={index}>
-                                                    {data['Q1-2015'] != null && (
-                                                        data['Q1-2015'].toFixed(1)
-                                                    )}
-                                                </td>
-                                            )}
-                                        </tr>
-                                        <tr>
-                                            <td className="vintage-cell-head">Q2-2015</td>
-                                            {this.state.vintage60dpd.data.map((data, index) =>
-                                                <td key={index}>
-                                                    {data['Q2-2015'] != null && (
-                                                        data['Q2-2015'].toFixed(1)
-                                                    )}
-                                                </td>
-                                            )}
-                                        </tr>
-                                        <tr>
-                                            <td className="vintage-cell-head">Q3-2015</td>
-                                            {this.state.vintage60dpd.data.map((data, index) =>
-                                                <td key={index}>
-                                                    {data['Q3-2015'] != null && (
-                                                        data['Q3-2015'].toFixed(1)
-                                                    )}
-                                                </td>
-                                            )}
-                                        </tr>
-                                        <tr>
-                                            <td className="vintage-cell-head">Q4-2015</td>
-                                            {this.state.vintage60dpd.data.map((data, index) =>
-                                                <td key={index}>
-                                                    {data['Q4-2015'] != null && (
-                                                        data['Q4-2015'].toFixed(1)
-                                                    )}
-                                                </td>
-                                            )}
-                                        </tr>
-                                        <tr>
-                                            <td className="vintage-cell-head">Q1-2016</td>
-                                            {this.state.vintage60dpd.data.map((data, index) =>
-                                                <td key={index}>
-                                                    {data['Q1-2016'] != null && (
-                                                        data['Q1-2016'].toFixed(1)
-                                                    )}
-                                                </td>
-                                            )}
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+
+                            {!this.state.vintage60Table && (
+                                <div className="flex-items vintage-analysis-chart">
+                                    <RechartLine
+                                        data={this.state.vintage60dpd.data}
+                                        xAxisDataKey={this.state.vintage60dpd.xAxisDataKey}
+                                        // xAxisText={this.state.vintage60dpd.xAxisText}
+                                        // yAxisText={this.state.vintage60dpd.yAxisText}
+                                        xAxisLabel={<AxisLabel axisType='xAxis' text={this.state.vintage60dpd.xAxisText} />}
+                                        yAxisLabel={<AxisLabel axisType='yAxis' text={this.state.vintage60dpd.yAxisText} />}
+                                        legendLayout={this.state.vintage60dpd.legendLayout}
+                                        legendHeight={this.state.vintage60dpd.legendHeight}
+                                        legendWrapperStyle={this.state.vintage60dpd.legendWrapperStyle}
+                                        linesData={this.state.vintage60dpd.linesData}
+                                        yAxisTickFormatter={(data) => `${data}%`}
+                                    />
+                                </div>
+                            )}
+
+                            {this.state.vintage60Table && (
+                                <div className="flex-items vintage-analysis-table-wrapper">
+                                    <table className="vintage-analysis-table">
+                                        <tbody>
+                                            <tr className="vintage-analysis-table-head">
+                                                <td></td>
+                                                {this.state.vintage60dpd.data.map((data, index) =>
+                                                    <td key={index}>
+                                                        {data.Model}
+                                                    </td>
+                                                )}
+                                            </tr>
+                                            <tr>
+                                                <td className="vintage-cell-head">Q2-2014</td>
+                                                {this.state.vintage60dpd.data.map((data, index) =>
+                                                    <td key={index}>
+                                                        {data['Q2-2014'].toFixed(1)}
+                                                    </td>
+                                                )}
+                                            </tr>
+                                            <tr>
+                                                <td className="vintage-cell-head">Q3-2014</td>
+                                                {this.state.vintage60dpd.data.map((data, index) =>
+                                                    <td key={index}>
+                                                        {data['Q3-2014'] != null && (
+                                                            data['Q3-2014'].toFixed(1)
+                                                        )}
+                                                    </td>
+                                                )}
+                                            </tr>
+                                            <tr>
+                                                <td className="vintage-cell-head">Q4-2014</td>
+                                                {this.state.vintage60dpd.data.map((data, index) =>
+                                                    <td key={index}>
+                                                        {data['Q4-2014'] != null && (
+                                                            data['Q4-2014'].toFixed(1)
+                                                        )}
+                                                    </td>
+                                                )}
+                                            </tr>
+                                            <tr>
+                                                <td className="vintage-cell-head">Q1-2015</td>
+                                                {this.state.vintage60dpd.data.map((data, index) =>
+                                                    <td key={index}>
+                                                        {data['Q1-2015'] != null && (
+                                                            data['Q1-2015'].toFixed(1)
+                                                        )}
+                                                    </td>
+                                                )}
+                                            </tr>
+                                            <tr>
+                                                <td className="vintage-cell-head">Q2-2015</td>
+                                                {this.state.vintage60dpd.data.map((data, index) =>
+                                                    <td key={index}>
+                                                        {data['Q2-2015'] != null && (
+                                                            data['Q2-2015'].toFixed(1)
+                                                        )}
+                                                    </td>
+                                                )}
+                                            </tr>
+                                            <tr>
+                                                <td className="vintage-cell-head">Q3-2015</td>
+                                                {this.state.vintage60dpd.data.map((data, index) =>
+                                                    <td key={index}>
+                                                        {data['Q3-2015'] != null && (
+                                                            data['Q3-2015'].toFixed(1)
+                                                        )}
+                                                    </td>
+                                                )}
+                                            </tr>
+                                            <tr>
+                                                <td className="vintage-cell-head">Q4-2015</td>
+                                                {this.state.vintage60dpd.data.map((data, index) =>
+                                                    <td key={index}>
+                                                        {data['Q4-2015'] != null && (
+                                                            data['Q4-2015'].toFixed(1)
+                                                        )}
+                                                    </td>
+                                                )}
+                                            </tr>
+                                            <tr>
+                                                <td className="vintage-cell-head">Q1-2016</td>
+                                                {this.state.vintage60dpd.data.map((data, index) =>
+                                                    <td key={index}>
+                                                        {data['Q1-2016'] != null && (
+                                                            data['Q1-2016'].toFixed(1)
+                                                        )}
+                                                    </td>
+                                                )}
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            )}
+
                         </div>
                     </div>
                 </div>
