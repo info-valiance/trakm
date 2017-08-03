@@ -63,3 +63,38 @@
     background: -webkit-gradient(linear, left top, left bottom, from(#fafbfc),color-stop(35%, rgba(224,224,224,1)),color-stop(65%, rgba(224,224,224,1)),to(#fafbfc));
     background: linear-gradient(to bottom, #fafbfc 0%,rgba(224,224,224,1) 35%,rgba(224,224,224,1) 65%,#fafbfc 100%);
 }
+
+/* Add Model Section */
+.add-model-btn {
+    border: none;
+    font-size: 24px;
+    color: #fff;
+    background: #02b3e4;
+    border: 2px solid #02b3e4;
+    border-radius: 2px;
+    padding: 5px 10px;
+    width: 80%;
+    -webkit-box-shadow: 1px 1px 5px #9c9c9c;
+    box-shadow: 1px 1px 5px #9c9c9c;
+    cursor: pointer;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.add-model-img {
+    width: 128px;
+    margin-bottom: 15px;
+}
+
+.add-model-content-wrapper {
+    margin-top: 50px;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.add-model-content {
+    text-align: center;
+}

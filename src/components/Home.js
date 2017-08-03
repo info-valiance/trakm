@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 // import VicPieChart from './VicPieChart.js'
 import RechartPie from './RechartPie.js'
+import plus from '../img/plus.svg'
 import '../css/Home.css'
 
 class Home extends Component {
@@ -96,7 +97,15 @@ class Home extends Component {
                             </div>
                         </div>
                     </div>
-                    <div className="flex-items home-add-model"></div>
+                    <div className="flex-items home-add-model">
+                        <div className="flex-box add-model-content-wrapper">
+                            <div className="flex-items add-model-content">
+                                <img className="add-model-img" src={plus} alt=""/>
+                                <button className="add-model-btn">Add Model</button>
+                            </div>
+                        </div>
+                        <div className="card-accent"></div>
+                    </div>
                 </div>
             </div>
         )
