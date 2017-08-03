@@ -498,6 +498,7 @@ class FrontEnd extends Component {
                             <div className="flex-items frontend-card-head">
                                 Stability Index (PSI)
                             </div>
+                            <div className="card-accent"></div>
                         </div>
                         <div className="flex-box frontend-psi-gauge-chart-table-wrapper">
                             <div className="flex-items frontend-psi-gauge-chart">
@@ -538,6 +539,7 @@ class FrontEnd extends Component {
                                 Population Stability
                                 <button className="show-table-graph-btn popRadialTableBtn" onClick={this.handleTableShow}>Show Table</button>
                             </div>
+                            <div className="card-accent"></div>
                         </div>
 
                         {!this.state.popRadialTable && (
@@ -688,6 +690,7 @@ class FrontEnd extends Component {
                                 Characteristics Analysis
                                 <button className="show-table-graph-btn characterTableBtn" onClick={this.handleTableShow}>Show Table</button>
                             </div>
+                            <div className="card-accent"></div>
                         </div>
                         <div className="flex-box">
                             <div className="flex-items char-analysis-select-wrapper">
@@ -820,6 +823,7 @@ class FrontEnd extends Component {
                             <div className="flex-items frontend-card-head">
                                 Final Decision Report
                             </div>
+                            <div className="card-accent"></div>
                         </div>
                         <div className="flex-box frontend-final-report-graph">
                             <RechartBar

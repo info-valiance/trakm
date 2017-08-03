@@ -511,6 +511,7 @@ class BackEnd extends Component {
 
                 <div className="flex-box backend-card">
                     <div className="flex-items backend-odds">
+                        <div className="card-accent"></div>
                         <div className="flex-box">
                             <div className="flex-items backend-card-head">
                                 Score to Odds Report
@@ -626,6 +627,7 @@ class BackEnd extends Component {
                                 Characteristics Analysis
                                 <button className="show-table-graph-btn characterTableBtn" onClick={this.handleTableShow}>Show Table</button>
                             </div>
+                            <div className="card-accent"></div>
                         </div>
                         <div className="flex-box">
                             <div className="flex-items char-analysis-select-wrapper">
@@ -747,6 +749,7 @@ class BackEnd extends Component {
                             <div className="flex-items backend-card-head">
                                 Scorecard Performance
                             </div>
+                            <div className="card-accent"></div>
                         </div>
                         <div className="flex-box backend-perf-thumbs">
                             <div className="flex-items backend-perf-gini-wrapper">
@@ -829,6 +832,7 @@ class BackEnd extends Component {
                             <div className="flex-items backend-card-head">
                                 Vintage Analysis
                             </div>
+                            <div className="card-accent"></div>
                         </div>
                         <div className="flex-box vintage-analysis-chart-wrapper">
                             <div className="flex-items backend-vintage-30-head">

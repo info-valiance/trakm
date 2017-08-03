@@ -106,6 +106,7 @@ class Overview extends Component {
                     <div className="flex-items overview-gains-chart">
                         <RechartLineArea />
                     </div>
+                    <div className="card-accent"></div>
                 </div>
 
                 <div className="overview-card">
@@ -113,6 +114,7 @@ class Overview extends Component {
                         <div className="flex-items overview-card-head">
                             Model Details
                         </div>
+                        <div className="card-accent"></div>
                     </div>
                     <div className="flex-box model-detail-content">
                         <div className="flex-items model-detail-img">
@@ -159,6 +161,7 @@ class Overview extends Component {
                             <div className="flex-items overview-card-head">
                                 Model Performance
                             </div>
+                            <div className="card-accent"></div>
                         </div>
                         <div className="flex-box gini-chart-wrapper">
                             <div className="flex-items gini-chart">
@@ -185,6 +188,7 @@ class Overview extends Component {
                             <div className="flex-items overview-card-head">
                                 Stability Index (PSI)
                             </div>
+                            <div className="card-accent"></div>
                         </div>
                         <div className="flex-box">
                             <div className="flex-items overview-psi-gauge-chart">
@@ -223,6 +227,7 @@ class Overview extends Component {
                         <div className="flex-items overview-card-head">
                             Gains Chart
                         </div>
+                        <div className="card-accent"></div>
                     </div>
                     <div className="flex-box tradeoff-chart-wrapper">
                         <div className="flex-items tradeoff-chart">
