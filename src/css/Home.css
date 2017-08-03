@@ -1,3 +1,14 @@
+/* Card design */
+.home-card {
+    position: relative;
+    padding: 12px 15px;
+    background: #fff;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.12);
+}
+
 .home-graphs {
     width: 74%;
 }
@@ -30,6 +41,7 @@
     padding: 12px 15px;
     background: #fff;
     border-radius: 6px;
+    margin-bottom: 12px;
     -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.12);
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.12);
 }
@@ -97,4 +109,9 @@
 
 .add-model-content {
     text-align: center;
+}
+
+/* Models List */
+.model-card {
+    border: 2px solid #000;
 }

@@ -107,6 +107,18 @@ class Home extends Component {
                         <div className="card-accent"></div>
                     </div>
                 </div>
+
+                <div className="flex-box home-card">
+                    <div className="flex-items">
+                        <div className="flex-box">
+                            <div className="flex-items model-card">
+                                <div className="flex-box">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         )
     }
