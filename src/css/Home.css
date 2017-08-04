@@ -9,6 +9,14 @@
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.12);
 }
 
+/* Home Card Head */
+.home-card-head {
+    font-family: 'Nunito', sans-serif;
+    width: 100%;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
 .home-graphs {
     width: 74%;
 }
@@ -109,9 +117,4 @@
 
 .add-model-content {
     text-align: center;
-}
-
-/* Models List */
-.model-card {
-    border: 2px solid #000;
 }

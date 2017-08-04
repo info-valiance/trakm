@@ -1,0 +1,70 @@
+.model-card {
+    padding: 12px 15px;
+    background: #fff;
+    border-radius: 6px;
+    width: 250px;
+    height: 298px;
+    margin-right: 10px;
+    -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.12);
+}
+
+.model-cards-section {
+    overflow-x: scroll;
+    padding: 5px 5px 15px;
+}
+
+.model-card-content {
+    height: 100%;
+    position: relative;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.model-list-img-wrapper {
+    text-align: center;
+}
+
+.model-list-img {
+    width: 100px;
+}
+
+.model-data-left,
+.model-data-right {
+    display: inline-block;
+    font-size: 13px;
+}
+
+.model-data-left {
+    width: 100px;
+}
+
+.model-card-end-content {
+    position: absolute;
+    bottom: 0;
+    font-size: 13px;
+    width: 100%;
+}
+
+.model-card-view-btn,
+.model-card-edit-btn {
+    /*font-size: 24px;*/
+    color: #fff;
+    margin-right: 5px;
+    margin-top: 3px;
+    background: #02b3e4;
+    border: 2px solid #02b3e4;
+    border-radius: 2px;
+    width: 50px;
+    /*padding: 5px 10px;*/
+    -webkit-box-shadow: 1px 1px 5px #9c9c9c;
+    box-shadow: 1px 1px 5px #9c9c9c;
+    cursor: pointer;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-// import VicPieChart from './VicPieChart.js'
 import RechartPie from './RechartPie.js'
+import ModelListCard from './ModelListCard.js'
 import plus from '../img/plus.svg'
 import '../css/Home.css'
 
@@ -109,13 +109,15 @@ class Home extends Component {
                 </div>
 
                 <div className="flex-box home-card">
-                    <div className="flex-items">
+                    <div className="flex-items" style={{width: "100%", position: "relative"}}>
                         <div className="flex-box">
-                            <div className="flex-items model-card">
-                                <div className="flex-box">
-
-                                </div>
+                            <div className="flex-items home-card-head">
+                                List of Models
                             </div>
+                        </div>
+                        <div className="flex-box model-cards-section">
+                            <ModelListCard />
+                            <ModelListCard />
                         </div>
                     </div>
                 </div>
