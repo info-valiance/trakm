@@ -65,9 +65,20 @@ class Home extends Component {
                     category: 'Marketing',
                     performance: 'high',
                 },
-            ]
+            ],
+            modelSelectValue: "all"
         }
+
+        this.handleModelChange = this.handleModelChange.bind(this);
     }
+
+
+    handleModelChange(event) {
+        this.setState({
+                modelSelectValue: event.target.value,
+        })
+    }
+
 
     /*global renderCustomizedLabel:true*/
     renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, data }) => {
@@ -157,6 +168,11 @@ class Home extends Component {
                         <div className="flex-box">
                             <div className="flex-items home-card-head">
                                 List of Models
+                                <select className="char-analysis-select" value={this.state.modelSelectValue} style={{float: "right"}}  onChange={this.handleModelChange}>
+                                    <option value="all">All Models</option>
+                                    <option value="best">Best Performing</option>
+                                    <option value="worst">Worst Performing</option>
+                                </select>
                             </div>
                         </div>
                         <div className="flex-box model-cards-section">
