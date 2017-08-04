@@ -170,15 +170,22 @@ class Home extends Component {
                                 List of Models
                                 <select className="char-analysis-select" value={this.state.modelSelectValue} style={{float: "right"}}  onChange={this.handleModelChange}>
                                     <option value="all">All Models</option>
-                                    <option value="best">Best Performing</option>
-                                    <option value="worst">Worst Performing</option>
+                                    <option value="high">Best Performing</option>
+                                    <option value="low">Worst Performing</option>
                                 </select>
                             </div>
                         </div>
                         <div className="flex-box model-cards-section">
-                            {this.state.models.map((data, index) =>
-                                <ModelListCard key={index} data={data} />
-                            )}
+                            {this.state.modelSelectValue === "high" ?
+                                this.state.models.filter(data => data.performance === "high").map((data, index) =>
+                                    <ModelListCard key={index} data={data} />
+                                ) : this.state.modelSelectValue === "low" ?
+                                    this.state.models.filter(data => data.performance === "low").map((data, index) =>
+                                        <ModelListCard key={index} data={data} />
+                                    ) : this.state.models.map((data, index) =>
+                                        <ModelListCard key={index} data={data} />
+                                    )
+                            }
                         </div>
                     </div>
                 </div>
