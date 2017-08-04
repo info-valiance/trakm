@@ -21,6 +21,50 @@ class Home extends Component {
                 { name: "12-18 months", value: 10 },
                 { name: "18-24 months", value: 7 },
                 { name: "24+ months", value: 3 }
+            ],
+            models: [
+                {
+                    created: '1 Jan 2014',
+                    type: 'Classification',
+                    technique: 'Logistic Regression',
+                    category: 'Marketing',
+                    performance: 'low',
+                },
+                {
+                    created: '1 Jan 2014',
+                    type: 'Classification',
+                    technique: 'Logistic Regression',
+                    category: 'Marketing',
+                    performance: 'fair',
+                },
+                {
+                    created: '1 Jan 2014',
+                    type: 'Classification',
+                    technique: 'Logistic Regression',
+                    category: 'Marketing',
+                    performance: 'high',
+                },
+                {
+                    created: '1 Jan 2014',
+                    type: 'Classification',
+                    technique: 'Logistic Regression',
+                    category: 'Marketing',
+                    performance: 'low',
+                },
+                {
+                    created: '1 Jan 2014',
+                    type: 'Classification',
+                    technique: 'Logistic Regression',
+                    category: 'Marketing',
+                    performance: 'fair',
+                },
+                {
+                    created: '1 Jan 2014',
+                    type: 'Classification',
+                    technique: 'Logistic Regression',
+                    category: 'Marketing',
+                    performance: 'high',
+                },
             ]
         }
     }
@@ -116,8 +160,9 @@ class Home extends Component {
                             </div>
                         </div>
                         <div className="flex-box model-cards-section">
-                            <ModelListCard />
-                            <ModelListCard />
+                            {this.state.models.map((data, index) =>
+                                <ModelListCard key={index} data={data} />
+                            )}
                         </div>
                     </div>
                 </div>

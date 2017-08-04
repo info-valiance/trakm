@@ -2,7 +2,7 @@
     padding: 12px 15px;
     background: #fff;
     border-radius: 6px;
-    width: 250px;
+    min-width: 250px;
     height: 298px;
     margin-right: 10px;
     -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.12);

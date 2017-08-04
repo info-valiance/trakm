@@ -10,35 +10,42 @@ class ModelListCard extends Component {
             <div className="flex-items model-card">
                 <div className="flex-box model-card-content">
                     <div className="flex-items model-list-img-wrapper">
-                        <img className="model-list-img" src={redGraphImg} alt=""/>
+                        <img className="model-list-img"
+                            src={
+                                this.props.data.performance === 'low' ?
+                                redGraphImg : this.props.data.performance === 'fair' ?
+                                yellowGraphImg : greenGraphImg
+                            }
+                            alt="Model Image"
+                        />
                     </div>
                     <div className="flex-items" style={{marginTop: "5px"}}>
                         <span className="model-data-left">
                             Created On:
                         </span>
                         <span className="model-data-right">
-                            1 Jan 2014
+                            {this.props.data.created}
                         </span>
                         <br/>
                         <span className="model-data-left">
                             Type:
                         </span>
                         <span className="model-data-right">
-                            Classification
+                            {this.props.data.type}
                         </span>
                         <br/>
                         <span className="model-data-left">
                             Technique:
                         </span>
                         <span className="model-data-right">
-                            Logistic Regression
+                            {this.props.data.technique}
                         </span>
                         <br/>
                         <span className="model-data-left">
                             Category:
                         </span>
                         <span className="model-data-right">
-                            Marketing
+                            {this.props.data.category}
                         </span>
                     </div>
                     <div className="flex-items model-card-end-content">
