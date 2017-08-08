@@ -132,6 +132,7 @@
     font-weight: bold;
     margin-top: 5px;
     font-size: 24px;
+    cursor: pointer;
     -webkit-animation: arrow-bounce 2s infinite;
     animation: arrow-bounce 2s infinite;
 }
@@ -199,4 +200,43 @@
 
 .add-model-content {
     text-align: center;
+}
+
+.add-model-steps-wrapper {
+    height: 100%;
+    padding-left: 15px;
+}
+
+.add-model-steps {
+    height: 100%;
+}
+
+.add-model-steps-li {
+    position: relative;
+    height: 100px;
+}
+
+.add-model-steps-li-text {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    text-align: center;
+    height: 30px;
+    width: 30px;
+    font-size: 20px;
+    border: 1px solid #c7c7c7;
+    color: #525252;
+    background: #fff;
+    border-radius: 50%
+}
+
+.add-model-steps-li::after {
+    content: '';
+    display: block;
+    height: 100px;
+    width: 2px;
+    margin-left: 14px;
+    background: #777;
 }

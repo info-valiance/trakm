@@ -177,7 +177,7 @@ class Home extends Component {
                                 <div className="flex-items expand-model-graphs-text">
                                     <button className="expand-model-graphs-btn" onClick={this.handleAddModelOpen}>Show Distribution of Models</button>
                                     <br/>
-                                    <i className="fa fa-angle-down" aria-hidden="true"></i>
+                                    <i className="fa fa-angle-down" aria-hidden="true" onClick={this.handleAddModelOpen}></i>
                                 </div>
                             </div>
                         )}
@@ -193,6 +193,23 @@ class Home extends Component {
                                 <div className="flex-items add-model-content">
                                     <img className="add-model-img" src={plus} alt=""/>
                                     <button className="add-model-btn" onClick={this.handleAddModelOpen}>Add Model</button>
+                                </div>
+                            </div>
+                        )}
+                        {this.state.addModelOpen && (
+                            <div className="flex-box add-model-steps-wrapper">
+                                <div className="flex-items">
+                                    <ul className="add-model-steps">
+                                        <li className="add-model-steps-li">
+                                            <span className="add-model-steps-li-text">1</span>
+                                        </li>
+                                        <li className="add-model-steps-li">
+                                            <span className="add-model-steps-li-text">2</span>
+                                        </li>
+                                        <li className="add-model-steps-li">
+                                            <span className="add-model-steps-li-text">3</span>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         )}
