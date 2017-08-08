@@ -66,16 +66,24 @@ class Home extends Component {
                     performance: 'high',
                 },
             ],
-            modelSelectValue: "all"
+            modelSelectValue: "all",
+            addModelOpen: true
         }
 
         this.handleModelChange = this.handleModelChange.bind(this);
+        this.handleAddModelOpen = this.handleAddModelOpen.bind(this);
     }
 
 
     handleModelChange(event) {
         this.setState({
                 modelSelectValue: event.target.value,
+        })
+    }
+
+    handleAddModelOpen(event) {
+        this.setState({
+                addModelOpen: !this.state.addModelOpen,
         })
     }
 
@@ -97,68 +105,97 @@ class Home extends Component {
         return (
             <div className="home-content-wrapper">
                 <div className="flex-box home-addmodel-graph-wrapper">
-                    <div className="flex-items home-graphs">
+                    <div
+                        className="flex-items home-graphs"
+                        style={{
+                            width: this.state.addModelOpen ? "9%" : "74%"
+                        }}
+                    >
                         <div className="card-accent"></div>
-                        <div className="home-graph-part"></div>
-                        <div className="flex-box">
-                            <div className="flex-items perf-dist-wrapper">
-                                <h1>Performance Distribution of Models</h1>
-                                {/* <VicPieChart /> */}
-                                <RechartPie
-                                    data={this.state.perfDistData}
-                                    dataKey="value"
-                                    startAngle={90}
-                                    endAngle={-270}
-                                    cx="50%"
-                                    cy="50%"
-                                    innerRadius={65}
-                                    outerRadius={100}
-                                    fill="#82ca9d"
-                                    labelLine={true}
-                                    label="label"
-                                    colors={['#FF8042', '#FFBB28', '#00C49F']}
-                                    textCenter={{
-                                        text: "200",
-                                        fill: "#2e3d49",
-                                        x: "50%",
-                                        y: "44%",
-                                        textAnchor: "middle",
-                                        fontSize: 24,
-                                        fontWeight: "bold",
-                                        dominantBaseline: "central"
-                                    }}
-                                />
+                        {/* Show when expanded */}
+                        {!this.state.addModelOpen && (
+                            <div className="home-graph-part"></div>
+                        )}
+                        {/* Show when expanded */}
+                        {!this.state.addModelOpen && (
+                            <div className="flex-box">
+                                <div className="flex-items perf-dist-wrapper">
+                                    <h1>Performance Distribution of Models</h1>
+                                    {/* <VicPieChart /> */}
+                                    <RechartPie
+                                        data={this.state.perfDistData}
+                                        dataKey="value"
+                                        startAngle={90}
+                                        endAngle={-270}
+                                        cx="50%"
+                                        cy="50%"
+                                        innerRadius={65}
+                                        outerRadius={100}
+                                        fill="#82ca9d"
+                                        labelLine={true}
+                                        label="label"
+                                        colors={['#FF8042', '#FFBB28', '#00C49F']}
+                                        textCenter={{
+                                            text: "200",
+                                            fill: "#2e3d49",
+                                            x: "50%",
+                                            y: "44%",
+                                            textAnchor: "middle",
+                                            fontSize: 24,
+                                            fontWeight: "bold",
+                                            dominantBaseline: "central"
+                                        }}
+                                    />
+                                </div>
+                                <div className="flex-items age-dist-wrapper">
+                                    <h1>Age Distribution of Models</h1>
+                                    {/* <VicPieChart /> */}
+                                    <RechartPie
+                                        data={this.state.ageDistData}
+                                        dataKey="value"
+                                        startAngle={90}
+                                        endAngle={-270}
+                                        cx="50%"
+                                        cy="50%"
+                                        innerRadius={65}
+                                        outerRadius={100}
+                                        fill="#82ca9d"
+                                        labelLine={true}
+                                        label={this.renderCustomizedLabel}
+                                        colors={['#006699', '#0088cc', '#00aaff', '#33bbff', '#66ccff', '#80d4ff', '#b3e6ff']}
+                                        textCenter={{
+                                            text: ""
+                                        }}
+                                    />
+                                </div>
                             </div>
-                            <div className="flex-items age-dist-wrapper">
-                                <h1>Age Distribution of Models</h1>
-                                {/* <VicPieChart /> */}
-                                <RechartPie
-                                    data={this.state.ageDistData}
-                                    dataKey="value"
-                                    startAngle={90}
-                                    endAngle={-270}
-                                    cx="50%"
-                                    cy="50%"
-                                    innerRadius={65}
-                                    outerRadius={100}
-                                    fill="#82ca9d"
-                                    labelLine={true}
-                                    label={this.renderCustomizedLabel}
-                                    colors={['#006699', '#0088cc', '#00aaff', '#33bbff', '#66ccff', '#80d4ff', '#b3e6ff']}
-                                    textCenter={{
-                                        text: ""
-                                    }}
-                                />
+                        )}
+
+                        {/* Show when collapsed */}
+                        {this.state.addModelOpen && (
+                            <div className="flex-box expand-model-graphs">
+                                <div className="flex-items expand-model-graphs-text">
+                                    <button className="expand-model-graphs-btn" onClick={this.handleAddModelOpen}>Show Distribution of Models</button>
+                                    <br/>
+                                    <i className="fa fa-angle-down" aria-hidden="true"></i>
+                                </div>
                             </div>
-                        </div>
+                        )}
                     </div>
-                    <div className="flex-items home-add-model">
-                        <div className="flex-box add-model-content-wrapper">
-                            <div className="flex-items add-model-content">
-                                <img className="add-model-img" src={plus} alt=""/>
-                                <button className="add-model-btn">Add Model</button>
+                    <div
+                        className="flex-items home-add-model"
+                        style={{
+                            width: this.state.addModelOpen ? "90%" : "25%"
+                        }}
+                    >
+                        {!this.state.addModelOpen && (
+                            <div className="flex-box add-model-content-wrapper">
+                                <div className="flex-items add-model-content">
+                                    <img className="add-model-img" src={plus} alt=""/>
+                                    <button className="add-model-btn" onClick={this.handleAddModelOpen}>Add Model</button>
+                                </div>
                             </div>
-                        </div>
+                        )}
                         <div className="card-accent"></div>
                     </div>
                 </div>
