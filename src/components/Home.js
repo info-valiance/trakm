@@ -199,7 +199,7 @@ class Home extends Component {
                         )}
                         {this.state.addModelOpen && (
                             <div className="flex-box add-model-steps-wrapper">
-                                <div className="flex-items">
+                                <div className="flex-items" style={{ width: '109px' }}>
                                     <ul className="add-model-steps">
                                         <li className="add-model-steps-li">
                                             <span
@@ -232,6 +232,142 @@ class Home extends Component {
                                             >1</span>
                                         </li>
                                     </ul>
+                                </div>
+
+                                <div className="flex-items" style={{ width: 'calc(100% - 109px)' }}>
+                                    <div className="flex-box add-model-head">
+                                        <div className="flex-items">
+                                            Add Model
+                                        </div>
+                                    </div>
+
+                                    <div className="flex-box add-model-subhead">
+                                        <div className="flex-items">
+                                            {
+                                                this.state.addModelFormStep === 3 ? 'Current Data:' :
+                                                this.state.addModelFormStep === 2 ? 'Development Data:' :
+                                                'Model Details:'
+                                            }
+                                        </div>
+                                    </div>
+
+                                    {this.state.addModelFormStep === 1 && (
+                                        <div>
+
+                                            <div className="flex-box add-model-fields-wrapper">
+                                                <div className="flex-items add-model-field-name">
+                                                    Name
+                                                </div>
+                                                <div className="flex-items add-model-field">
+                                                    <input type="text"/>
+                                                </div>
+                                                <div className="flex-items add-model-field-name">
+                                                    Type
+                                                </div>
+                                                <div className="flex-items add-model-field">
+                                                    <input type="text"/>
+                                                </div>
+                                                <div className="flex-items add-model-field-name">
+                                                    Owner
+                                                </div>
+                                                <div className="flex-items add-model-field">
+                                                    <input type="text"/>
+                                                </div>
+                                                <div className="flex-items add-model-field-name">
+                                                    Technique
+                                                </div>
+                                                <div className="flex-items add-model-field">
+                                                    <input type="text"/>
+                                                </div>
+                                            </div>
+
+                                            <div className="flex-box add-model-step-btn-wrapper">
+                                                <div className="flex-items">
+                                                    <button onClick={() => this.setState({addModelFormStep: 2})}>Next</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    )}
+
+                                    {this.state.addModelFormStep === 2 && (
+                                        <div>
+
+                                            <div className="flex-box add-model-fields-wrapper">
+                                                <div className="flex-items add-model-field-name">
+                                                    Name
+                                                </div>
+                                                <div className="flex-items add-model-field">
+                                                    <input type="text"/>
+                                                </div>
+                                                <div className="flex-items add-model-field-name">
+                                                    Type
+                                                </div>
+                                                <div className="flex-items add-model-field">
+                                                    <input type="text"/>
+                                                </div>
+                                                <div className="flex-items add-model-field-name">
+                                                    Owner
+                                                </div>
+                                                <div className="flex-items add-model-field">
+                                                    <input type="text"/>
+                                                </div>
+                                                <div className="flex-items add-model-field-name">
+                                                    Technique
+                                                </div>
+                                                <div className="flex-items add-model-field">
+                                                    <input type="text"/>
+                                                </div>
+                                            </div>
+
+                                            <div className="flex-box add-model-step-btn-wrapper">
+                                                <div className="flex-items">
+                                                    <button onClick={() => this.setState({addModelFormStep: 3})}>Next</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    )}
+
+                                    {this.state.addModelFormStep === 3 && (
+                                        <div>
+
+                                            <div className="flex-box add-model-fields-wrapper">
+                                                <div className="flex-items add-model-field-name">
+                                                    Name
+                                                </div>
+                                                <div className="flex-items add-model-field">
+                                                    <input type="text"/>
+                                                </div>
+                                                <div className="flex-items add-model-field-name">
+                                                    Type
+                                                </div>
+                                                <div className="flex-items add-model-field">
+                                                    <input type="text"/>
+                                                </div>
+                                                <div className="flex-items add-model-field-name">
+                                                    Owner
+                                                </div>
+                                                <div className="flex-items add-model-field">
+                                                    <input type="text"/>
+                                                </div>
+                                                <div className="flex-items add-model-field-name">
+                                                    Technique
+                                                </div>
+                                                <div className="flex-items add-model-field">
+                                                    <input type="text"/>
+                                                </div>
+                                            </div>
+
+                                            <div className="flex-box add-model-step-btn-wrapper">
+                                                <div className="flex-items">
+                                                    <button>Submit</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    )}
+
                                 </div>
                             </div>
                         )}
