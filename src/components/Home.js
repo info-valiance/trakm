@@ -295,25 +295,25 @@ class Home extends Component {
 
                                             <div className="flex-box add-model-fields-wrapper">
                                                 <div className="flex-items add-model-field-name">
-                                                    Name
+                                                    Development Window
                                                 </div>
                                                 <div className="flex-items add-model-field">
                                                     <input type="text"/>
                                                 </div>
                                                 <div className="flex-items add-model-field-name">
-                                                    Type
+                                                    Performance Window
                                                 </div>
                                                 <div className="flex-items add-model-field">
                                                     <input type="text"/>
                                                 </div>
                                                 <div className="flex-items add-model-field-name">
-                                                    Owner
+                                                    Download Template
                                                 </div>
                                                 <div className="flex-items add-model-field">
                                                     <input type="text"/>
                                                 </div>
                                                 <div className="flex-items add-model-field-name">
-                                                    Technique
+                                                    Upload Data
                                                 </div>
                                                 <div className="flex-items add-model-field">
                                                     <input type="text"/>
@@ -334,25 +334,25 @@ class Home extends Component {
 
                                             <div className="flex-box add-model-fields-wrapper">
                                                 <div className="flex-items add-model-field-name">
-                                                    Name
+                                                    Current Window
                                                 </div>
                                                 <div className="flex-items add-model-field">
                                                     <input type="text"/>
                                                 </div>
                                                 <div className="flex-items add-model-field-name">
-                                                    Type
+                                                    Performance Window
                                                 </div>
                                                 <div className="flex-items add-model-field">
                                                     <input type="text"/>
                                                 </div>
                                                 <div className="flex-items add-model-field-name">
-                                                    Owner
+                                                    Download Template
                                                 </div>
                                                 <div className="flex-items add-model-field">
                                                     <input type="text"/>
                                                 </div>
                                                 <div className="flex-items add-model-field-name">
-                                                    Technique
+                                                    Upload Data
                                                 </div>
                                                 <div className="flex-items add-model-field">
                                                     <input type="text"/>
