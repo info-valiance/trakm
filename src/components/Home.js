@@ -67,7 +67,8 @@ class Home extends Component {
                 },
             ],
             modelSelectValue: "all",
-            addModelOpen: true
+            addModelOpen: true,
+            addModelFormStep: 1
         }
 
         this.handleModelChange = this.handleModelChange.bind(this);
@@ -201,13 +202,34 @@ class Home extends Component {
                                 <div className="flex-items">
                                     <ul className="add-model-steps">
                                         <li className="add-model-steps-li">
-                                            <span className="add-model-steps-li-text">1</span>
+                                            <span
+                                                className="add-model-steps-li-text"
+                                                style={{
+                                                    background: this.state.addModelFormStep === 3 ? '#2e3d49' : '#fff',
+                                                    color: this.state.addModelFormStep === 3 ? '#fff' : '#525252'
+                                                }}
+                                                onClick={() => this.setState({addModelFormStep: 3})}
+                                            >3</span>
                                         </li>
                                         <li className="add-model-steps-li">
-                                            <span className="add-model-steps-li-text">2</span>
+                                            <span
+                                                className="add-model-steps-li-text"
+                                                style={{
+                                                    background: this.state.addModelFormStep === 1 ? '#fff' : '#2e3d49',
+                                                    color: this.state.addModelFormStep === 1 ? '#525252' : '#fff'
+                                                }}
+                                                onClick={() => this.setState({addModelFormStep: 2})}
+                                            >2</span>
                                         </li>
                                         <li className="add-model-steps-li">
-                                            <span className="add-model-steps-li-text">3</span>
+                                            <span
+                                                className="add-model-steps-li-text"
+                                                style={{
+                                                    background: '#2e3d49',
+                                                    color: '#fff'
+                                                }}
+                                                onClick={() => this.setState({addModelFormStep: 1})}
+                                            >1</span>
                                         </li>
                                     </ul>
                                 </div>
