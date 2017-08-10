@@ -298,25 +298,27 @@ class Home extends Component {
                                                     Development Window
                                                 </div>
                                                 <div className="flex-items add-model-field">
-                                                    <input type="text"/>
+                                                    <input type="date" style={{ marginRight: '2%' }}/>
+                                                    <input type="date"/>
                                                 </div>
                                                 <div className="flex-items add-model-field-name">
                                                     Performance Window
                                                 </div>
                                                 <div className="flex-items add-model-field">
-                                                    <input type="text"/>
+                                                    <input type="date" style={{ marginRight: '2%' }}/>
+                                                    <input type="date"/>
                                                 </div>
                                                 <div className="flex-items add-model-field-name">
                                                     Download Template
                                                 </div>
                                                 <div className="flex-items add-model-field">
-                                                    <input type="text"/>
+                                                    <button className="add-model-form-btn">Template</button>
                                                 </div>
                                                 <div className="flex-items add-model-field-name">
                                                     Upload Data
                                                 </div>
                                                 <div className="flex-items add-model-field">
-                                                    <input type="text"/>
+                                                    <button className="add-model-form-btn">Browse</button>
                                                 </div>
                                             </div>
 
@@ -337,25 +339,27 @@ class Home extends Component {
                                                     Current Window
                                                 </div>
                                                 <div className="flex-items add-model-field">
-                                                    <input type="text"/>
+                                                    <input type="date" style={{ marginRight: '2%' }}/>
+                                                    <input type="date"/>
                                                 </div>
                                                 <div className="flex-items add-model-field-name">
                                                     Performance Window
                                                 </div>
                                                 <div className="flex-items add-model-field">
-                                                    <input type="text"/>
+                                                    <input type="date" style={{ marginRight: '2%' }}/>
+                                                    <input type="date"/>
                                                 </div>
                                                 <div className="flex-items add-model-field-name">
                                                     Download Template
                                                 </div>
                                                 <div className="flex-items add-model-field">
-                                                    <input type="text"/>
+                                                    <button className="add-model-form-btn">Template</button>
                                                 </div>
                                                 <div className="flex-items add-model-field-name">
                                                     Upload Data
                                                 </div>
                                                 <div className="flex-items add-model-field">
-                                                    <input type="text"/>
+                                                    <button className="add-model-form-btn">Browse</button>
                                                 </div>
                                             </div>
 
