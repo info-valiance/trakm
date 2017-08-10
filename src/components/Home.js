@@ -279,25 +279,25 @@ class Home extends Component {
                                                     Name
                                                 </div>
                                                 <div className="flex-items add-model-field">
-                                                    <input name="modelName" type="text" onChange={this.saveModelFormInput}/>
+                                                    <input name="modelName" placeholder="" type="text" onChange={this.saveModelFormInput}/>
                                                 </div>
                                                 <div className="flex-items add-model-field-name">
                                                     Type
                                                 </div>
                                                 <div className="flex-items add-model-field">
-                                                    <input name="modelType" type="text" onChange={this.saveModelFormInput}/>
+                                                    <input name="modelType" placeholder="" type="text" onChange={this.saveModelFormInput}/>
                                                 </div>
                                                 <div className="flex-items add-model-field-name">
                                                     Owner
                                                 </div>
                                                 <div className="flex-items add-model-field">
-                                                    <input name="modelOwner" type="text" onChange={this.saveModelFormInput}/>
+                                                    <input name="modelOwner" placeholder="" type="text" onChange={this.saveModelFormInput}/>
                                                 </div>
                                                 <div className="flex-items add-model-field-name">
                                                     Technique
                                                 </div>
                                                 <div className="flex-items add-model-field">
-                                                    <input name="modelTechnique" type="text" onChange={this.saveModelFormInput}/>
+                                                    <input name="modelTechnique" placeholder="" type="text" onChange={this.saveModelFormInput}/>
                                                 </div>
                                             </div>
 
