@@ -67,12 +67,25 @@ class Home extends Component {
                 },
             ],
             modelSelectValue: "all",
-            addModelOpen: true,
-            addModelFormStep: 1
+            addModelOpen: false,
+            addModelFormStep: 1,
+            modelName: '',
+            modelType: '',
+            modelOwner: '',
+            modelTechnique: '',
+            modelDevFrom: '',
+            modelDevTo: '',
+            modelDevPerfFrom: '',
+            modelDevPerfTo: '',
+            modelCurFrom: '',
+            modelCurTo: '',
+            modelCurPerfFrom: '',
+            modelCurPerfTo: '',
         }
 
         this.handleModelChange = this.handleModelChange.bind(this);
         this.handleAddModelOpen = this.handleAddModelOpen.bind(this);
+        this.saveModelFormInput = this.saveModelFormInput.bind(this);
     }
 
 
@@ -85,6 +98,13 @@ class Home extends Component {
     handleAddModelOpen(event) {
         this.setState({
                 addModelOpen: !this.state.addModelOpen,
+        })
+    }
+
+    saveModelFormInput(event) {
+        const { name, value } = event.target;
+        this.setState({
+                [name]: value,
         })
     }
 
@@ -259,25 +279,25 @@ class Home extends Component {
                                                     Name
                                                 </div>
                                                 <div className="flex-items add-model-field">
-                                                    <input type="text"/>
+                                                    <input name="modelName" type="text" onChange={this.saveModelFormInput}/>
                                                 </div>
                                                 <div className="flex-items add-model-field-name">
                                                     Type
                                                 </div>
                                                 <div className="flex-items add-model-field">
-                                                    <input type="text"/>
+                                                    <input name="modelType" type="text" onChange={this.saveModelFormInput}/>
                                                 </div>
                                                 <div className="flex-items add-model-field-name">
                                                     Owner
                                                 </div>
                                                 <div className="flex-items add-model-field">
-                                                    <input type="text"/>
+                                                    <input name="modelOwner" type="text" onChange={this.saveModelFormInput}/>
                                                 </div>
                                                 <div className="flex-items add-model-field-name">
                                                     Technique
                                                 </div>
                                                 <div className="flex-items add-model-field">
-                                                    <input type="text"/>
+                                                    <input name="modelTechnique" type="text" onChange={this.saveModelFormInput}/>
                                                 </div>
                                             </div>
 
@@ -298,15 +318,15 @@ class Home extends Component {
                                                     Development Window
                                                 </div>
                                                 <div className="flex-items add-model-field">
-                                                    <input type="date" style={{ marginRight: '2%' }}/>
-                                                    <input type="date"/>
+                                                    <input name="modelDevFrom" placeholder="From" type="date" onChange={this.saveModelFormInput} style={{ marginRight: '2%' }}/>
+                                                    <input name="modelDevTo" placeholder="To" type="date" onChange={this.saveModelFormInput}/>
                                                 </div>
                                                 <div className="flex-items add-model-field-name">
                                                     Performance Window
                                                 </div>
                                                 <div className="flex-items add-model-field">
-                                                    <input type="date" style={{ marginRight: '2%' }}/>
-                                                    <input type="date"/>
+                                                    <input name="modelDevPerfFrom" placeholder="From" type="date" onChange={this.saveModelFormInput} style={{ marginRight: '2%' }}/>
+                                                    <input name="modelDevPerfTo" placeholder="To" type="date" onChange={this.saveModelFormInput}/>
                                                 </div>
                                                 <div className="flex-items add-model-field-name">
                                                     Download Template
@@ -339,15 +359,15 @@ class Home extends Component {
                                                     Current Window
                                                 </div>
                                                 <div className="flex-items add-model-field">
-                                                    <input type="date" style={{ marginRight: '2%' }}/>
-                                                    <input type="date"/>
+                                                    <input name="modelCurFrom" placeholder="From" type="date" onChange={this.saveModelFormInput} style={{ marginRight: '2%' }}/>
+                                                    <input name="modelCurTo" placeholder="To" type="date" onChange={this.saveModelFormInput}/>
                                                 </div>
                                                 <div className="flex-items add-model-field-name">
                                                     Performance Window
                                                 </div>
                                                 <div className="flex-items add-model-field">
-                                                    <input type="date" style={{ marginRight: '2%' }}/>
-                                                    <input type="date"/>
+                                                    <input name="modelCurPerfFrom" placeholder="From" type="date" onChange={this.saveModelFormInput} style={{ marginRight: '2%' }}/>
+                                                    <input name="modelCurPerfTo" placeholder="To" type="date" onChange={this.saveModelFormInput}/>
                                                 </div>
                                                 <div className="flex-items add-model-field-name">
                                                     Download Template
